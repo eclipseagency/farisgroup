@@ -1,18 +1,23 @@
 "use client";
 
+// Real international brand partners of Faris Group
 const brands = [
-  "TECHNOGYM",
-  "MATRIX",
-  "LIFE FITNESS",
-  "PRECOR",
-  "MONDO",
-  "SPORTEC",
-  "KARHU",
-  "POLTRONA FRAU",
-  "HUSTLE FITNESS",
-  "STAR TRAC",
-  "CYBEX",
-  "HAMMER STRENGTH",
+  "ARTISPORT",
+  "TUFF STUFF",
+  "LANDICE",
+  "LIMONTA",
+  "NOTRAX",
+  "OMSI",
+  "INTERKAL",
+  "HOLLMAN",
+  "AACER",
+  "DALLARIVA",
+  "BOEN",
+  "TOPFLOR",
+  "ECOPLAS",
+  "CASALI SPORT",
+  "OSST",
+  "ACT",
 ];
 
 export default function BrandsSection() {
@@ -25,15 +30,19 @@ export default function BrandsSection() {
             Official Distributor of{" "}
             <span style={{ color: "#c9a227" }}>Top International Brands</span>
           </h2>
+          <p className="text-gray-500 text-sm mt-3 max-w-lg mx-auto">
+            Faris Group partners with globally recognized brands from Italy, USA, and beyond
+            to bring the finest sports equipment to the Middle East.
+          </p>
         </div>
 
         {/* Scrolling Brand Logos */}
         <div className="relative overflow-hidden">
-          <div className="flex items-center gap-12 animate-scroll">
+          <div className="flex items-center gap-10 animate-scroll">
             {[...brands, ...brands].map((brand, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 px-6 py-3 border border-gray-200 rounded-lg hover:border-gold transition-colors duration-300 min-w-[140px] text-center group"
+                className="flex-shrink-0 px-6 py-3 border border-gray-200 rounded-lg hover:border-gold transition-colors duration-300 min-w-[150px] text-center group"
               >
                 <span className="font-heading font-bold text-xs tracking-widest uppercase text-gray-400 group-hover:text-primary transition-colors duration-300">
                   {brand}
@@ -50,7 +59,7 @@ export default function BrandsSection() {
           100% { transform: translateX(-50%); }
         }
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 35s linear infinite;
           width: max-content;
         }
         .animate-scroll:hover {

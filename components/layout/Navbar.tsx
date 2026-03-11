@@ -6,9 +6,15 @@ import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/" },
+  { name: "About Us", href: "/about-us" },
   {
-    name: "About Us",
-    href: "/about-us",
+    name: "Services",
+    href: "/services",
+    children: [
+      { name: "Construction", href: "/construction" },
+      { name: "Supply", href: "/supply" },
+      { name: "Maintenance", href: "/maintenance" },
+    ],
   },
   {
     name: "Products",
@@ -21,15 +27,8 @@ const navigation = [
       { name: "Shooting Range", href: "/shooting-range" },
     ],
   },
-  {
-    name: "Services",
-    href: "#",
-    children: [
-      { name: "Construction", href: "/construction" },
-      { name: "Supply", href: "/supply" },
-    ],
-  },
-  { name: "Contact", href: "/contact" },
+  { name: "Projects", href: "/projects" },
+  { name: "Contact Us", href: "/contact-us" },
 ];
 
 export default function Navbar() {
@@ -53,7 +52,7 @@ export default function Navbar() {
           <div className="flex items-center gap-6">
             <a href="tel:+97142223333" className="flex items-center gap-2 hover:text-gold transition-colors">
               <Phone size={12} />
-              <span>+971 4 222 3333</span>
+              <span>+966 55 668 8883</span>
             </a>
             <a href="mailto:info@farisgroup.net" className="flex items-center gap-2 hover:text-gold transition-colors">
               <Mail size={12} />
@@ -61,7 +60,7 @@ export default function Navbar() {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-gray-400">Leading Sports Solutions in the Middle East</span>
+            <span className="text-gray-400">KSA · UAE · Italy | Leading Sports Solutions</span>
           </div>
         </div>
       </div>
@@ -133,7 +132,7 @@ export default function Navbar() {
                 </div>
               ))}
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="ml-4 px-6 py-2.5 text-sm font-semibold text-white rounded-sm transition-all duration-300 hover:opacity-90"
                 style={{ backgroundColor: "#c9a227" }}
               >
@@ -185,7 +184,7 @@ export default function Navbar() {
                 </div>
               ))}
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="block text-center mt-4 px-6 py-3 text-sm font-semibold text-white"
                 style={{ backgroundColor: "#c9a227" }}
                 onClick={() => setIsOpen(false)}

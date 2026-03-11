@@ -7,9 +7,9 @@ const highlights = [
   "Official distributor of top international brands",
   "20+ years of industry experience in the Middle East",
   "Present in over 50 countries worldwide",
-  "Comprehensive supply and installation services",
-  "Qualified vendor for government institutions",
-  "End-to-end sports facility solutions",
+  "Qualified vendor for ARAMCO, DAMAC, SABIC, and government bodies",
+  "Offices in KSA, UAE, and Italy",
+  "Full turn-key sports facility solutions",
 ];
 
 export default function AboutSection() {
@@ -90,7 +90,7 @@ export default function AboutSection() {
                 <ArrowRight size={16} />
               </Link>
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="inline-flex items-center gap-2 px-8 py-3.5 border-2 font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:text-white"
                 style={{ borderColor: "#1a3a6b", color: "#1a3a6b", hover: { backgroundColor: "#1a3a6b" } } as React.CSSProperties}
               >

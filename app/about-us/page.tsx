@@ -82,22 +82,22 @@ export default function AboutPage() {
               <p className="text-gray-600 mt-5 leading-relaxed">
                 Faris Group is an established name in the Sports and Leisure industry, recognized as
                 the leading supplier of superior quality sports and entertainment equipment in the
-                Middle East. We serve as an official distributor of top international brands and
-                have built a reputation for excellence over more than two decades.
+                Middle East. Headquartered in Jeddah, Saudi Arabia, with offices in Riyadh,
+                Dammam, Abu Dhabi (UAE), and Milano (Italy), we operate as an official distributor
+                of top international brands.
               </p>
-              <p className="text-gray-600 mt-4 leading-relaxed">
-                We are a one-stop shop for all sports needs — always ready to help our clients find
-                the right solution. Whether you need equipment for a small gym, a professional
-                stadium, or a complete sports complex, Faris Group has the expertise, products, and
-                partnerships to deliver.
+              <p className="text-gray-600 mt-4 leading-relaxed italic border-l-4 pl-4" style={{ borderColor: "#c9a227" }}>
+                &ldquo;To be the premier provider of sports and leisure solutions, transforming the
+                industry through innovation and superior quality, while enhancing the overall
+                experience for individuals and communities.&rdquo;
               </p>
               <div className="mt-8 grid grid-cols-1 gap-3">
                 {[
                   "Official distributor of top international brands",
-                  "20+ years of industry experience",
-                  "Operations in 50+ countries",
-                  "Qualified vendor for government institutions",
-                  "Complete supply, installation, and construction",
+                  "20+ years of industry experience in the Middle East",
+                  "Offices in KSA, UAE, and Italy",
+                  "Qualified vendor for ARAMCO, DAMAC, SABIC & government bodies",
+                  "Complete supply, construction, and maintenance",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <CheckCircle size={16} style={{ color: "#c9a227" }} className="flex-shrink-0" />
