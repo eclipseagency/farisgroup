@@ -6,57 +6,57 @@ import { ArrowRight } from "lucide-react";
 const services = [
   {
     id: 1,
-    title: "Sports Equipment",
+    title: "Bowling Alley",
     description:
-      "High-quality sports equipment from basketball hoops and soccer goals to volleyball nets and tennis rackets for all sporting activities.",
-    href: "/products",
-    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80",
-    icon: "⚽",
+      "Complete bowling center solutions including lane supply, pin-setting machines, scoring systems, and full turnkey installation.",
+    href: "/construction",
+    image: "https://farisgroup.net/wp-content/uploads/2023/06/DSC05991-scaled-1.jpg",
+    icon: "🎳",
   },
   {
     id: 2,
-    title: "Fitness & Gym",
-    description:
-      "World-class fitness facilities with cutting-edge equipment including treadmills, weight machines, and comprehensive gym solutions.",
-    href: "/fitness-and-gym",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80",
-    icon: "🏋️",
-  },
-  {
-    id: 3,
     title: "Padel Courts",
     description:
       "Customize your padel court with VISION, PANORAMIC, and FORTE models. Available in 50+ countries with professional installation.",
     href: "/padel-court",
-    image: "https://images.unsplash.com/photo-1554284126-aa88f22d8b74?w=600&q=80",
+    image: "https://farisgroup.net/wp-content/uploads/2023/06/Private-Villa-Padel-Court-Riyadh-4-1024x768-1-1.jpeg",
     icon: "🎾",
   },
   {
-    id: 4,
-    title: "Bleachers & Seating",
+    id: 3,
+    title: "Fitness & Gym",
     description:
-      "Durable and ergonomic bleachers and seating solutions for stadiums, arenas, and outdoor events with excellent sightlines.",
-    href: "/bleachers-and-seating",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80",
-    icon: "🏟️",
+      "World-class fitness facilities with cutting-edge equipment including treadmills, weight machines, and comprehensive gym solutions.",
+    href: "/fitness-and-gym",
+    image: "https://farisgroup.net/wp-content/uploads/2023/07/Al-Midra-Recreation-Center-Saudi-Aramco-11-1.jpeg",
+    icon: "🏋️",
+  },
+  {
+    id: 4,
+    title: "Playground",
+    description:
+      "Safe, durable, and engaging outdoor playground equipment for schools, parks, and community centers across the region.",
+    href: "/products",
+    image: "https://farisgroup.net/wp-content/uploads/2023/06/phoro10-1-1.jpg",
+    icon: "🛝",
   },
   {
     id: 5,
-    title: "Shooting Range",
+    title: "Climbing Walls",
     description:
-      "Advanced shooting range solutions designed to meet the needs of both shooting enthusiasts and professional athletes.",
-    href: "/shooting-range",
-    image: "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&q=80",
-    icon: "🎯",
+      "Custom indoor and outdoor climbing wall installations for sports clubs, schools, and adventure recreation centers.",
+    href: "/construction",
+    image: "https://farisgroup.net/wp-content/uploads/2023/06/LawnZ-Wall-Climbing_Danube-Properties-1-1.jpeg",
+    icon: "🧗",
   },
   {
     id: 6,
-    title: "Construction",
+    title: "Shooting Range",
     description:
-      "Full-scope construction from squash courts and home cinemas to bowling centers and football fields across the Middle East.",
-    href: "/construction",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
-    icon: "🏗️",
+      "Advanced shooting range solutions with electronic target systems, reactive targets, bullet traps, and full range setup.",
+    href: "/shooting-range",
+    image: "https://farisgroup.net/wp-content/uploads/2023/06/Rangers-Range-3-lanes-indoor-target-shooting-project-1-1-1.jpeg",
+    icon: "🎯",
   },
 ];
 

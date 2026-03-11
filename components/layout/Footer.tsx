@@ -29,17 +29,11 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-3xl leading-none text-white">
-                  FARIS
-                </span>
-                <span className="font-heading font-bold text-3xl leading-none" style={{ color: "#c9a227" }}>
-                  GROUP
-                </span>
-                <span className="text-xs text-gray-400 tracking-widest uppercase mt-1">
-                  Total Sports Solutions
-                </span>
-              </div>
+              <img
+                src="https://farisgroup.net/wp-content/uploads/2023/05/Faris-Group-Logo-twt.png"
+                alt="Faris Group - Total Sports Solutions"
+                className="h-16 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               With over 20 years of experience, Faris Group is the leading supplier of superior

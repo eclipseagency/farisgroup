@@ -76,18 +76,12 @@ export default function Navbar() {
         <div className="container-custom">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3">
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-2xl leading-none" style={{ color: "#1a3a6b" }}>
-                  FARIS
-                </span>
-                <span className="font-heading font-bold text-2xl leading-none" style={{ color: "#c9a227" }}>
-                  GROUP
-                </span>
-                <span className="text-xs text-gray-500 tracking-widest uppercase leading-tight">
-                  Total Sports Solutions
-                </span>
-              </div>
+            <Link href="/" className="flex items-center">
+              <img
+                src="https://farisgroup.net/wp-content/uploads/2023/05/Faris-Group-Logo-twt.png"
+                alt="Faris Group - Total Sports Solutions"
+                className="h-14 w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Navigation */}
