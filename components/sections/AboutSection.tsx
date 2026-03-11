@@ -22,7 +22,7 @@ export default function AboutSection() {
             {/* Main image */}
             <div className="relative rounded-lg overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80"
+                src="https://farisgroup.net/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-24-at-11.20.13.jpeg"
                 alt="Faris Group Sports Solutions"
                 className="w-full h-96 object-cover"
               />
@@ -44,8 +44,8 @@ export default function AboutSection() {
             {/* Second Image */}
             <div className="absolute -top-6 -left-6 w-40 h-40 rounded-lg overflow-hidden shadow-xl border-4 border-white hidden md:block">
               <img
-                src="https://images.unsplash.com/photo-1547592180-85f173990554?w=300&q=80"
-                alt="Sports Facility"
+                src="https://farisgroup.net/wp-content/uploads/2023/06/Private-Villa-Padel-Court-Riyadh-4-1024x768-1-1.jpeg"
+                alt="Padel Court"
                 className="w-full h-full object-cover"
               />
             </div>
