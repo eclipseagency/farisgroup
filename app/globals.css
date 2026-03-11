@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #1a3a6b;
+  --gold: #c9a227;
+  --navy: #0a1628;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1a1a1a;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 bg-gold text-white font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-gold-dark hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3 border-2 border-gold text-gold font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-gold hover:text-white;
+  }
+
+  .btn-white {
+    @apply inline-flex items-center justify-center px-8 py-3 bg-white text-primary font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-gold hover:text-white hover:border-gold;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-primary-900 mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-gold font-semibold text-sm tracking-widest uppercase mb-3;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a3a6b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a227;
+}
+
+/* Hero slider animation */
+@keyframes kenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.ken-burns {
+  animation: kenBurns 8s ease-out forwards;
+}
+
+/* Card hover effects */
+.service-card {
+  transition: all 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
