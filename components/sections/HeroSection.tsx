@@ -60,10 +60,10 @@ const slides = [
 ];
 
 const heroImages: Record<string, string> = {
-  "sports-hero": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80",
-  "padel-hero": "https://images.unsplash.com/photo-1554284126-aa88f22d8b74?w=1920&q=80",
-  "gym-hero": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80",
-  "construction-hero": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80",
+  "sports-hero": "https://farisgroup.net/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-24-at-11.20.13.jpeg",
+  "padel-hero": "https://farisgroup.net/wp-content/uploads/2023/06/Private-Villa-Padel-Court-Riyadh-4-1024x768-1-1.jpeg",
+  "gym-hero": "https://farisgroup.net/wp-content/uploads/2023/07/Al-Midra-Recreation-Center-Saudi-Aramco-11-1.jpeg",
+  "construction-hero": "https://farisgroup.net/wp-content/uploads/2023/06/DSC05991-scaled-1.jpg",
 };
 
 export default function HeroSection() {
