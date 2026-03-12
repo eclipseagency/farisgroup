@@ -1,16 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { CheckCircle, ArrowRight } from "lucide-react";
-
-const highlights = [
-  "Official distributor of top international brands",
-  "20+ years of industry experience in the Middle East",
-  "Present in over 50 countries worldwide",
-  "Qualified vendor for ARAMCO, DAMAC, SABIC, and government bodies",
-  "Offices in KSA, UAE, and Italy",
-  "Full turn-key sports facility solutions",
-];
 
 export default function AboutSection() {
   return (
@@ -19,7 +9,6 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Images Side */}
           <div className="relative">
-            {/* Main image */}
             <div className="relative rounded-lg overflow-hidden shadow-2xl">
               <img
                 src="https://farisgroup.net/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-24-at-11.20.13.jpeg"
@@ -32,7 +21,7 @@ export default function AboutSection() {
               />
             </div>
 
-            {/* Floating Stats Card */}
+            {/* 20+ badge */}
             <div
               className="absolute -bottom-6 -right-6 p-6 rounded-lg shadow-xl text-white hidden md:block"
               style={{ backgroundColor: "#c9a227" }}
@@ -53,48 +42,31 @@ export default function AboutSection() {
 
           {/* Content Side */}
           <div>
-            <span className="section-subtitle block">Who We Are</span>
+            <span className="section-subtitle block">About FARIS GROUP</span>
             <h2 className="section-title">
-              The Middle East&apos;s Leading{" "}
-              <span style={{ color: "#c9a227" }}>Sports Solutions</span> Provider
+              FARIS GROUP{" "}
+              <span style={{ color: "#c9a227" }}>TOTAL SPORTS SOLUTIONS.</span>
             </h2>
             <p className="text-gray-600 mt-5 leading-relaxed">
-              With over 20 years of experience, Faris Group is an established name in the Sports and
-              Leisure industry. Recognized as the leading supplier of superior quality sports and
-              entertainment equipment in the Middle East, we serve as an official distributor of top
-              international brands.
+              With over 20 years of experience, Faris Group is an established name in the Sports
+              and Leisure industry. Recognized as the leading supplier of superior quality sports
+              and entertainment equipment in the Middle East, Faris Group is an official
+              distributor of top international brands.
             </p>
             <p className="text-gray-600 mt-4 leading-relaxed">
-              We are a one-stop shop for all your sports needs — always ready to help you find the
-              right solution. From sports equipment supply to full facility construction and
-              installation, we cover every aspect of your sports infrastructure.
+              Whether you require a private cinema or an Olympic sized football field, Faris Group
+              is there from start to finish. Delivering turn-key projects such as bowling centers,
+              shooting ranges, climbing walls, recreation centers, fitness clubs, playground parks,
+              squash courts and running tracks to name a few.
             </p>
 
-            {/* Highlights */}
-            <ul className="mt-8 grid grid-cols-1 gap-3">
-              {highlights.map((item, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <CheckCircle size={18} className="flex-shrink-0" style={{ color: "#c9a227" }} />
-                  <span className="text-gray-700 text-sm">{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10">
               <Link
                 href="/about-us"
                 className="inline-flex items-center gap-2 px-8 py-3.5 font-semibold text-sm tracking-wider uppercase text-white transition-all duration-300 hover:opacity-90"
                 style={{ backgroundColor: "#1a3a6b" }}
               >
-                Learn More
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/contact-us"
-                className="inline-flex items-center gap-2 px-8 py-3.5 border-2 font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:text-white"
-                style={{ borderColor: "#1a3a6b", color: "#1a3a6b", hover: { backgroundColor: "#1a3a6b" } } as React.CSSProperties}
-              >
-                Contact Us
+                Read more
               </Link>
             </div>
           </div>

@@ -125,13 +125,22 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
-              <Link
-                href="/contact-us"
-                className="ml-4 px-6 py-2.5 text-sm font-semibold text-white rounded-sm transition-all duration-300 hover:opacity-90"
+              {/* Arabic toggle */}
+              <button
+                className="ml-2 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-primary transition-colors rounded-md hover:bg-gray-50"
+              >
+                العربية
+              </button>
+              {/* OUR STORE */}
+              <a
+                href="https://farisgroup.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 px-6 py-2.5 text-sm font-semibold text-white rounded-sm transition-all duration-300 hover:opacity-90"
                 style={{ backgroundColor: "#c9a227" }}
               >
-                Get a Quote
-              </Link>
+                OUR STORE
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
