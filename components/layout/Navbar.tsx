@@ -51,7 +51,7 @@ const navigation: NavItem[] = [
         ],
       },
       { name: "Supply and Installation of Shooting Range Equipment", href: "/shooting-range" },
-      { name: "Playground", href: "/products" },
+      { name: "Playground", href: "/playground" },
     ],
   },
   {
