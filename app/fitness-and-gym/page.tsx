@@ -170,6 +170,59 @@ export default function FitnessGymPage() {
         </div>
       </div>
 
+      {/* Equipment Carousel */}
+      <section className="py-12 bg-white overflow-hidden">
+        <style>{`
+          @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 28s linear infinite;
+          }
+          .marquee-track:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
+        <div className="marquee-track">
+          {[
+            "https://farisgroup.net/wp-content/uploads/2024/10/HUMAN-RUN-LED-11-200x200-2.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/LAT-MACHINE-2-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/LEG-EXTENSION-MACHINE-2-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/LEG-PRESS-MACHINE-4-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/SEATED-LEG-CURL-MACHINE-2-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/SHOULDER-MACHINE-2-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/CHEST-PRESS-MACHINE-2-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/FLAT-BENCH-3-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/HALF-RACK-3-200x200-2.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/FLEXIBILITY-MACHINE-7-200x200-1.jpg",
+            /* duplicate for seamless loop */
+            "https://farisgroup.net/wp-content/uploads/2024/10/HUMAN-RUN-LED-11-200x200-2.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/LAT-MACHINE-2-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/LEG-EXTENSION-MACHINE-2-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/LEG-PRESS-MACHINE-4-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/SEATED-LEG-CURL-MACHINE-2-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/SHOULDER-MACHINE-2-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/CHEST-PRESS-MACHINE-2-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/FLAT-BENCH-3-200x200-1.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/HALF-RACK-3-200x200-2.jpg",
+            "https://farisgroup.net/wp-content/uploads/2024/10/FLEXIBILITY-MACHINE-7-200x200-1.jpg",
+          ].map((src, i) => (
+            <div key={i} className="flex-shrink-0 mx-6 flex items-center justify-center" style={{ width: 140, height: 140 }}>
+              <img
+                src={src}
+                alt={`Equipment ${(i % 11) + 1}`}
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Projects Gallery */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
