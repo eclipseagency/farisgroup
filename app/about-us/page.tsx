@@ -1,217 +1,224 @@
-import type { Metadata } from "next";
-import PageHeader from "@/components/ui/PageHeader";
-import StatsSection from "@/components/sections/StatsSection";
+"use client";
+
+import Link from "next/link";
+import { ChevronRight, Quote } from "lucide-react";
+import ClientsSection from "@/components/sections/ClientsSection";
 import CTASection from "@/components/sections/CTASection";
-import { CheckCircle, Award, Globe, Users, Target, TrendingUp } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "About Us - Faris Group",
-  description:
-    "Learn about Faris Group — the Middle East's leading sports equipment supplier with 20+ years of experience, serving 50+ countries worldwide.",
-};
-
-const values = [
+const testimonials = [
   {
-    icon: Award,
-    title: "Excellence",
-    description:
-      "We are committed to delivering only the highest quality products and services.",
+    quote:
+      "Faris Group's innovative equipment transformed our fitness club, attracting more members and enhancing their experience. Highly recommended!",
+    name: "Khalid Al-Rashid",
+    role: "Owner of a Sports Complex",
   },
   {
-    icon: Target,
-    title: "Precision",
-    description:
-      "We approach every project with meticulous attention to detail and accuracy.",
+    quote:
+      "Faris Group played a pivotal role in transforming our school's sports facilities. Their expertise and dedication resulted in top-quality sports equipment and spaces that inspire our students to excel. We're grateful for their exceptional services.",
+    name: "Saad Al-Muhanna",
+    role: "Community Center Manager",
   },
   {
-    icon: Globe,
-    title: "Global Reach",
-    description:
-      "Our network spans 50+ countries, ensuring worldwide access to our solutions.",
+    quote:
+      "I'm impressed by Faris Group's commitment to innovation. Their equipment and facilities have taken my sports experience to a whole new level. Thank you!",
+    name: "Mohammed Al-Abdulaziz",
+    role: "Sports Enthusiast",
   },
   {
-    icon: Users,
-    title: "Partnership",
-    description:
-      "We build long-term relationships with our clients based on trust and reliability.",
+    quote:
+      "Faris Group exceeded our expectations with their exceptional sports solutions. Our facility has become a top-notch recreation center, thanks to their expertise and attention to detail.",
+    name: "Fatima Al-Malik",
+    role: "Director of a Fitness Club",
   },
-  {
-    icon: TrendingUp,
-    title: "Innovation",
-    description:
-      "We continuously evolve to offer the latest sports technology and solutions.",
-  },
-  {
-    icon: CheckCircle,
-    title: "Integrity",
-    description:
-      "Our business is built on a foundation of honesty, transparency, and ethical practices.",
-  },
-];
-
-const milestones = [
-  { year: "2000s", title: "Foundation", description: "Faris Group established as a sports equipment supplier in the Middle East." },
-  { year: "2005", title: "Regional Expansion", description: "Expanded operations to cover all GCC countries and the wider Middle East region." },
-  { year: "2010", title: "International Brands", description: "Became official distributor for multiple top international sports brands." },
-  { year: "2015", title: "Construction Division", description: "Launched full sports facility construction services including courts and stadiums." },
-  { year: "2018", title: "Padel Revolution", description: "Introduced padel court solutions, becoming a leading supplier across 50+ countries." },
-  { year: "2020+", title: "Total Solutions", description: "Evolved into a complete sports solutions provider offering end-to-end services." },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <PageHeader
-        title="About Faris Group"
-        subtitle="Our Story"
-        description="With over 20 years of experience, we are the Middle East's trusted partner for total sports solutions — from equipment supply to full facility construction."
-        breadcrumbs={[{ label: "About Us" }]}
-        backgroundImage="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920&q=80"
-      />
+      {/* ── Hero / Page Header ───────────────────────── */}
+      <section className="relative py-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage:
+              "url(https://farisgroup.net/wp-content/uploads/2023/05/45518666_356687755099112_7281876042573152256_n.jpg)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(10,22,40,0.92) 0%, rgba(26,58,107,0.80) 100%)",
+          }}
+        />
+        <div className="relative z-10 container-custom text-white">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
+            <Link href="/" className="hover:text-white transition-colors">
+              Home
+            </Link>
+            <ChevronRight size={14} className="text-gray-600" />
+            <span style={{ color: "#c9a227" }}>ABOUT US</span>
+          </nav>
+          <h1 className="font-heading font-black text-4xl md:text-5xl lg:text-6xl leading-tight">
+            ABOUT US
+          </h1>
+        </div>
+      </section>
 
-      {/* Mission & Vision */}
+      {/* ── Main About Content ───────────────────────── */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Text */}
             <div>
-              <span className="section-subtitle block">Who We Are</span>
+              <span className="section-subtitle block">About Us</span>
               <h2 className="section-title">
-                The Middle East&apos;s Premier{" "}
-                <span style={{ color: "#c9a227" }}>Sports Solutions</span> Company
+                FARIS GROUP FOR{" "}
+                <span style={{ color: "#c9a227" }}>SPORTS SOLUTIONS</span>
               </h2>
-              <p className="text-gray-600 mt-5 leading-relaxed">
-                Faris Group is an established name in the Sports and Leisure industry, recognized as
-                the leading supplier of superior quality sports and entertainment equipment in the
-                Middle East. Headquartered in Jeddah, Saudi Arabia, with offices in Riyadh,
-                Dammam, Abu Dhabi (UAE), and Milano (Italy), we operate as an official distributor
-                of top international brands.
-              </p>
-              <p className="text-gray-600 mt-4 leading-relaxed italic border-l-4 pl-4" style={{ borderColor: "#c9a227" }}>
-                &ldquo;To be the premier provider of sports and leisure solutions, transforming the
-                industry through innovation and superior quality, while enhancing the overall
-                experience for individuals and communities.&rdquo;
-              </p>
-              <div className="mt-8 grid grid-cols-1 gap-3">
-                {[
-                  "Official distributor of top international brands",
-                  "20+ years of industry experience in the Middle East",
-                  "Offices in KSA, UAE, and Italy",
-                  "Qualified vendor for ARAMCO, DAMAC, SABIC & government bodies",
-                  "Complete supply, construction, and maintenance",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <CheckCircle size={16} style={{ color: "#c9a227" }} className="flex-shrink-0" />
-                    <span className="text-gray-700 text-sm">{item}</span>
-                  </div>
-                ))}
+              <div className="mt-5 space-y-4 text-gray-600 leading-relaxed">
+                <p>
+                  With over 20 years of experience, Faris Group is an established name in the
+                  Sports and Leisure industry. Recognized as the leading supplier of superior
+                  quality sports and entertainment equipment in the Middle East, Faris Group is
+                  an official distributor of top international brands.
+                </p>
+                <p>
+                  Whether you require a private cinema or an Olympic sized football field,
+                  Faris Group is there from start to finish. Delivering turn-key projects such
+                  as bowling centers, shooting ranges, climbing walls, recreation centers,
+                  fitness clubs, playground parks, squash courts and running tracks to name a
+                  few.
+                </p>
+                <p>
+                  Constantly abreast with new products and innovations, Faris Group is the
+                  Total Sports Solution.
+                </p>
               </div>
             </div>
-            <div className="relative">
+
+            {/* Image */}
+            <div className="rounded-xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80"
-                alt="Faris Group Sports Facility"
-                className="rounded-lg shadow-2xl w-full h-96 object-cover"
+                src="https://farisgroup.net/wp-content/uploads/2023/05/ABOUT2-1.png"
+                alt="Faris Group Sports Solutions"
+                className="w-full h-full object-cover"
               />
-              <div
-                className="absolute -bottom-6 -right-6 p-6 rounded-lg shadow-xl text-white"
-                style={{ backgroundColor: "#c9a227" }}
-              >
-                <div className="text-4xl font-black font-heading">20+</div>
-                <div className="text-sm font-medium">Years of Excellence</div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <StatsSection />
-
-      {/* Our Values */}
+      {/* ── Mission & Vision ─────────────────────────── */}
       <section className="py-20" style={{ backgroundColor: "#f8f9fc" }}>
         <div className="container-custom">
-          <div className="text-center mb-14">
-            <span className="section-subtitle block">What Drives Us</span>
-            <h2 className="section-title">
-              Our Core <span style={{ color: "#c9a227" }}>Values</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {values.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group hover:-translate-y-1"
-                >
-                  <div
-                    className="w-14 h-14 rounded-lg flex items-center justify-center mb-5"
-                    style={{ backgroundColor: "rgba(201,162,39,0.1)" }}
-                  >
-                    <Icon size={24} style={{ color: "#c9a227" }} />
-                  </div>
-                  <h3 className="font-heading font-bold text-lg mb-3" style={{ color: "#0a1628" }}>
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{value.description}</p>
-                </div>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Mission */}
+            <div
+              className="bg-white rounded-xl p-10 shadow-md border-t-4"
+              style={{ borderColor: "#1a3a6b" }}
+            >
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center mb-6"
+                style={{ backgroundColor: "rgba(26,58,107,0.08)" }}
+              >
+                <span className="font-heading font-black text-xl" style={{ color: "#1a3a6b" }}>
+                  M
+                </span>
+              </div>
+              <h3 className="font-heading font-bold text-2xl mb-4" style={{ color: "#1a3a6b" }}>
+                Mission
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Our mission is to improve the leisure industry by delivering comprehensive
+                sports and entertainment solutions, offering top-quality equipment and services
+                that exceed customer expectations. We strive to create exceptional recreational
+                spaces that promote active lifestyles, foster social connections, and contribute
+                to the overall well-being of individuals and communities.
+              </p>
+            </div>
+
+            {/* Vision */}
+            <div
+              className="bg-white rounded-xl p-10 shadow-md border-t-4"
+              style={{ borderColor: "#c9a227" }}
+            >
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center mb-6"
+                style={{ backgroundColor: "rgba(201,162,39,0.1)" }}
+              >
+                <span className="font-heading font-black text-xl" style={{ color: "#c9a227" }}>
+                  V
+                </span>
+              </div>
+              <h3 className="font-heading font-bold text-2xl mb-4" style={{ color: "#1a3a6b" }}>
+                Vision
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                To be the premier provider of sports and leisure solutions, transforming the
+                industry through innovation and superior quality, while enhancing the overall
+                experience for individuals and communities.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-20 bg-white">
+      {/* ── Testimonials ─────────────────────────────── */}
+      <section className="py-20 bg-white overflow-hidden">
         <div className="container-custom">
-          <div className="text-center mb-14">
-            <span className="section-subtitle block">Our Journey</span>
+          <div className="text-center mb-12">
+            <span className="section-subtitle block">Testimonials</span>
             <h2 className="section-title">
-              Company <span style={{ color: "#c9a227" }}>Milestones</span>
+              Don&apos;t just take our word for it.{" "}
+              <span style={{ color: "#c9a227" }}>
+                Hear what our amazing customers say about our business.
+              </span>
             </h2>
           </div>
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-gray-200 hidden lg:block" />
-            <div className="space-y-8">
-              {milestones.map((milestone, index) => (
+
+          {/* Scrolling row */}
+          <div className="relative overflow-hidden">
+            <div className="flex gap-6 animate-testimonials-scroll">
+              {[...testimonials, ...testimonials].map((t, i) => (
                 <div
-                  key={index}
-                  className={`flex flex-col lg:flex-row items-center gap-8 ${
-                    index % 2 === 0 ? "lg:flex-row-reverse" : ""
-                  }`}
+                  key={i}
+                  className="flex-shrink-0 w-80 bg-white rounded-xl p-7 shadow-md border border-gray-100 flex flex-col"
                 >
-                  <div className="lg:w-1/2 text-center lg:text-left">
-                    <div
-                      className="inline-block bg-white border-2 rounded-lg p-6 shadow-lg max-w-sm text-left"
-                      style={{ borderColor: "#c9a227" }}
-                    >
-                      <div
-                        className="text-sm font-bold tracking-widest uppercase mb-2"
-                        style={{ color: "#c9a227" }}
-                      >
-                        {milestone.year}
-                      </div>
-                      <h3 className="font-heading font-bold text-lg mb-2" style={{ color: "#1a3a6b" }}>
-                        {milestone.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        {milestone.description}
-                      </p>
-                    </div>
+                  <Quote size={28} className="mb-4 flex-shrink-0" style={{ color: "#c9a227" }} />
+                  <p className="text-gray-600 text-sm leading-relaxed flex-1 italic">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div className="mt-5 pt-4 border-t border-gray-100">
+                    <p className="font-heading font-bold text-sm" style={{ color: "#1a3a6b" }}>
+                      {t.name}
+                    </p>
+                    <p className="text-xs text-gray-400 mt-0.5">{t.role}</p>
                   </div>
-                  {/* Center dot */}
-                  <div
-                    className="hidden lg:flex w-5 h-5 rounded-full border-4 border-white shadow-lg z-10 flex-shrink-0"
-                    style={{ backgroundColor: "#c9a227" }}
-                  />
-                  <div className="lg:w-1/2" />
                 </div>
               ))}
             </div>
           </div>
         </div>
+
+        <style jsx>{`
+          @keyframes testimonials-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-testimonials-scroll {
+            animation: testimonials-scroll 28s linear infinite;
+            width: max-content;
+          }
+          .animate-testimonials-scroll:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
       </section>
 
+      {/* ── Clients + CTA ────────────────────────────── */}
+      <ClientsSection />
       <CTASection />
     </>
   );
