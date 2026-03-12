@@ -1,0 +1,197 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import CTASection from "@/components/sections/CTASection";
+
+export const metadata: Metadata = {
+  title: "Squash Courts - Faris Group",
+  description:
+    "Faris Group delivers excellence in squash court design, construction, and installation. Top-notch facilities meeting international standards for players of all levels.",
+};
+
+const galleryImages = [
+  {
+    src: "https://farisgroup.net/wp-content/uploads/2023/05/28058482_195341751233714_3716889217452087241_n.jpg",
+    alt: "Squash Court 1",
+  },
+  {
+    src: "https://farisgroup.net/wp-content/uploads/2023/05/28167927_195341747900381_7372523716644854920_n.jpg",
+    alt: "Squash Court 2",
+  },
+];
+
+export default function SquashCourtsPage() {
+  return (
+    <>
+      {/* Hero — Static Image */}
+      <section className="relative w-full h-screen min-h-[500px] overflow-hidden flex items-center justify-center">
+        <img
+          src="https://farisgroup.net/wp-content/uploads/2023/05/9-1-1.jpg"
+          alt="Squash Courts Hero"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.55)" }} />
+        <div className="relative z-10 text-center text-white px-4 max-w-3xl">
+          <h1 className="font-heading font-black text-4xl md:text-6xl mb-6 leading-tight uppercase tracking-widest">
+            Squash Courts
+          </h1>
+        </div>
+      </section>
+
+      {/* Breadcrumb */}
+      <div className="bg-gray-50 border-b border-gray-200 py-3">
+        <div className="container-custom">
+          <nav className="flex items-center gap-2 text-sm text-gray-500">
+            <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-gray-800 font-medium">Squash Courts</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* Intro */}
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Image */}
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="https://farisgroup.net/wp-content/uploads/2023/05/28058482_195341751233714_3716889217452087241_n.jpg"
+                alt="Squash Court Interior"
+                className="w-full h-80 object-cover"
+              />
+            </div>
+            {/* Title + first paragraph */}
+            <div>
+              <h2
+                className="font-heading font-black text-3xl md:text-4xl mb-6 leading-tight uppercase"
+                style={{ color: "#1a8fc1" }}
+              >
+                Squash Courts
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                When it comes to Squash Courts, Faris Group is dedicated to delivering excellence.
+                We understand the importance of creating top-notch facilities that meet international
+                standards and cater to players of all levels.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                With our expertise in squash court design, construction, and installation, we go
+                above and beyond to build the best and most serviceable courts for a wide range of
+                facilities.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 2: text+buttons left, image right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center">
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Our commitment to quality extends beyond the construction phase. At Faris Group, we
+                pride ourselves on providing exceptional customer service throughout the entire
+                process. From initial consultation to final installation, our knowledgeable team
+                works closely with our clients to ensure their specific requirements are met.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                We take great care in selecting premium materials and employing skilled craftsmen to
+                create squash courts that are not only visually stunning but also offer optimal
+                playing conditions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="#quote"
+                  className="inline-block px-10 py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-full transition-all duration-300 hover:opacity-90"
+                  style={{ backgroundColor: "#0d1f3c" }}
+                >
+                  Request a Quote
+                </Link>
+                <a
+                  href="http://farisstore.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-10 py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-full transition-all duration-300 hover:opacity-90"
+                  style={{ backgroundColor: "#c9a227" }}
+                >
+                  Our Store
+                </a>
+              </div>
+            </div>
+            {/* Image */}
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="https://farisgroup.net/wp-content/uploads/2023/05/28167927_195341747900381_7372523716644854920_n.jpg"
+                alt="Squash Court"
+                className="w-full h-80 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Gallery */}
+      <section className="py-20 bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <span className="section-subtitle block">Our Work</span>
+            <h2 className="section-title">Projects</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {galleryImages.map((img, index) => (
+              <div key={index} className="overflow-hidden rounded-xl shadow-md aspect-video">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quote Form */}
+      <section id="quote" className="py-20" style={{ backgroundColor: "#f8f9fc" }}>
+        <div className="container-custom max-w-2xl">
+          <div className="text-center mb-10">
+            <span className="section-subtitle block">QUOTE</span>
+            <h2 className="section-title">Request a Quote</h2>
+            <p className="text-gray-500 text-sm mt-2">
+              Your email address will not be published. Required fields are marked *
+            </p>
+          </div>
+          <form className="bg-white rounded-2xl shadow-lg p-8 space-y-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <input
+                type="text"
+                placeholder="Your Name *"
+                className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none"
+              />
+              <input
+                type="email"
+                placeholder="Your Email *"
+                className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none"
+              />
+            </div>
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none"
+            />
+            <textarea
+              rows={5}
+              placeholder="Your Message *"
+              className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none resize-none"
+            />
+            <button
+              type="submit"
+              className="w-full py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-sm transition-all duration-300 hover:opacity-90"
+              style={{ backgroundColor: "#c9a227" }}
+            >
+              Send Request
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <CTASection />
+    </>
+  );
+}
