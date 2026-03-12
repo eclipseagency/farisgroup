@@ -16,7 +16,7 @@ const navigation = [
       { name: "Squash Courts", href: "/squash-courts" },
       { name: "SPA & Pool", href: "/spa-pool" },
       { name: "Bowling", href: "/bowling" },
-      { name: "Climbing Wall", href: "/construction" },
+      { name: "Climbing Wall", href: "/climbing-wall" },
       { name: "Wall Insulation", href: "/products" },
       { name: "Sport Equipment", href: "/products/sports-equipment" },
       { name: "Urban Furniture", href: "/products" },
