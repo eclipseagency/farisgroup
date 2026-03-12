@@ -40,7 +40,16 @@ const navigation: NavItem[] = [
         ],
       },
       { name: "Urban Furniture", href: "https://farisgroup.net/themencode-pdf-viewer/?file=https://farisgroup.net/wp-content/uploads/2023/05/MANTIS-zlozenka_WEB.pdf#zoom=auto", external: true },
-      { name: "Fitness & Gym", href: "/fitness-and-gym" },
+      {
+        name: "Fitness & Gym",
+        href: "/fitness-and-gym",
+        children: [
+          { name: "Cardio Machines", href: "/cardio-machines" },
+          { name: "Strength Machines", href: "/strength-machines" },
+          { name: "Flexibility Machine", href: "/flexibility-machine" },
+          { name: "Fullscreen Mode", href: "https://farisgroup.net/themencode-pdf-viewer/?file=https://farisgroup.net/wp-content/uploads/2023/05/Patentverwag-Brochure-1.pdf#zoom=auto" },
+        ],
+      },
       { name: "Supply and Installation of Shooting Range Equipment", href: "/shooting-range" },
       { name: "Playground", href: "/products" },
     ],
@@ -158,17 +167,27 @@ export default function Navbar() {
                               {/* Level-2 Dropdown */}
                               {activeSubDropdown === child.name && (
                                 <div className="absolute left-full top-0 w-48 bg-white shadow-xl border-t-2 border-gold rounded-r-lg py-2 z-50">
-                                  {child.children.map((sub) => (
-                                    <a
-                                      key={sub.name}
-                                      href={sub.href}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
-                                    >
-                                      {sub.name}
-                                    </a>
-                                  ))}
+                                  {child.children.map((sub) =>
+                                    sub.href.startsWith("http") ? (
+                                      <a
+                                        key={sub.name}
+                                        href={sub.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                                      >
+                                        {sub.name}
+                                      </a>
+                                    ) : (
+                                      <Link
+                                        key={sub.name}
+                                        href={sub.href}
+                                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                                      >
+                                        {sub.name}
+                                      </Link>
+                                    )
+                                  )}
                                 </div>
                               )}
                             </>
