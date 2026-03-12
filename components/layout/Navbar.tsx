@@ -13,7 +13,7 @@ const navigation = [
     children: [
       { name: "Padel Court", href: "/padel-court" },
       { name: "Billiards", href: "/billiards" },
-      { name: "Squash Courts", href: "/products" },
+      { name: "Squash Courts", href: "/squash-courts" },
       { name: "SPA & Pool", href: "/products" },
       { name: "Bowling", href: "/construction" },
       { name: "Climbing Wall", href: "/construction" },
