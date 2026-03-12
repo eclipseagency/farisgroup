@@ -8,16 +8,6 @@ export const metadata: Metadata = {
     "Faris Group delivers excellence in squash court design, construction, and installation. Top-notch facilities meeting international standards for players of all levels.",
 };
 
-const galleryImages = [
-  {
-    src: "https://farisgroup.net/wp-content/uploads/2023/05/28058482_195341751233714_3716889217452087241_n.jpg",
-    alt: "Squash Court 1",
-  },
-  {
-    src: "https://farisgroup.net/wp-content/uploads/2023/05/28167927_195341747900381_7372523716644854920_n.jpg",
-    alt: "Squash Court 2",
-  },
-];
 
 export default function SquashCourtsPage() {
   return (
@@ -95,24 +85,13 @@ export default function SquashCourtsPage() {
                 create squash courts that are not only visually stunning but also offer optimal
                 playing conditions.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="#quote"
-                  className="inline-block px-10 py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-full transition-all duration-300 hover:opacity-90"
-                  style={{ backgroundColor: "#0d1f3c" }}
-                >
-                  Request a Quote
-                </Link>
-                <a
-                  href="http://farisstore.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-10 py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-full transition-all duration-300 hover:opacity-90"
-                  style={{ backgroundColor: "#c9a227" }}
-                >
-                  Our Store
-                </a>
-              </div>
+              <Link
+                href="#quote"
+                className="inline-block px-10 py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-full transition-all duration-300 hover:opacity-90"
+                style={{ backgroundColor: "#0d1f3c" }}
+              >
+                Request a Quote
+              </Link>
             </div>
             {/* Image */}
             <div className="rounded-2xl overflow-hidden shadow-xl">
@@ -122,27 +101,6 @@ export default function SquashCourtsPage() {
                 className="w-full h-80 object-cover"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Gallery */}
-      <section className="py-20 bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <span className="section-subtitle block">Our Work</span>
-            <h2 className="section-title">Projects</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {galleryImages.map((img, index) => (
-              <div key={index} className="overflow-hidden rounded-xl shadow-md aspect-video">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -144,7 +144,7 @@ export default function Navbar() {
               </button>
               {/* OUR STORE */}
               <a
-                href="https://farisgroup.net"
+                href="http://farisstore.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ml-2 px-6 py-2.5 text-sm font-semibold text-white rounded-sm transition-all duration-300 hover:opacity-90"
