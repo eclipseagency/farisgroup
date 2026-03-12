@@ -1,54 +1,103 @@
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="relative py-24 overflow-hidden">
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80)",
-        }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{ background: "linear-gradient(135deg, rgba(10,22,40,0.95) 0%, rgba(26,58,107,0.9) 100%)" }}
-      />
+    <section className="py-20" style={{ backgroundColor: "#1a3a6b" }}>
+      <div className="container-custom">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Left: CTA */}
+          <div className="text-white">
+            <span
+              className="inline-block text-xs font-bold tracking-widest uppercase mb-4 px-3 py-1.5"
+              style={{ color: "#c9a227", backgroundColor: "rgba(201,162,39,0.15)", border: "1px solid rgba(201,162,39,0.3)" }}
+            >
+              Get a quote from
+            </span>
+            <h2 className="font-heading font-black text-4xl md:text-5xl leading-tight mb-6">
+              FARIS GROUP
+            </h2>
+            <p className="text-white/80 text-base leading-relaxed mb-8 max-w-md">
+              Let&apos;s get in touch
+              <br />
+              <span className="text-white/60 text-sm">
+                We&apos;re open for any suggestion or just to have a chat
+              </span>
+            </p>
+            <Link
+              href="/contact-us"
+              className="inline-flex items-center gap-2 px-10 py-4 font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:opacity-90"
+              style={{ backgroundColor: "#c9a227", color: "#fff" }}
+            >
+              Contact Us
+            </Link>
+          </div>
 
-      {/* Content */}
-      <div className="relative z-10 container-custom text-center text-white">
-        <span
-          className="inline-block text-xs font-bold tracking-widest uppercase mb-4 px-3 py-1.5"
-          style={{ color: "#c9a227", backgroundColor: "rgba(201,162,39,0.15)", border: "1px solid rgba(201,162,39,0.3)" }}
-        >
-          Ready to Get Started?
-        </span>
-        <h2 className="font-heading font-black text-3xl md:text-4xl lg:text-5xl mb-6 max-w-3xl mx-auto leading-tight">
-          Transform Your Sports Facility With{" "}
-          <span style={{ color: "#c9a227" }}>Faris Group</span>
-        </h2>
-        <p className="text-gray-300 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-          Contact our expert team today for a free consultation. We&apos;ll help you find the perfect
-          sports solution tailored to your needs and budget.
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <Link
-            href="/contact-us"
-            className="inline-flex items-center gap-2 px-10 py-4 font-semibold text-sm tracking-wider uppercase text-white transition-all duration-300 hover:opacity-90 hover:gap-3"
-            style={{ backgroundColor: "#c9a227" }}
-          >
-            Get a Free Quote
-            <ArrowRight size={16} />
-          </Link>
-          <a
-            href="tel:+97142223333"
-            className="inline-flex items-center gap-2 px-10 py-4 border-2 border-white/40 font-semibold text-sm tracking-wider uppercase text-white transition-all duration-300 hover:border-white hover:bg-white/10"
-          >
-            <Phone size={16} />
-            Call Us Now
-          </a>
+          {/* Right: Contact Details */}
+          <div className="space-y-5">
+            {/* Phones */}
+            <div className="flex items-start gap-4">
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
+              >
+                <Phone size={18} style={{ color: "#c9a227" }} />
+              </div>
+              <div className="space-y-1">
+                {[
+                  "+966 55 668 8883 (KSA)",
+                  "+971 55 336 6241 (UAE)",
+                  "+39 328 819 7804 (Italy)",
+                ].map((phone) => (
+                  <a
+                    key={phone}
+                    href={`tel:${phone.split(" ")[0]}`}
+                    className="block text-white/80 text-sm hover:text-white transition-colors"
+                  >
+                    {phone}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Emails */}
+            <div className="flex items-start gap-4">
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
+              >
+                <Mail size={18} style={{ color: "#c9a227" }} />
+              </div>
+              <div className="space-y-1">
+                {["info@farisgroup.net", "faris@farisgroup.net"].map((email) => (
+                  <a
+                    key={email}
+                    href={`mailto:${email}`}
+                    className="block text-white/80 text-sm hover:text-white transition-colors"
+                  >
+                    {email}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Address */}
+            <div className="flex items-start gap-4">
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
+              >
+                <MapPin size={18} style={{ color: "#c9a227" }} />
+              </div>
+              <div className="text-white/80 text-sm space-y-0.5">
+                <p>Jeddah - Riyadh - Saudi Arabia</p>
+                <p>Abu Dhabi - United Arab Emirates</p>
+                <p>Milano - Italy</p>
+                <p>Cairo - Egypt</p>
+                <p>Metro Manila, Philippines</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
