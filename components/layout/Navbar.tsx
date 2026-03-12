@@ -105,10 +105,10 @@ export default function Navbar() {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   {item.children ? (
-                    <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-md hover:bg-gray-50">
+                    <Link href={item.href} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-md hover:bg-gray-50">
                       {item.name}
                       <ChevronDown size={14} className={`transition-transform ${activeDropdown === item.name ? "rotate-180" : ""}`} />
-                    </button>
+                    </Link>
                   ) : (
                     <Link
                       href={item.href}
@@ -172,9 +172,13 @@ export default function Navbar() {
                 <div key={item.name}>
                   {item.children ? (
                     <div>
-                      <div className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                      <Link
+                        href={item.href}
+                        className="block px-3 py-2 text-sm font-semibold text-gray-700 hover:text-primary uppercase tracking-wider"
+                        onClick={() => setIsOpen(false)}
+                      >
                         {item.name}
-                      </div>
+                      </Link>
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
