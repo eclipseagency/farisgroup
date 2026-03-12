@@ -25,14 +25,6 @@ const projectImages = [
     src: "https://farisgroup.net/wp-content/uploads/2023/05/2-4-1024x768-1.jpg",
     alt: "SPA Project 4",
   },
-  {
-    src: "https://farisgroup.net/wp-content/uploads/2023/05/1-4-768x1024-1.jpg",
-    alt: "SPA Project 5",
-  },
-  {
-    src: "https://farisgroup.net/wp-content/uploads/2023/05/3jpg-768x1024-1.jpg",
-    alt: "SPA Project 6",
-  },
 ];
 
 export default function SpaPoolPage() {
