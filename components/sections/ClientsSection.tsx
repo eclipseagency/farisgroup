@@ -1,16 +1,30 @@
 "use client";
 
 const clients = [
-  { name: "American International School of Jeddah", short: "AISJ" },
-  { name: "Albander Hotel & Resort", short: "albander" },
-  { name: "Al-Basateen Village", short: "Al-Basateen" },
-  { name: "Arabian Homes", short: "Arabian Homes" },
-  { name: "Saudi Aramco", short: "Aramco" },
-  { name: "King Abdulaziz University", short: "KAU" },
-  { name: "DAMAC Properties", short: "DAMAC" },
-  { name: "SABIC", short: "SABIC" },
-  { name: "Dubai Municipality", short: "Dubai Mun." },
-  { name: "GEMS Schools", short: "GEMS" },
+  {
+    name: "American International School of Jeddah",
+    logo: "https://farisgroup.net/wp-content/uploads/2023/05/AISJ.png",
+  },
+  {
+    name: "Albander Hotel & Resort",
+    logo: "https://farisgroup.net/wp-content/uploads/2023/05/albander.png",
+  },
+  {
+    name: "Al-Basateen Village",
+    logo: "https://farisgroup.net/wp-content/uploads/2023/05/albasateen.png",
+  },
+  {
+    name: "Arabian Homes",
+    logo: "https://farisgroup.net/wp-content/uploads/2023/05/arabianhomes.png",
+  },
+  {
+    name: "Saudi Aramco",
+    logo: "https://farisgroup.net/wp-content/uploads/2023/05/aramco.png",
+  },
+  {
+    name: "King Abdulaziz University",
+    logo: "https://farisgroup.net/wp-content/uploads/2023/05/kauj.png",
+  },
 ];
 
 export default function ClientsSection() {
@@ -29,12 +43,13 @@ export default function ClientsSection() {
             {[...clients, ...clients].map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex items-center justify-center mx-5 px-8 py-4 bg-white border border-gray-200 rounded-lg hover:border-gold transition-colors duration-300 min-w-[180px] h-16 group"
-                style={{ "--tw-border-opacity": 1 } as React.CSSProperties}
+                className="flex-shrink-0 flex items-center justify-center mx-6 px-8 py-4 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all duration-300 min-w-[180px] h-24 group"
               >
-                <span className="font-heading font-bold text-xs tracking-widest uppercase text-gray-400 group-hover:text-primary transition-colors duration-300 text-center">
-                  {client.short}
-                </span>
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="max-h-14 max-w-[150px] object-contain filter grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300"
+                />
               </div>
             ))}
           </div>
