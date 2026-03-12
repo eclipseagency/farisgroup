@@ -83,6 +83,24 @@ const projectImages = [
 export default function PadelCourtPage() {
   return (
     <>
+      {/* Hero — Video */}
+      <section className="relative w-full h-screen min-h-[500px] overflow-hidden flex items-center justify-center">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          src="https://farisgroup.net/wp-content/uploads/2023/07/videoplayback.mp4"
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.55)" }} />
+        <div className="relative z-10 text-center text-white px-4 max-w-3xl">
+          <h1 className="font-heading font-black text-4xl md:text-6xl mb-6 leading-tight">
+            Set up your padel court
+          </h1>
+        </div>
+      </section>
+
       {/* Intro — Row 1: image left, title+text right */}
       <section className="py-16 bg-white">
         <div className="container-custom">
