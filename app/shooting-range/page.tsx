@@ -1,156 +1,171 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHeader from "@/components/ui/PageHeader";
 import CTASection from "@/components/sections/CTASection";
-import { CheckCircle, ArrowRight, Shield, Target, Award } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Shooting Range - Faris Group",
   description:
-    "Advanced shooting range solutions for professionals and enthusiasts. Supply and installation by Faris Group.",
+    "Advanced Shooting Range solutions by Faris Group. Supply and installation of target systems, bullet traps, and shooting accessories built to the highest safety standards.",
 };
 
-const solutions = [
-  {
-    title: "Indoor Shooting Ranges",
-    description:
-      "Fully equipped indoor shooting range solutions with advanced target systems, ventilation, and acoustic design.",
-    image: "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&q=80",
-    features: ["Advanced target systems", "Safety baffles", "Ventilation systems", "Sound proofing"],
-  },
-  {
-    title: "Outdoor Ranges",
-    description:
-      "Professional outdoor shooting range setups with weatherproof infrastructure and safety systems.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
-    features: ["Weather-resistant", "Long-range capability", "Safety berms", "Target automation"],
-  },
-  {
-    title: "Target Systems",
-    description:
-      "Electronic and mechanical target systems for various shooting disciplines including pistol, rifle, and shotgun.",
-    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80",
-    features: ["Electronic scoring", "Moving targets", "Multiple calibers", "Remote control"],
-  },
-  {
-    title: "Safety Equipment",
-    description:
-      "Complete shooting range safety solutions including bullet traps, baffles, and protective barriers.",
-    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80",
-    features: ["Bullet traps", "Safety baffles", "Protective barriers", "Emergency systems"],
-  },
+const projectImages = [
+  "https://farisgroup.net/wp-content/uploads/2023/05/Alforsan-Club-Acrylic-Sport-Flooring.jpg",
+  "https://farisgroup.net/wp-content/uploads/2023/05/Alforsan-Club-Acrylic-Sport-Flooring-2.jpg",
+  "https://farisgroup.net/wp-content/uploads/2023/05/Rangers-Range-3-lanes-indoor-target-shooting-project-1-2.jpeg",
+  "https://farisgroup.net/wp-content/uploads/2023/05/rangers-range-3-lanes-indoor-target-shooting-project-1-1.jpeg",
+  "https://farisgroup.net/wp-content/uploads/2023/05/rangers-range-controls-booths.jpg",
 ];
 
 export default function ShootingRangePage() {
   return (
     <>
-      <PageHeader
-        title="Shooting Range"
-        subtitle="Professional Equipment"
-        description="Advanced shooting range solutions designed to meet the needs of both shooting enthusiasts and professional athletes."
-        breadcrumbs={[{ label: "Shooting Range" }]}
-        backgroundImage="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=1920&q=80"
-      />
+      {/* Hero */}
+      <section className="relative w-full h-screen min-h-[500px] overflow-hidden flex items-center justify-center">
+        <img
+          src="https://farisgroup.net/wp-content/uploads/2023/05/Alforsan-Club-Acrylic-Sport-Flooring-2.jpg"
+          alt="Shooting Range Hero"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.55)" }} />
+        <div className="relative z-10 text-center text-white px-4 max-w-3xl">
+          <h1 className="font-heading font-black text-4xl md:text-6xl mb-6 leading-tight uppercase tracking-widest">
+            Shooting Range
+          </h1>
+        </div>
+      </section>
 
-      {/* Overview */}
-      <section className="py-20 bg-white">
+      {/* Breadcrumb */}
+      <div className="bg-gray-50 border-b border-gray-200 py-3">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="section-subtitle block">Shooting Solutions</span>
-              <h2 className="section-title">
-                Professional Shooting Range{" "}
-                <span style={{ color: "#c9a227" }}>Supply & Installation</span>
-              </h2>
-              <p className="text-gray-600 mt-5 leading-relaxed">
-                Faris Group offers advanced shooting range solutions designed for both enthusiasts
-                and professional athletes. We supply and install complete shooting range
-                infrastructure, from indoor ranges to full competition facilities.
-              </p>
-              <p className="text-gray-600 mt-4 leading-relaxed">
-                Our shooting range solutions meet international safety standards and can be
-                customized for various disciplines including pistol, rifle, shotgun, and archery.
-              </p>
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {[
-                  { icon: Shield, label: "Safety First", desc: "International safety standards" },
-                  { icon: Target, label: "Precision", desc: "Competition-grade systems" },
-                  { icon: Award, label: "Certified", desc: "Internationally approved" },
-                ].map((item, i) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={i}
-                      className="text-center p-4 rounded-lg"
-                      style={{ backgroundColor: "rgba(26,58,107,0.06)" }}
-                    >
-                      <Icon size={24} className="mx-auto mb-2" style={{ color: "#1a3a6b" }} />
-                      <h4 className="font-bold text-sm mb-1" style={{ color: "#1a3a6b" }}>{item.label}</h4>
-                      <p className="text-gray-500 text-xs">{item.desc}</p>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="mt-8">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 text-white font-semibold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: "#1a3a6b" }}
-                >
-                  Get a Quote
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </div>
-            <div className="rounded-xl overflow-hidden shadow-2xl">
+          <nav className="flex items-center gap-2 text-sm text-gray-500">
+            <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-gray-800 font-medium">Supply and Installation of Shooting Range Equipment</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* Intro */}
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          {/* Row 1: image left, title+text right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&q=80"
-                alt="Shooting Range"
-                className="w-full h-96 object-cover"
+                src="https://farisgroup.net/wp-content/uploads/2023/05/Rangers-Range-3-lanes-indoor-target-shooting-project-1-2.jpeg"
+                alt="Shooting Range Interior"
+                className="w-full h-80 object-cover"
+              />
+            </div>
+            <div className="text-center">
+              <h2
+                className="font-heading font-black text-3xl md:text-4xl mb-6 leading-tight uppercase"
+                style={{ color: "#1a8fc1" }}
+              >
+                Shooting Range
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                When it comes to shooting sports, precision and safety are of utmost importance. At
+                Faris Group, we offer advanced Shooting Range solutions designed to meet the needs
+                of shooting enthusiasts and professionals alike. Our comprehensive range includes
+                cutting-edge target systems, bullet traps, and a wide selection of shooting
+                accessories, all crafted with precision and built to the highest safety standards.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 2: text left, image right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center">
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Our shooting ranges provide a controlled environment that allows shooters to hone
+                their skills and enjoy their passion with confidence. The target systems we provide
+                are designed for accuracy, reliability, and versatility, catering to various
+                shooting disciplines and training requirements. From electronic target systems with
+                precise scoring capabilities to reactive targets that add an element of excitement,
+                we have the perfect solution to suit your shooting range needs.
+              </p>
+              <Link
+                href="#quote"
+                className="inline-block px-10 py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-full transition-all duration-300 hover:opacity-90"
+                style={{ backgroundColor: "#0d1f3c" }}
+              >
+                Request a Quote
+              </Link>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="https://farisgroup.net/wp-content/uploads/2023/05/Alforsan-Club-Acrylic-Sport-Flooring.jpg"
+                alt="Shooting Range Facility"
+                className="w-full h-80 object-cover"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Solutions Grid */}
-      <section className="py-20" style={{ backgroundColor: "#f8f9fc" }}>
+      {/* Projects Gallery */}
+      <section className="py-20 bg-gray-50">
         <div className="container-custom">
-          <div className="text-center mb-14">
-            <span className="section-subtitle block">Our Offerings</span>
-            <h2 className="section-title">
-              Shooting Range <span style={{ color: "#c9a227" }}>Solutions</span>
-            </h2>
+          <div className="text-center mb-12">
+            <span className="section-subtitle block">Our Work</span>
+            <h2 className="section-title">Projects</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {solutions.map((sol, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={sol.image}
-                    alt={sol.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,22,40,0.7) 0%, transparent 60%)" }} />
-                  <h3 className="absolute bottom-4 left-4 font-heading font-bold text-xl text-white">{sol.title}</h3>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{sol.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {sol.features.map((f, i) => (
-                      <div key={i} className="flex items-center gap-1.5 text-xs text-gray-700">
-                        <CheckCircle size={12} style={{ color: "#c9a227" }} />
-                        {f}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {projectImages.map((src, index) => (
+              <div key={index} className="overflow-hidden rounded-xl shadow-md aspect-square">
+                <img
+                  src={src}
+                  alt={`Shooting range project ${index + 1}`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Quote Form */}
+      <section id="quote" className="py-20" style={{ backgroundColor: "#f8f9fc" }}>
+        <div className="container-custom max-w-2xl">
+          <div className="text-center mb-10">
+            <span className="section-subtitle block">QUOTE</span>
+            <h2 className="section-title">Request a Quote</h2>
+            <p className="text-gray-500 text-sm mt-2">
+              Your email address will not be published. Required fields are marked *
+            </p>
+          </div>
+          <form className="bg-white rounded-2xl shadow-lg p-8 space-y-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <input
+                type="text"
+                placeholder="Your Name *"
+                className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none"
+              />
+              <input
+                type="email"
+                placeholder="Your Email *"
+                className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none"
+              />
+            </div>
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none"
+            />
+            <textarea
+              rows={5}
+              placeholder="Your Message *"
+              className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none resize-none"
+            />
+            <button
+              type="submit"
+              className="w-full py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-sm transition-all duration-300 hover:opacity-90"
+              style={{ backgroundColor: "#c9a227" }}
+            >
+              Send Request
+            </button>
+          </form>
         </div>
       </section>
 
