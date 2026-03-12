@@ -7,12 +7,14 @@ import { Menu, X, ChevronDown, ChevronRight, Phone, Mail } from "lucide-react";
 type NavChild = {
   name: string;
   href: string;
+  external?: boolean;
   children?: { name: string; href: string }[];
 };
 
 type NavItem = {
   name: string;
   href: string;
+  external?: boolean;
   children?: NavChild[];
 };
 
@@ -37,7 +39,7 @@ const navigation: NavItem[] = [
           { name: "Fullscreen Mode", href: "https://farisgroup.net/themencode-pdf-viewer/?file=https://farisgroup.net/wp-content/uploads/2023/05/Patentverwag-Brochure-1.pdf#zoom=auto" },
         ],
       },
-      { name: "Urban Furniture", href: "/urban-furniture" },
+      { name: "Urban Furniture", href: "https://farisgroup.net/themencode-pdf-viewer/?file=https://farisgroup.net/wp-content/uploads/2023/05/MANTIS-zlozenka_WEB.pdf#zoom=auto", external: true },
       { name: "Fitness & Gym", href: "/fitness-and-gym" },
       { name: "Supply and Installation of Shooting Range Equipment", href: "/shooting-range" },
       { name: "Playground", href: "/products" },
@@ -170,6 +172,15 @@ export default function Navbar() {
                                 </div>
                               )}
                             </>
+                          ) : child.external ? (
+                            <a
+                              href={child.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                            >
+                              {child.name}
+                            </a>
                           ) : (
                             <Link
                               href={child.href}
@@ -229,13 +240,25 @@ export default function Navbar() {
                       </Link>
                       {item.children.map((child) => (
                         <div key={child.name}>
-                          <Link
-                            href={child.href}
-                            className="block px-6 py-2 text-sm text-gray-700 hover:text-primary"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {child.name}
-                          </Link>
+                          {child.external ? (
+                            <a
+                              href={child.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block px-6 py-2 text-sm text-gray-700 hover:text-primary"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {child.name}
+                            </a>
+                          ) : (
+                            <Link
+                              href={child.href}
+                              className="block px-6 py-2 text-sm text-gray-700 hover:text-primary"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {child.name}
+                            </Link>
+                          )}
                           {child.children?.map((sub) => (
                             <Link
                               key={sub.name}
