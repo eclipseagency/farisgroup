@@ -83,74 +83,70 @@ const projectImages = [
 export default function PadelCourtPage() {
   return (
     <>
-      {/* Hero — Video */}
-      <section className="relative w-full h-screen min-h-[500px] overflow-hidden flex items-center justify-center">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          src="https://farisgroup.net/wp-content/uploads/2023/07/videoplayback.mp4"
-        />
-        <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.55)" }} />
-        <div className="relative z-10 text-center text-white px-4 max-w-3xl">
-          <h1 className="font-heading font-black text-4xl md:text-6xl mb-6 leading-tight">
-            Set up your padel court
-          </h1>
-          <Link
-            href="#quote"
-            className="inline-block px-10 py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-sm transition-all duration-300 hover:opacity-90"
-            style={{ backgroundColor: "#c9a227" }}
-          >
-            Start Now
-          </Link>
-        </div>
-      </section>
-
-      {/* Intro */}
-      <section className="py-20 bg-white">
+      {/* Intro — Row 1: image left, title+text right */}
+      <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-gray-600 leading-relaxed mb-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Image */}
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="https://farisgroup.net/wp-content/uploads/2023/05/0208e9d7-5582-4aeb-9ad8-4a99f289f239-1-1.jpg"
+                alt="Padel Court 3D"
+                className="w-full h-80 object-cover"
+              />
+            </div>
+            {/* Title + first 2 paragraphs */}
+            <div className="text-center lg:text-left">
+              <h1
+                className="font-heading font-black text-3xl md:text-4xl mb-6 leading-tight"
+                style={{ color: "#1a8fc1" }}
+              >
+                Set up your padel court
+              </h1>
+              <p className="text-gray-600 leading-relaxed mb-4 text-center">
                 Padel, the fastest-growing fitness trend, is taking the sports world by storm. With
                 its exciting gameplay, accessibility, and social appeal, Padel is capturing the
                 hearts of fitness enthusiasts and athletes of all ages.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-5">
+              <p className="text-gray-600 leading-relaxed text-center">
                 At Faris Group, we recognize the immense potential of Padel and are proud to offer
                 comprehensive Padel Court solutions. Our state-of-the-art Padel Courts are designed
                 to deliver an unparalleled playing experience, combining elements of tennis and
                 squash to create a dynamic and engaging sport.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-5">
+            </div>
+          </div>
+
+          {/* Row 2: text+button left, image right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Last 2 paragraphs + button */}
+            <div className="text-center">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 Whether you&apos;re a sports facility owner, a fitness club manager, or an
                 individual looking to bring Padel to your community, our expertise in Padel court
                 design, construction, and equipment supply ensures a seamless and exceptional
                 experience from start to finish.
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed mb-8">
                 Experience the thrill of Padel with Faris Group, and be a part of the fitness trend
                 that is sweeping the globe. Join us in revolutionizing the way people stay active,
                 have fun, and connect through the power of Padel.
               </p>
+              <Link
+                href="#quote"
+                className="inline-block px-10 py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-full transition-all duration-300 hover:opacity-90"
+                style={{ backgroundColor: "#0d1f3c" }}
+              >
+                Start Now
+              </Link>
             </div>
-            <div className="grid grid-cols-1 gap-4">
-              <div className="rounded-xl overflow-hidden shadow-xl">
-                <img
-                  src="https://farisgroup.net/wp-content/uploads/2023/05/0208e9d7-5582-4aeb-9ad8-4a99f289f239-1-1.jpg"
-                  alt="Padel Court"
-                  className="w-full h-64 object-cover"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-xl">
-                <img
-                  src="https://farisgroup.net/wp-content/uploads/2023/05/Al-Bustan-Padel-Courts-8-1-1536x1152.jpeg"
-                  alt="Al Bustan Padel Courts"
-                  className="w-full h-64 object-cover"
-                />
-              </div>
+            {/* Image */}
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="https://farisgroup.net/wp-content/uploads/2023/05/Al-Bustan-Padel-Courts-8-1-1536x1152.jpeg"
+                alt="Al Bustan Padel Courts"
+                className="w-full h-80 object-cover"
+              />
             </div>
           </div>
         </div>
