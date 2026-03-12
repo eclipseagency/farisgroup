@@ -8,27 +8,38 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
   {
-    name: "Services",
-    href: "/services",
-    children: [
-      { name: "Construction", href: "/construction" },
-      { name: "Supply", href: "/supply" },
-      { name: "Maintenance", href: "/maintenance" },
-    ],
-  },
-  {
     name: "Products",
     href: "/products",
     children: [
-      { name: "Sports Equipment", href: "/products/sports-equipment" },
-      { name: "Fitness & Gym", href: "/fitness-and-gym" },
-      { name: "Bleachers & Seating", href: "/bleachers-and-seating" },
       { name: "Padel Court", href: "/padel-court" },
-      { name: "Shooting Range", href: "/shooting-range" },
+      { name: "Billiards", href: "/products" },
+      { name: "Squash Courts", href: "/products" },
+      { name: "SPA & Pool", href: "/products" },
+      { name: "Bowling", href: "/construction" },
+      { name: "Climbing Wall", href: "/construction" },
+      { name: "Wall Insulation", href: "/products" },
+      { name: "Sport Equipment", href: "/products/sports-equipment" },
+      { name: "Urban Furniture", href: "/products" },
+      { name: "Fitness & Gym", href: "/fitness-and-gym" },
+      { name: "Supply and Installation of Shooting Range Equipment", href: "/shooting-range" },
+      { name: "Playground", href: "/products" },
     ],
   },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact Us", href: "/contact-us" },
+  {
+    name: "Services",
+    href: "/services",
+    children: [
+      { name: "Maintenance", href: "/maintenance" },
+      { name: "Spare Parts", href: "/services" },
+      { name: "Project Management", href: "/services" },
+      { name: "Supply", href: "/supply" },
+      { name: "Project / Facility Planning", href: "/services" },
+      { name: "Construction", href: "/construction" },
+      { name: "Sports Facility Operation", href: "/services" },
+    ],
+  },
+  { name: "Our Projects", href: "/projects" },
+  { name: "Contact", href: "/contact-us" },
 ];
 
 export default function Navbar() {
