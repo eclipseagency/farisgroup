@@ -34,16 +34,10 @@ const navigation: NavItem[] = [
         name: "Sport Equipment",
         href: "/sport-equipment",
         children: [
-          { name: "Artisport", href: "/artisport" },
+          { name: "Fullscreen Mode", href: "https://farisgroup.net/themencode-pdf-viewer/?file=https://farisgroup.net/wp-content/uploads/2023/05/Patentverwag-Brochure-1.pdf#zoom=auto" },
         ],
       },
-      {
-        name: "Urban Furniture",
-        href: "/urban-furniture",
-        children: [
-          { name: "Fullscreen Mode", href: "/urban-furniture/fullscreen" },
-        ],
-      },
+      { name: "Urban Furniture", href: "/urban-furniture" },
       { name: "Fitness & Gym", href: "/fitness-and-gym" },
       { name: "Supply and Installation of Shooting Range Equipment", href: "/shooting-range" },
       { name: "Playground", href: "/products" },
@@ -163,13 +157,15 @@ export default function Navbar() {
                               {activeSubDropdown === child.name && (
                                 <div className="absolute left-full top-0 w-48 bg-white shadow-xl border-t-2 border-gold rounded-r-lg py-2 z-50">
                                   {child.children.map((sub) => (
-                                    <Link
+                                    <a
                                       key={sub.name}
                                       href={sub.href}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
                                       className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
                                     >
                                       {sub.name}
-                                    </Link>
+                                    </a>
                                   ))}
                                 </div>
                               )}
