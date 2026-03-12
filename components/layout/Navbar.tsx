@@ -46,8 +46,8 @@ const navigation: NavItem[] = [
         children: [
           { name: "Cardio Machines", href: "/cardio-machines" },
           { name: "Strength Machines", href: "/strength-machines" },
-          { name: "Flexibility Machine", href: "/flexibility-machine" },
-          { name: "Fullscreen Mode", href: "https://farisgroup.net/themencode-pdf-viewer/?file=https://farisgroup.net/wp-content/uploads/2023/05/Patentverwag-Brochure-1.pdf#zoom=auto" },
+          { name: "Flexibility Machine", href: "https://farisgroup.net/wp-content/uploads/2023/05/CANALI-Fitness-Faris-Group-1.pdf#page=22" },
+          { name: "Fullscreen Mode", href: "https://farisgroup.net/themencode-pdf-viewer/?file=https://farisgroup.net/wp-content/uploads/2023/05/FITNESS-ACCESSORIES-1.pdf#zoom=auto" },
         ],
       },
       { name: "Supply and Installation of Shooting Range Equipment", href: "/shooting-range" },
