@@ -2,9 +2,21 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, Phone, Mail } from "lucide-react";
 
-const navigation = [
+type NavChild = {
+  name: string;
+  href: string;
+  children?: { name: string; href: string }[];
+};
+
+type NavItem = {
+  name: string;
+  href: string;
+  children?: NavChild[];
+};
+
+const navigation: NavItem[] = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
   {
@@ -18,8 +30,20 @@ const navigation = [
       { name: "Bowling", href: "/bowling" },
       { name: "Climbing Wall", href: "/climbing-wall" },
       { name: "Wall Insulation", href: "/wall-insulation" },
-      { name: "Sport Equipment", href: "/products/sports-equipment" },
-      { name: "Urban Furniture", href: "/products" },
+      {
+        name: "Sport Equipment",
+        href: "/sport-equipment",
+        children: [
+          { name: "Artisport", href: "/artisport" },
+        ],
+      },
+      {
+        name: "Urban Furniture",
+        href: "/urban-furniture",
+        children: [
+          { name: "Fullscreen Mode", href: "/urban-furniture/fullscreen" },
+        ],
+      },
       { name: "Fitness & Gym", href: "/fitness-and-gym" },
       { name: "Supply and Installation of Shooting Range Equipment", href: "/shooting-range" },
       { name: "Playground", href: "/products" },
@@ -46,6 +70,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeSubDropdown, setActiveSubDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,9 +104,7 @@ export default function Navbar() {
       {/* Main Navbar */}
       <nav
         className={`sticky top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white shadow-lg"
-            : "bg-white shadow-sm"
+          scrolled ? "bg-white shadow-lg" : "bg-white shadow-sm"
         }`}
       >
         <div className="container-custom">
@@ -102,7 +125,7 @@ export default function Navbar() {
                   key={item.name}
                   className="relative"
                   onMouseEnter={() => item.children && setActiveDropdown(item.name)}
-                  onMouseLeave={() => setActiveDropdown(null)}
+                  onMouseLeave={() => { setActiveDropdown(null); setActiveSubDropdown(null); }}
                 >
                   {item.children ? (
                     <Link href={item.href} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-md hover:bg-gray-50">
@@ -113,24 +136,53 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-md hover:bg-gray-50"
-                      style={{ "--hover-color": "#1a3a6b" } as React.CSSProperties}
                     >
                       {item.name}
                     </Link>
                   )}
 
-                  {/* Dropdown */}
+                  {/* Level-1 Dropdown */}
                   {item.children && activeDropdown === item.name && (
-                    <div className="absolute top-full left-0 mt-0 w-56 bg-white shadow-xl border-t-2 border-gold rounded-b-lg py-2 z-50">
+                    <div className="absolute top-full left-0 mt-0 w-64 bg-white shadow-xl border-t-2 border-gold rounded-b-lg py-2 z-50">
                       {item.children.map((child) => (
-                        <Link
+                        <div
                           key={child.name}
-                          href={child.href}
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
-                          style={{ "--tw-text-opacity": "1" } as React.CSSProperties}
+                          className="relative group"
+                          onMouseEnter={() => child.children && setActiveSubDropdown(child.name)}
+                          onMouseLeave={() => child.children && setActiveSubDropdown(null)}
                         >
-                          {child.name}
-                        </Link>
+                          {child.children ? (
+                            <>
+                              <div className="flex items-center justify-between px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors cursor-pointer">
+                                <Link href={child.href} className="flex-1">
+                                  {child.name}
+                                </Link>
+                                <ChevronRight size={14} className="text-gold" />
+                              </div>
+                              {/* Level-2 Dropdown */}
+                              {activeSubDropdown === child.name && (
+                                <div className="absolute left-full top-0 w-48 bg-white shadow-xl border-t-2 border-gold rounded-r-lg py-2 z-50">
+                                  {child.children.map((sub) => (
+                                    <Link
+                                      key={sub.name}
+                                      href={sub.href}
+                                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                                    >
+                                      {sub.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </>
+                          ) : (
+                            <Link
+                              href={child.href}
+                              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                            >
+                              {child.name}
+                            </Link>
+                          )}
+                        </div>
                       ))}
                     </div>
                   )}
@@ -180,14 +232,25 @@ export default function Navbar() {
                         {item.name}
                       </Link>
                       {item.children.map((child) => (
-                        <Link
-                          key={child.name}
-                          href={child.href}
-                          className="block px-6 py-2 text-sm text-gray-700 hover:text-primary"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {child.name}
-                        </Link>
+                        <div key={child.name}>
+                          <Link
+                            href={child.href}
+                            className="block px-6 py-2 text-sm text-gray-700 hover:text-primary"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {child.name}
+                          </Link>
+                          {child.children?.map((sub) => (
+                            <Link
+                              key={sub.name}
+                              href={sub.href}
+                              className="block px-10 py-1.5 text-sm text-gray-500 hover:text-primary"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              — {sub.name}
+                            </Link>
+                          ))}
+                        </div>
                       ))}
                     </div>
                   ) : (
