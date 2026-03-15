@@ -1,13 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
-import { motion, useInView } from "framer-motion";
 
 export default function CTASection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,29 +29,9 @@ export default function CTASection() {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden mesh-bg noise" ref={ref}>
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-5"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-      {/* Glow */}
-      <div
-        className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(244,123,32,0.08) 0%, transparent 70%)" }}
-      />
-
+    <section className="relative py-20 mesh-bg">
       <div className="container-custom relative z-10">
-        <motion.div
-          className="text-center mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="text-center mb-10">
           <span
             className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase mb-4 px-4 py-2 rounded-full"
             style={{
@@ -70,14 +46,9 @@ export default function CTASection() {
           <h2 className="font-heading font-black text-3xl md:text-4xl text-white">
             Contact <span style={{ color: "#F47B20" }}>Faris Group</span>
           </h2>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="max-w-3xl mx-auto"
-        >
+        <div className="max-w-3xl mx-auto">
           {submitted ? (
             <div
               className="flex flex-col items-center justify-center text-center py-16 px-8 rounded-2xl border"
@@ -208,7 +179,7 @@ export default function CTASection() {
               </button>
             </form>
           )}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
