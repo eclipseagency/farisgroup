@@ -1,6 +1,9 @@
+"use client";
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
+import { useT } from "@/lib/useT";
 
 export const metadata: Metadata = {
   title: "Bleachers & Seating - Faris Group",
@@ -18,6 +21,7 @@ const projectImages = [
 ];
 
 export default function BleachersSeatingPage() {
+  const t = useT();
   return (
     <>
       {/* Hero */}

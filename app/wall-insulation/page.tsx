@@ -1,6 +1,9 @@
+"use client";
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
+import { useT } from "@/lib/useT";
 
 export const metadata: Metadata = {
   title: "Wall Insulation - Faris Group",
@@ -99,6 +102,7 @@ const projectImages = [
 ];
 
 export default function WallInsulationPage() {
+  const t = useT();
   return (
     <>
       {/* Hero */}
