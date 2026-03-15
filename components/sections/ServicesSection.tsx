@@ -37,12 +37,12 @@ export default function ServicesSection() {
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section className="py-28 relative overflow-hidden" style={{ backgroundColor: "#f8f9fc" }}>
+    <section className="py-28 relative overflow-hidden">
       {/* Bg decoration */}
       <div
         className="absolute bottom-0 right-0 w-96 h-96 pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(26,58,107,0.06) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(244,123,32,0.08) 0%, transparent 70%)",
           transform: "translate(30%, 30%)",
         }}
       />
@@ -90,15 +90,15 @@ export default function ServicesSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
-          <div className="lg:col-span-2 space-y-4 text-gray-500 text-base leading-relaxed">
+          <div className="lg:col-span-2 space-y-4 text-white/55 text-base leading-relaxed">
             <p>
-              <strong style={{ color: "#0a1628" }}>Sports Facility Design and Construction:</strong>{" "}
+              <strong className="text-white/80">Sports Facility Design and Construction:</strong>{" "}
               We specialize in creating state-of-the-art sports facilities tailored to your unique needs.
               From concept to completion, we ensure every aspect of the design and construction process
               is meticulously executed.
             </p>
             <p>
-              <strong style={{ color: "#0a1628" }}>Equipment and Supply:</strong>{" "}
+              <strong className="text-white/80">Equipment and Supply:</strong>{" "}
               Discover a wide range of top-quality sports equipment and supplies to enhance your facility.
               Whether you need fitness equipment, court accessories, or specialized gear, we offer
               reliable products that meet the highest industry standards.
@@ -143,7 +143,7 @@ export default function ServicesSection() {
                 {/* Arrow icon top-right */}
                 <div
                   className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-2 group-hover:translate-y-0"
-                  style={{ backgroundColor: "rgba(201,162,39,0.9)" }}
+                  style={{ backgroundColor: "rgba(244,123,32,0.9)" }}
                 >
                   <ArrowUpRight size={14} className="text-white" />
                 </div>

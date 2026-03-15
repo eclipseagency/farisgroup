@@ -89,7 +89,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-navy-900 text-white text-xs py-2 hidden md:block" style={{ backgroundColor: "#0a1628" }}>
+      <div className="text-white text-xs py-2 hidden md:block" style={{ backgroundColor: "rgba(6,12,24,0.95)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
         <div className="container-custom flex justify-between items-center">
           <div className="flex items-center gap-6">
             <a href="tel:+97142223333" className="flex items-center gap-2 hover:text-gold transition-colors">
@@ -109,14 +109,12 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <nav
-        className={`sticky top-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "shadow-2xl border-b border-gray-100"
-            : "shadow-sm border-b border-gray-50"
-        }`}
+        className={`sticky top-0 z-50 transition-all duration-500`}
         style={{
-          backgroundColor: scrolled ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,1)",
-          backdropFilter: scrolled ? "blur(20px)" : "none",
+          backgroundColor: scrolled ? "rgba(8,16,32,0.97)" : "rgba(10,22,40,0.92)",
+          backdropFilter: "blur(20px)",
+          borderBottom: "1px solid rgba(255,255,255,0.07)",
+          boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.4)" : "none",
         }}
       >
         <div className="container-custom">
@@ -140,14 +138,14 @@ export default function Navbar() {
                   onMouseLeave={() => { setActiveDropdown(null); setActiveSubDropdown(null); }}
                 >
                   {item.children ? (
-                    <Link href={item.href} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-md hover:bg-gray-50">
+                    <Link href={item.href} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-colors rounded-md hover:bg-white/5">
                       {item.name}
                       <ChevronDown size={14} className={`transition-transform ${activeDropdown === item.name ? "rotate-180" : ""}`} />
                     </Link>
                   ) : (
                     <Link
                       href={item.href}
-                      className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded-md hover:bg-gray-50"
+                      className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-colors rounded-md hover:bg-white/5"
                     >
                       {item.name}
                     </Link>
@@ -155,7 +153,7 @@ export default function Navbar() {
 
                   {/* Level-1 Dropdown */}
                   {item.children && activeDropdown === item.name && (
-                    <div className="absolute top-full left-0 mt-0 w-64 shadow-2xl rounded-b-xl py-2 z-50 overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.97)", backdropFilter: "blur(20px)", borderTop: "2px solid #F47B20", border: "1px solid rgba(0,0,0,0.06)", borderTopColor: "#F47B20" }}>
+                    <div className="absolute top-full left-0 mt-0 w-64 shadow-2xl rounded-b-xl py-2 z-50 overflow-hidden" style={{ backgroundColor: "rgba(8,18,36,0.98)", backdropFilter: "blur(24px)", borderTop: "2px solid #F47B20", border: "1px solid rgba(255,255,255,0.08)", borderTopColor: "#F47B20" }}>
                       {item.children.map((child) => (
                         <div
                           key={child.name}
@@ -165,7 +163,7 @@ export default function Navbar() {
                         >
                           {child.children ? (
                             <>
-                              <div className="flex items-center justify-between px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors cursor-pointer">
+                              <div className="flex items-center justify-between px-4 py-2.5 text-sm text-white/75 hover:bg-white/5 hover:text-white transition-colors cursor-pointer">
                                 <Link href={child.href} className="flex-1">
                                   {child.name}
                                 </Link>
@@ -173,7 +171,7 @@ export default function Navbar() {
                               </div>
                               {/* Level-2 Dropdown */}
                               {activeSubDropdown === child.name && (
-                                <div className="absolute left-full top-0 w-48 bg-white shadow-xl border-t-2 border-gold rounded-r-lg py-2 z-50">
+                                <div className="absolute left-full top-0 w-48 shadow-xl rounded-r-lg py-2 z-50" style={{ backgroundColor: "rgba(8,18,36,0.98)", backdropFilter: "blur(24px)", borderTop: "2px solid #F47B20", border: "1px solid rgba(255,255,255,0.08)", borderTopColor: "#F47B20" }}>
                                   {child.children.map((sub) =>
                                     sub.href.startsWith("http") ? (
                                       <a
@@ -181,7 +179,7 @@ export default function Navbar() {
                                         href={sub.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                                        className="block px-4 py-2.5 text-sm text-white/75 hover:bg-white/5 hover:text-white transition-colors"
                                       >
                                         {sub.name}
                                       </a>
@@ -189,7 +187,7 @@ export default function Navbar() {
                                       <Link
                                         key={sub.name}
                                         href={sub.href}
-                                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                                        className="block px-4 py-2.5 text-sm text-white/75 hover:bg-white/5 hover:text-white transition-colors"
                                       >
                                         {sub.name}
                                       </Link>
@@ -203,14 +201,14 @@ export default function Navbar() {
                               href={child.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                              className="block px-4 py-2.5 text-sm text-white/75 hover:bg-white/5 hover:text-white transition-colors"
                             >
                               {child.name}
                             </a>
                           ) : (
                             <Link
                               href={child.href}
-                              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                              className="block px-4 py-2.5 text-sm text-white/75 hover:bg-white/5 hover:text-white transition-colors"
                             >
                               {child.name}
                             </Link>
@@ -223,7 +221,7 @@ export default function Navbar() {
               ))}
               {/* Arabic toggle */}
               <button
-                className="ml-2 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-primary transition-colors rounded-md hover:bg-gray-50"
+                className="ml-2 px-4 py-2 text-sm font-semibold text-white/70 hover:text-white transition-colors rounded-md hover:bg-white/5"
               >
                 العربية
               </button>
@@ -241,7 +239,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+              className="lg:hidden p-2 rounded-md text-white/70 hover:bg-white/10"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -251,7 +249,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
+          <div className="lg:hidden shadow-lg" style={{ backgroundColor: "rgba(8,18,36,0.99)", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
             <div className="container-custom py-4 space-y-1">
               {navigation.map((item) => (
                 <div key={item.name}>
@@ -259,7 +257,7 @@ export default function Navbar() {
                     <div>
                       <Link
                         href={item.href}
-                        className="block px-3 py-2 text-sm font-semibold text-gray-700 hover:text-primary uppercase tracking-wider"
+                        className="block px-3 py-2 text-sm font-semibold text-white/80 hover:text-white uppercase tracking-wider"
                         onClick={() => setIsOpen(false)}
                       >
                         {item.name}
@@ -271,7 +269,7 @@ export default function Navbar() {
                               href={child.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="block px-6 py-2 text-sm text-gray-700 hover:text-primary"
+                              className="block px-6 py-2 text-sm text-white/70 hover:text-white"
                               onClick={() => setIsOpen(false)}
                             >
                               {child.name}
@@ -279,7 +277,7 @@ export default function Navbar() {
                           ) : (
                             <Link
                               href={child.href}
-                              className="block px-6 py-2 text-sm text-gray-700 hover:text-primary"
+                              className="block px-6 py-2 text-sm text-white/70 hover:text-white"
                               onClick={() => setIsOpen(false)}
                             >
                               {child.name}
@@ -289,7 +287,7 @@ export default function Navbar() {
                             <Link
                               key={sub.name}
                               href={sub.href}
-                              className="block px-10 py-1.5 text-sm text-gray-500 hover:text-primary"
+                              className="block px-10 py-1.5 text-sm text-white/50 hover:text-white"
                               onClick={() => setIsOpen(false)}
                             >
                               — {sub.name}
@@ -301,7 +299,7 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                      className="block px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-md"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}

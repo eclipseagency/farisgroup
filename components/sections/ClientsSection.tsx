@@ -17,7 +17,7 @@ export default function ClientsSection() {
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden" ref={ref}>
+    <section className="py-20 relative overflow-hidden" ref={ref}>
       {/* Top border */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-0.5"
@@ -51,17 +51,17 @@ export default function ClientsSection() {
         <div className="relative overflow-hidden">
           {/* Left fade */}
           <div className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-            style={{ background: "linear-gradient(to right, white, transparent)" }} />
+            style={{ background: "linear-gradient(to right, #0a1628, transparent)" }} />
           {/* Right fade */}
           <div className="absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-            style={{ background: "linear-gradient(to left, white, transparent)" }} />
+            style={{ background: "linear-gradient(to left, #0a1628, transparent)" }} />
 
           <div className="flex items-center animate-clients-scroll">
             {[...clients, ...clients].map((client, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 flex items-center justify-center mx-5 px-8 py-4 rounded-2xl border transition-all duration-300 min-w-[190px] h-24 group hover:shadow-md cursor-default"
-                style={{ borderColor: "rgba(0,0,0,0.06)", backgroundColor: "#fafafa" }}
+                style={{ borderColor: "rgba(255,255,255,0.07)", backgroundColor: "rgba(255,255,255,0.04)" }}
               >
                 <img
                   src={client.logo}

@@ -49,21 +49,21 @@ export default function SportsEquipmentPage() {
         backgroundImage="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80"
       />
 
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container-custom">
           {equipment.map((cat, catIndex) => (
             <div key={catIndex} className="mb-16 last:mb-0">
               <div className="flex items-center gap-4 mb-8">
-                <h2 className="font-heading font-bold text-2xl" style={{ color: "#1a3a6b" }}>
+                <h2 className="font-heading font-bold text-2xl" style={{ color: "#ffffff" }}>
                   {cat.category}
                 </h2>
-                <div className="flex-1 h-px bg-gray-200" />
+                <div className="flex-1 h-px bg-white/10" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {cat.items.map((item, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:-translate-y-1"
+                    className="group rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-white/10 hover:-translate-y-1"
                   >
                     <div className="relative h-44 overflow-hidden">
                       <img
@@ -73,10 +73,10 @@ export default function SportsEquipmentPage() {
                       />
                     </div>
                     <div className="p-4">
-                      <h3 className="font-semibold text-sm mb-1.5" style={{ color: "#1a3a6b" }}>
+                      <h3 className="font-semibold text-sm mb-1.5" style={{ color: "#ffffff" }}>
                         {item.name}
                       </h3>
-                      <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                      <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}

@@ -53,7 +53,7 @@ export default function BleachersSeatingPage() {
       />
 
       {/* Overview */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="rounded-xl overflow-hidden shadow-2xl">
@@ -69,7 +69,7 @@ export default function BleachersSeatingPage() {
                 Premium Seating for{" "}
                 <span style={{ color: "#F47B20" }}>Every Venue</span>
               </h2>
-              <p className="text-gray-600 mt-5 leading-relaxed">
+              <p className="text-white/60 mt-5 leading-relaxed">
                 Faris Group provides durable and ergonomic bleachers and seating solutions to
                 maximize spectator comfort. Whether you&apos;re outfitting a small community sports
                 facility or a large international stadium, our seating solutions deliver excellent
@@ -86,7 +86,7 @@ export default function BleachersSeatingPage() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <CheckCircle size={16} style={{ color: "#F47B20" }} />
-                    <span className="text-gray-700 text-sm">{item}</span>
+                    <span className="text-white/70 text-sm">{item}</span>
                   </div>
                 ))}
               </div>
@@ -106,7 +106,7 @@ export default function BleachersSeatingPage() {
       </section>
 
       {/* Seating Types */}
-      <section className="py-20" style={{ backgroundColor: "#f8f9fc" }}>
+      <section className="py-20" style={{ background: "rgba(255,255,255,0.02)" }}>
         <div className="container-custom">
           <div className="text-center mb-14">
             <span className="section-subtitle block">Our Range</span>
@@ -118,7 +118,7 @@ export default function BleachersSeatingPage() {
             {seatingTypes.map((type, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+                className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-white/10 group"
               >
                 <div className="relative h-52 overflow-hidden">
                   <img
@@ -128,10 +128,10 @@ export default function BleachersSeatingPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-heading font-bold text-xl mb-2" style={{ color: "#1a3a6b" }}>
+                  <h3 className="font-heading font-bold text-xl mb-2" style={{ color: "#ffffff" }}>
                     {type.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{type.description}</p>
+                  <p className="text-white/60 text-sm mb-4 leading-relaxed">{type.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {type.features.map((f, i) => (
                       <span

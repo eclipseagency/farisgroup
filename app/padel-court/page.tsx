@@ -102,7 +102,7 @@ export default function PadelCourtPage() {
       </section>
 
       {/* Intro — Row 1: image left, title+text right */}
-      <section className="py-16 bg-white">
+      <section className="py-16">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             {/* Image */}
@@ -121,12 +121,12 @@ export default function PadelCourtPage() {
               >
                 Set up your padel court
               </h1>
-              <p className="text-gray-600 leading-relaxed mb-4 text-center">
+              <p className="text-white/60 leading-relaxed mb-4 text-center">
                 Padel, the fastest-growing fitness trend, is taking the sports world by storm. With
                 its exciting gameplay, accessibility, and social appeal, Padel is capturing the
                 hearts of fitness enthusiasts and athletes of all ages.
               </p>
-              <p className="text-gray-600 leading-relaxed text-center">
+              <p className="text-white/60 leading-relaxed text-center">
                 At Faris Group, we recognize the immense potential of Padel and are proud to offer
                 comprehensive Padel Court solutions. Our state-of-the-art Padel Courts are designed
                 to deliver an unparalleled playing experience, combining elements of tennis and
@@ -139,13 +139,13 @@ export default function PadelCourtPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Last 2 paragraphs + button */}
             <div className="text-center">
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-white/60 leading-relaxed mb-4">
                 Whether you&apos;re a sports facility owner, a fitness club manager, or an
                 individual looking to bring Padel to your community, our expertise in Padel court
                 design, construction, and equipment supply ensures a seamless and exceptional
                 experience from start to finish.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-8">
+              <p className="text-white/60 leading-relaxed mb-8">
                 Experience the thrill of Padel with Faris Group, and be a part of the fitness trend
                 that is sweeping the globe. Join us in revolutionizing the way people stay active,
                 have fun, and connect through the power of Padel.
@@ -220,7 +220,7 @@ export default function PadelCourtPage() {
       </section>
 
       {/* Projects Gallery */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container-custom">
           <div className="text-center mb-12">
             <span className="section-subtitle block">Our Work</span>
@@ -243,40 +243,40 @@ export default function PadelCourtPage() {
       </section>
 
       {/* Quote Form */}
-      <section id="quote" className="py-20" style={{ backgroundColor: "#f8f9fc" }}>
+      <section id="quote" className="py-20" style={{ background: "rgba(255,255,255,0.02)" }}>
         <div className="container-custom max-w-2xl">
           <div className="text-center mb-10">
             <span className="section-subtitle block">QUOTE</span>
             <h2 className="section-title">
               Get your own court now!
             </h2>
-            <p className="text-gray-500 text-sm mt-2">
+            <p className="text-white/50 text-sm mt-2">
               Your email address will not be published. Required fields are marked *
             </p>
           </div>
-          <form className="bg-white rounded-2xl shadow-lg p-8 space-y-5">
+          <form className="rounded-2xl shadow-lg p-8 space-y-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <input
                 type="text"
                 placeholder="Your Name *"
-                className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none focus:border-gold"
+                className="w-full border border-white/10 rounded-md px-4 py-3 text-sm focus:outline-none focus:border-gold"
                 style={{ "--tw-ring-color": "#F47B20" } as React.CSSProperties}
               />
               <input
                 type="email"
                 placeholder="Your Email *"
-                className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none focus:border-gold"
+                className="w-full border border-white/10 rounded-md px-4 py-3 text-sm focus:outline-none focus:border-gold"
               />
             </div>
             <input
               type="tel"
               placeholder="Phone Number"
-              className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none"
+              className="w-full border border-white/10 rounded-md px-4 py-3 text-sm focus:outline-none"
             />
             <textarea
               rows={5}
               placeholder="Your Message *"
-              className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none resize-none"
+              className="w-full border border-white/10 rounded-md px-4 py-3 text-sm focus:outline-none resize-none"
             />
             <button
               type="submit"

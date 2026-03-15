@@ -63,18 +63,18 @@ export default function ContactPage() {
       />
 
       {/* Contact Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Info */}
             <div className="lg:col-span-1 space-y-6">
               <div>
                 <span className="section-subtitle block">Reach Us</span>
-                <h2 className="font-heading font-bold text-2xl md:text-3xl" style={{ color: "#0a1628" }}>
+                <h2 className="font-heading font-bold text-2xl md:text-3xl" style={{ color: "#ffffff" }}>
                   Let&apos;s Start a{" "}
                   <span style={{ color: "#F47B20" }}>Conversation</span>
                 </h2>
-                <p className="text-gray-600 mt-4 text-sm leading-relaxed">
+                <p className="text-white/60 mt-4 text-sm leading-relaxed">
                   Whether you have a question about our products, need a quote, or want to discuss
                   a project, our team is here to help.
                 </p>
@@ -91,11 +91,11 @@ export default function ContactPage() {
                       <Icon size={20} style={{ color: "#F47B20" }} />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-sm mb-1" style={{ color: "#1a3a6b" }}>
+                      <h3 className="font-semibold text-sm mb-1" style={{ color: "#ffffff" }}>
                         {item.title}
                       </h3>
                       {item.details.map((detail, i) => (
-                        <p key={i} className="text-gray-600 text-sm">
+                        <p key={i} className="text-white/60 text-sm">
                           {detail}
                         </p>
                       ))}
@@ -113,10 +113,10 @@ export default function ContactPage() {
                   style={{ borderColor: "#F47B20", backgroundColor: "rgba(201,162,39,0.05)" }}
                 >
                   <CheckCircle size={64} className="mb-4" style={{ color: "#F47B20" }} />
-                  <h3 className="font-heading font-bold text-2xl mb-3" style={{ color: "#1a3a6b" }}>
+                  <h3 className="font-heading font-bold text-2xl mb-3" style={{ color: "#ffffff" }}>
                     Message Sent Successfully!
                   </h3>
-                  <p className="text-gray-600 leading-relaxed max-w-md">
+                  <p className="text-white/60 leading-relaxed max-w-md">
                     Thank you for contacting Faris Group. Our team will review your message and
                     get back to you within 24 hours.
                   </p>
@@ -131,15 +131,15 @@ export default function ContactPage() {
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="bg-white rounded-xl shadow-lg p-8 border border-gray-100"
+                  className="rounded-xl shadow-lg p-8 border border-white/10"
                 >
-                  <h3 className="font-heading font-bold text-xl mb-6" style={{ color: "#1a3a6b" }}>
+                  <h3 className="font-heading font-bold text-xl mb-6" style={{ color: "#ffffff" }}>
                     Send Us a Message
                   </h3>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">
                         Full Name *
                       </label>
                       <input
@@ -149,12 +149,12 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         placeholder="Your full name"
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors"
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors"
                         style={{ "--focus-border": "#1a3a6b" } as React.CSSProperties}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">
                         Email Address *
                       </label>
                       <input
@@ -164,11 +164,11 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         placeholder="your@email.com"
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors"
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">
                         Phone Number
                       </label>
                       <input
@@ -177,11 +177,11 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+971 X XXX XXXX"
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors"
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">
                         Company / Organization
                       </label>
                       <input
@@ -190,11 +190,11 @@ export default function ContactPage() {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="Your company name"
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors"
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors"
                       />
                     </div>
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">
                         Subject *
                       </label>
                       <select
@@ -202,7 +202,7 @@ export default function ContactPage() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors bg-white"
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors" style={{ background: "rgba(255,255,255,0.06)", color: "white" }}
                       >
                         <option value="">Select a subject</option>
                         <option value="sports-equipment">Sports Equipment</option>
@@ -216,7 +216,7 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">
                         Message *
                       </label>
                       <textarea
@@ -226,7 +226,7 @@ export default function ContactPage() {
                         required
                         rows={5}
                         placeholder="Tell us about your project or inquiry..."
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors resize-none"
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors resize-none"
                       />
                     </div>
                   </div>
@@ -257,17 +257,17 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="h-80 bg-gray-200 relative overflow-hidden">
+      <section className="h-80 relative overflow-hidden">
         <div
           className="absolute inset-0 flex items-center justify-center"
           style={{ backgroundColor: "#f0f4ff" }}
         >
           <div className="text-center">
-            <MapPin size={48} className="mx-auto mb-4" style={{ color: "#1a3a6b" }} />
-            <h3 className="font-heading font-bold text-xl mb-2" style={{ color: "#1a3a6b" }}>
+            <MapPin size={48} className="mx-auto mb-4" style={{ color: "#ffffff" }} />
+            <h3 className="font-heading font-bold text-xl mb-2" style={{ color: "#ffffff" }}>
               Dubai, United Arab Emirates
             </h3>
-            <p className="text-gray-500 text-sm">Middle East Operations Center</p>
+            <p className="text-white/50 text-sm">Middle East Operations Center</p>
           </div>
         </div>
       </section>

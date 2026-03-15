@@ -116,14 +116,14 @@ export default function ProductsPage() {
       />
 
       {/* Products Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container-custom">
           <div className="text-center mb-14">
             <span className="section-subtitle block">OUR SPECIALIZATIONS</span>
             <h2 className="section-title">
               OUR <span style={{ color: "#F47B20" }}>PRODUCTS</span>
             </h2>
-            <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-base leading-relaxed">
+            <p className="text-white/50 mt-4 max-w-2xl mx-auto text-base leading-relaxed">
               Learn about Faris Group products.
             </p>
           </div>
@@ -133,7 +133,7 @@ export default function ProductsPage() {
               <Link
                 key={index}
                 href={product.href}
-                className="group flex flex-col rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1"
+                className="group flex flex-col rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-white/10 hover:-translate-y-1"
               >
                 {/* Image */}
                 <div className="relative w-full h-56 overflow-hidden">
@@ -146,10 +146,10 @@ export default function ProductsPage() {
                 {/* Content */}
                 <div className="p-6 flex flex-col justify-between flex-1">
                   <div>
-                    <h3 className="font-heading font-bold text-xl mb-3" style={{ color: "#1a3a6b" }}>
+                    <h3 className="font-heading font-bold text-xl mb-3" style={{ color: "#ffffff" }}>
                       {product.title}
                     </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-4">
+                    <p className="text-white/50 text-sm leading-relaxed mb-4">
                       {product.description}
                     </p>
                   </div>
