@@ -64,15 +64,6 @@ export default function ShootingRangePage() {
             </div>
           </div>
 
-          {/* Row 2: text left, image right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center">
-              <p className="text-white/60 leading-relaxed mb-8">{content.p3}</p>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img src="https://farisgroup.net/wp-content/uploads/2023/05/Alforsan-Club-Acrylic-Sport-Flooring.jpg" alt="{content.title}" className="w-full h-80 object-cover" />
-            </div>
-          </div>
         </div>
       </section>
 
