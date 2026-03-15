@@ -1,219 +1,170 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHeader from "@/components/ui/PageHeader";
-import CTASection from "@/components/sections/CTASection";
-import { CheckCircle, ArrowRight, Wrench, Calendar, Shield } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Maintenance - Faris Group",
   description:
-    "Professional sports facility maintenance services by Faris Group — one-time and annual contracts for all sports equipment and surfaces.",
+    "Faris Group provides repairs and maintenance services to bowling centers, gymnasiums, running tracks, sports fields and other sports facilities.",
 };
-
-const maintenanceTypes = [
-  {
-    title: "Bowling Center Maintenance",
-    description: "Full-service maintenance for bowling lanes, pin-setting machines, ball returns, and electronic scoring systems.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
-    features: ["Lane resurfacing", "Pinsetter service", "Scoring system updates", "Ball return maintenance"],
-  },
-  {
-    title: "Gymnasium Equipment",
-    description: "Preventive and corrective maintenance for all gym and fitness equipment including treadmills, weight machines, and cardio gear.",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80",
-    features: ["Treadmill service", "Weight machine inspection", "Lubrication & adjustment", "Safety checks"],
-  },
-  {
-    title: "Running Tracks & Sports Floors",
-    description: "Specialized cleaning and maintenance using professional German equipment (Horger machine) for synthetic turf and rubber flooring.",
-    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80",
-    features: ["Deep cleaning", "Line re-marking", "Surface repairs", "Rubber infill replenishment"],
-  },
-  {
-    title: "Sports Fields",
-    description: "Comprehensive maintenance for football fields, padel courts, squash courts, and multi-sport surfaces.",
-    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80",
-    features: ["Field inspection", "Surface repairs", "Drainage checks", "Equipment maintenance"],
-  },
-];
-
-const contractTypes = [
-  {
-    icon: Wrench,
-    title: "One-Time Service",
-    description: "Single-visit maintenance for specific repairs, inspections, or seasonal servicing of your sports facilities.",
-    features: ["Flexible scheduling", "Detailed service report", "Warranty on parts", "Emergency response"],
-  },
-  {
-    icon: Calendar,
-    title: "Annual Contract",
-    description: "Comprehensive yearly maintenance contract covering scheduled visits, preventive maintenance, and priority emergency support.",
-    features: ["Scheduled quarterly visits", "Priority support", "Discounted rates", "Dedicated service team"],
-  },
-  {
-    icon: Shield,
-    title: "Extended Warranty",
-    description: "Extended warranty coverage for major equipment and infrastructure beyond standard manufacturer warranty periods.",
-    features: ["Parts & labor covered", "Manufacturer support", "Rapid response", "Full documentation"],
-  },
-];
 
 export default function MaintenancePage() {
   return (
     <>
-      <PageHeader
-        title="Maintenance"
-        subtitle="Ongoing Support"
-        description="Professional maintenance services for all sports facilities and equipment — available as one-time service or comprehensive annual contracts."
-        breadcrumbs={[{ label: "Services", href: "/services" }, { label: "Maintenance" }]}
-        backgroundImage="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920&q=80"
-      />
+      {/* Hero */}
+      <section className="relative w-full h-screen min-h-[500px] overflow-hidden flex items-center justify-center">
+        <img
+          src="https://farisgroup.net/wp-content/uploads/2023/05/45518666_356687755099112_7281876042573152256_n-1-1.jpg"
+          alt="Maintenance Hero"
+          className="absolute inset-0 w-full h-full object-cover object-bottom"
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.55)" }} />
+        <div className="relative z-10 text-center text-white px-4 max-w-3xl">
+          <h1 className="font-heading font-black text-4xl md:text-6xl mb-6 leading-tight uppercase tracking-widest">
+            Maintenance
+          </h1>
+        </div>
+      </section>
 
-      {/* Overview */}
+      {/* Breadcrumb */}
+      <div className="bg-gray-50 border-b border-gray-200 py-3">
+        <div className="container-custom">
+          <nav className="flex items-center gap-2 text-sm text-gray-500">
+            <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-gray-800 font-medium">MAINTENANCE</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* Content Section */}
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="section-subtitle block">Maintenance Services</span>
-              <h2 className="section-title">
-                Keep Your Facility{" "}
-                <span style={{ color: "#c9a227" }}>at Peak Performance</span>
+              <h2 className="font-heading font-black text-3xl md:text-4xl uppercase tracking-widest mb-6" style={{ color: "#0a1628" }}>
+                MAINTENANCE
               </h2>
-              <p className="text-gray-600 mt-5 leading-relaxed">
-                Faris Group provides professional repair and maintenance services for all types of
-                sports facilities. Our experienced technicians use specialized equipment —
-                including the German Horger machine for synthetic turf and rubber flooring — to
-                deliver superior results.
+              <p className="text-gray-600 leading-relaxed mb-5">
+                Faris Group , along with our engineers and other professional staff, provide repairs
+                and maintenance services to bowling centers, gymnasiums, running tracks, sports fields
+                and other sports facilities. In accordance with our clients&apos; needs, we offer one
+                time, or yearly contracts.
               </p>
-              <p className="text-gray-600 mt-4 leading-relaxed">
-                Whether you need a one-time service visit or a comprehensive annual maintenance
-                contract, our team is equipped to handle facilities of any size across the
-                Middle East.
+              <p className="text-gray-600 leading-relaxed">
+                Maintenance services for sports fields with synthetic turf/rubber flooring is also
+                offered with our German specialized cleaning machine, Horger.
               </p>
-              <div className="mt-8 space-y-2">
-                {[
-                  "Bowling centers and entertainment facilities",
-                  "Gymnasium and fitness equipment",
-                  "Running tracks and sports flooring",
-                  "Artificial turf and natural grass fields",
-                  "Padel and squash courts",
-                  "Shooting range equipment",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <CheckCircle size={16} style={{ color: "#c9a227" }} />
-                    <span className="text-gray-700 text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 text-white font-semibold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: "#c9a227" }}
-                >
-                  Request Maintenance
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
             </div>
             <div className="rounded-xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80"
+                src="https://farisgroup.net/wp-content/uploads/2023/05/cxzv.jpg"
                 alt="Maintenance Services"
-                className="w-full h-96 object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contract Types */}
-      <section className="py-20" style={{ backgroundColor: "#f8f9fc" }}>
-        <div className="container-custom">
-          <div className="text-center mb-14">
-            <span className="section-subtitle block">Service Options</span>
-            <h2 className="section-title">
-              Maintenance <span style={{ color: "#c9a227" }}>Contracts</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {contractTypes.map((contract, index) => {
-              const Icon = contract.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
-                >
-                  <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
-                    style={{ backgroundColor: "rgba(201,162,39,0.1)" }}
+      {/* Quote / Contact Section */}
+      <section
+        className="relative py-24 overflow-hidden"
+        style={{
+          backgroundImage:
+            "url(https://farisgroup.net/wp-content/uploads/2023/05/45518666_356687755099112_7281876042573152256_n-1-1.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "bottom",
+        }}
+      >
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.7)" }} />
+        <div className="relative z-10 container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-2xl max-w-5xl mx-auto">
+            {/* Left dark panel */}
+            <div className="p-10 flex flex-col justify-center" style={{ backgroundColor: "#0a1628" }}>
+              <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9a227" }}>
+                QUOTE
+              </p>
+              <h2 className="font-heading font-black text-4xl md:text-5xl text-white leading-tight mb-4">
+                REQUEST A QUOTE
+              </h2>
+              <p className="text-white font-semibold text-base mb-1">Let&apos;s get in touch</p>
+              <p className="text-white/60 text-sm mb-8">
+                We&apos;re open for any suggestion or just to have a chat
+              </p>
+              <div className="space-y-3">
+                {[
+                  "+966 53 800 7018 (KSA)",
+                  "+971 55 336 6241 (UAE)",
+                  "+39 328 819 7804 (Italy)",
+                ].map((phone) => (
+                  <a
+                    key={phone}
+                    href={`tel:${phone.split(" ")[0]}`}
+                    className="flex items-center gap-2 text-white/70 text-sm hover:text-white transition-colors"
                   >
-                    <Icon size={26} style={{ color: "#c9a227" }} />
-                  </div>
-                  <h3 className="font-heading font-bold text-xl mb-3" style={{ color: "#1a3a6b" }}>
-                    {contract.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-5">{contract.description}</p>
-                  <ul className="space-y-2">
-                    {contract.features.map((f, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-gray-700">
-                        <CheckCircle size={14} style={{ color: "#c9a227" }} />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Maintenance Types */}
-      <section className="py-20 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-14">
-            <span className="section-subtitle block">What We Maintain</span>
-            <h2 className="section-title">
-              Facility <span style={{ color: "#c9a227" }}>Maintenance Scope</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {maintenanceTypes.map((type, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group"
-              >
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={type.image}
-                    alt={type.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,22,40,0.7) 0%, transparent 60%)" }} />
-                  <h3 className="absolute bottom-3 left-4 font-heading font-bold text-lg text-white">{type.title}</h3>
-                </div>
-                <div className="p-5">
-                  <p className="text-gray-600 text-sm mb-3 leading-relaxed">{type.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {type.features.map((f, i) => (
-                      <span
-                        key={i}
-                        className="text-xs px-2.5 py-1 rounded-full font-medium"
-                        style={{ backgroundColor: "rgba(26,58,107,0.07)", color: "#1a3a6b" }}
-                      >
-                        {f}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                    <Phone size={14} style={{ color: "#c9a227" }} />
+                    {phone}
+                  </a>
+                ))}
+                {["info@farisgroup.net", "faris@farisgroup.net"].map((email) => (
+                  <a
+                    key={email}
+                    href={`mailto:${email}`}
+                    className="flex items-center gap-2 text-white/70 text-sm hover:text-white transition-colors"
+                  >
+                    <Mail size={14} style={{ color: "#c9a227" }} />
+                    {email}
+                  </a>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Right form panel */}
+            <div className="bg-white p-10">
+              <form className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                />
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                />
+                <input
+                  type="text"
+                  placeholder="Company Name"
+                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                />
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                />
+                <textarea
+                  rows={4}
+                  placeholder="Message"
+                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400 resize-none"
+                />
+                <button
+                  type="submit"
+                  className="w-full py-3 font-semibold text-white text-sm tracking-widest uppercase rounded transition-all duration-300 hover:opacity-90"
+                  style={{ backgroundColor: "#0a1628" }}
+                >
+                  Send a message
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
-
-      <CTASection />
     </>
   );
 }
