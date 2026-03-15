@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 import { useT } from "@/lib/useT";
@@ -14,14 +15,14 @@ const whyChooseImages = [
   "https://farisgroup.net/wp-content/uploads/2024/07/IMG4-1536x1023.jpg",
 ];
 
-const applicationIcons = [
-  (
+const applicationIcons: (() => React.ReactElement)[] = [
+  () => (
     <svg viewBox="0 0 64 64" className="w-12 h-12 mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
       <path d="M8 32L32 10l24 22v22H8V32z" />
       <rect x="24" y="40" width="16" height="16" />
     </svg>
   ),
-  (
+  () => (
     <svg viewBox="0 0 64 64" className="w-12 h-12 mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
       <rect x="8" y="8" width="48" height="48" rx="2" />
       <path d="M8 24h48M24 8v48M8 40h16" />
@@ -29,14 +30,14 @@ const applicationIcons = [
       <path d="M44 38v6h6" />
     </svg>
   ),
-  (
+  () => (
     <svg viewBox="0 0 64 64" className="w-12 h-12 mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
       <path d="M8 24h48l-4 32H12L8 24z" />
       <path d="M20 24V16a12 12 0 0124 0v8" />
       <circle cx="32" cy="40" r="4" />
     </svg>
   ),
-  (
+  () => (
     <svg viewBox="0 0 64 64" className="w-12 h-12 mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
       <rect x="4" y="32" width="56" height="28" rx="1" />
       <path d="M4 32l14-20v20M18 32l14-20v20M32 32l14-20v20" />
@@ -154,7 +155,7 @@ export default function WallInsulationPage() {
                 className="rounded-2xl p-8 text-center border-2 transition-all duration-300 hover:-translate-y-1"
                 style={{ borderColor: index === 0 ? "#00e5cc" : "transparent" }}
               >
-                <div className="flex justify-center">{applicationIcons[index]}</div>
+                <div className="flex justify-center">{applicationIcons[index]()}</div>
                 <h3 className="font-heading font-bold text-xl mb-3 text-white">
                   {app.title}
                 </h3>

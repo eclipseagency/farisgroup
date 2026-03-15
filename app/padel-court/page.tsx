@@ -1,37 +1,38 @@
 "use client";
 
+import React from "react";
 import CTASection from "@/components/sections/CTASection";
 import { useT } from "@/lib/useT";
 import { useLocale } from "@/contexts/LocaleContext";
 import { translations } from "@/lib/translations";
 
-const whyUsIcons = [
-  (
+const whyUsIcons: (() => React.ReactElement)[] = [
+  () => (
     <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
       <circle cx="32" cy="20" r="10" />
       <path d="M12 52c0-11 9-20 20-20s20 9 20 20" />
       <path d="M44 30l4 4 8-8" />
     </svg>
   ),
-  (
+  () => (
     <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
       <path d="M8 56V24L32 8l24 16v32H8z" />
       <path d="M20 40l8 8 16-16" />
     </svg>
   ),
-  (
+  () => (
     <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
       <circle cx="32" cy="32" r="24" />
       <path d="M20 32l8 8 16-16" />
     </svg>
   ),
-  (
+  () => (
     <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
       <circle cx="32" cy="32" r="24" />
       <path d="M8 32h48M32 8c-8 6-12 14-12 24s4 18 12 24M32 8c8 6 12 14 12 24s-4 18-12 24" />
     </svg>
   ),
-  (
+  () => (
     <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
       <path d="M12 52V28l8-16h24l8 16v24H12z" />
       <path d="M24 52V36h16v16" />
@@ -145,7 +146,7 @@ export default function PadelCourtPage() {
                   borderColor: index === 0 ? "#00e5cc" : "rgba(255,255,255,0.1)",
                 }}
               >
-                {whyUsIcons[index]}
+                {whyUsIcons[index]()}
                 <h3 className="font-heading font-bold text-xl text-white mb-3">{item.title}</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
               </div>
@@ -163,7 +164,7 @@ export default function PadelCourtPage() {
                   borderColor: "rgba(255,255,255,0.1)",
                 }}
               >
-                {whyUsIcons[index + 3]}
+                {whyUsIcons[index + 3]()}
                 <h3 className="font-heading font-bold text-xl text-white mb-3">{item.title}</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
               </div>
