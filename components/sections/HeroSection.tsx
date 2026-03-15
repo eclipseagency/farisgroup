@@ -4,14 +4,7 @@ import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  show: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
+const easing = [0.22, 1, 0.36, 1] as const;
 
 export default function HeroSection() {
   return (
@@ -40,7 +33,6 @@ export default function HeroSection() {
               "linear-gradient(105deg, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.75) 45%, rgba(10,22,40,0.35) 100%)",
           }}
         />
-        {/* Gold accent glow bottom-left */}
         <div
           className="absolute bottom-0 left-0 w-96 h-96 pointer-events-none"
           style={{
@@ -70,10 +62,9 @@ export default function HeroSection() {
 
             {/* Badge */}
             <motion.div
-              initial="hidden"
-              animate="show"
-              custom={0.1}
-              variants={fadeUp}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: easing }}
             >
               <span
                 className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase mb-6 px-4 py-2 rounded-full"
@@ -94,10 +85,9 @@ export default function HeroSection() {
             {/* Headline */}
             <motion.h1
               className="font-heading font-black text-5xl md:text-6xl lg:text-8xl text-white leading-[0.95] mb-6"
-              initial="hidden"
-              animate="show"
-              custom={0.25}
-              variants={fadeUp}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.25, ease: easing }}
             >
               Total Sports
               <br />
@@ -107,10 +97,9 @@ export default function HeroSection() {
             {/* Sub */}
             <motion.p
               className="text-gray-300 text-base md:text-lg leading-relaxed mb-10 max-w-xl"
-              initial="hidden"
-              animate="show"
-              custom={0.4}
-              variants={fadeUp}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: easing }}
             >
               Faris Group is the leading supplier of superior quality sports and entertainment
               equipment in the Middle East — with over 20 years of experience and offices
@@ -120,10 +109,9 @@ export default function HeroSection() {
             {/* CTAs */}
             <motion.div
               className="flex flex-wrap items-center gap-4"
-              initial="hidden"
-              animate="show"
-              custom={0.55}
-              variants={fadeUp}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.55, ease: easing }}
             >
               <Link
                 href="/products"
@@ -153,15 +141,11 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1 }}
       >
-        {/* Thin gold line */}
         <div
           className="absolute top-0 left-0 right-0 h-px"
           style={{ background: "linear-gradient(90deg, transparent, rgba(201,162,39,0.4), transparent)" }}
         />
-        <div
-          className="container-custom py-5 flex items-center justify-between"
-          style={{ borderTop: "none" }}
-        >
+        <div className="container-custom py-5 flex items-center justify-between">
           <div className="flex items-center gap-6 text-white/40 text-xs uppercase tracking-[0.15em]">
             <span>KSA</span>
             <div className="w-4 h-px" style={{ backgroundColor: "rgba(201,162,39,0.4)" }} />
@@ -173,7 +157,7 @@ export default function HeroSection() {
           </div>
           <button
             onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-            className="flex flex-col items-center gap-1.5 text-white/30 hover:text-white/60 transition-colors group"
+            className="flex flex-col items-center gap-1.5 text-white/30 hover:text-white/60 transition-colors"
           >
             <span className="text-xs tracking-widest uppercase">Scroll</span>
             <ChevronDown size={16} className="animate-bounce" />
