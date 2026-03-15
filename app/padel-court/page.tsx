@@ -1,66 +1,43 @@
 "use client";
 
 import CTASection from "@/components/sections/CTASection";
+import { useT } from "@/lib/useT";
+import { useLocale } from "@/contexts/LocaleContext";
+import { translations } from "@/lib/translations";
 
-
-const whyUs = [
-  {
-    icon: (
-      <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
-        <circle cx="32" cy="20" r="10" />
-        <path d="M12 52c0-11 9-20 20-20s20 9 20 20" />
-        <path d="M44 30l4 4 8-8" />
-      </svg>
-    ),
-    title: "Expertise",
-    description:
-      "With a track record of excellence spanning over 25 years, FarisGroup has become a leader in the padel court industry. Our team of professionals brings extensive knowledge and experience to every project, ensuring that you receive the finest quality courts.",
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
-        <path d="M8 56V24L32 8l24 16v32H8z" />
-        <path d="M20 40l8 8 16-16" />
-      </svg>
-    ),
-    title: "Tailored Solutions",
-    description:
-      "At FarisGroup, we believe in personalized experiences. Our configurator allows you to bring your vision to life, customizing your padel court according to your preferences. Choose from our diverse range of court models - VISION, PANORAMIC, and FORTE - to suit your specific needs.",
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
-        <circle cx="32" cy="32" r="24" />
-        <path d="M20 32l8 8 16-16" />
-      </svg>
-    ),
-    title: "Quality Assurance",
-    description:
-      "We are committed to delivering unparalleled quality in every aspect. From the construction systems to the materials used, each element of our padel courts is carefully selected and designed to provide durability, safety, and optimal performance.",
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
-        <circle cx="32" cy="32" r="24" />
-        <path d="M8 32h48M32 8c-8 6-12 14-12 24s4 18 12 24M32 8c8 6 12 14 12 24s-4 18-12 24" />
-      </svg>
-    ),
-    title: "Global Reach",
-    description:
-      "Our success has reached over 50 countries, and we continue to serve clients across the globe. Whether you're in Europe, America, Africa, or Asia, our efficient logistics and distribution network ensure timely delivery and hassle-free installation.",
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
-        <path d="M12 52V28l8-16h24l8 16v24H12z" />
-        <path d="M24 52V36h16v16" />
-        <path d="M12 28h40" />
-      </svg>
-    ),
-    title: "Comprehensive Services",
-    description:
-      "FarisGroup offers a range of services to support your padel court journey. From planning and purchase to installation and maintenance, we are with you every step of the way. Count on us for success, automation, roofing, and complementary services for your club.",
-  },
+const whyUsIcons = [
+  (
+    <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
+      <circle cx="32" cy="20" r="10" />
+      <path d="M12 52c0-11 9-20 20-20s20 9 20 20" />
+      <path d="M44 30l4 4 8-8" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
+      <path d="M8 56V24L32 8l24 16v32H8z" />
+      <path d="M20 40l8 8 16-16" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
+      <circle cx="32" cy="32" r="24" />
+      <path d="M20 32l8 8 16-16" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
+      <circle cx="32" cy="32" r="24" />
+      <path d="M8 32h48M32 8c-8 6-12 14-12 24s4 18 12 24M32 8c8 6 12 14 12 24s-4 18-12 24" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 64 64" className="w-12 h-12 mx-auto mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
+      <path d="M12 52V28l8-16h24l8 16v24H12z" />
+      <path d="M24 52V36h16v16" />
+      <path d="M12 28h40" />
+    </svg>
+  ),
 ];
 
 const projectImages = [
@@ -76,6 +53,10 @@ const projectImages = [
 ];
 
 export default function PadelCourtPage() {
+  const t = useT();
+  const { locale } = useLocale();
+  const content = translations[locale].pageContent.padelCourt;
+
   return (
     <>
       {/* Hero — Video */}
@@ -91,7 +72,7 @@ export default function PadelCourtPage() {
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.55)" }} />
         <div className="relative z-10 text-center text-white px-4 max-w-3xl">
           <h1 className="font-heading font-black text-4xl md:text-6xl mb-6 leading-tight">
-            Set up your padel court
+            {content.heroTitle}
           </h1>
         </div>
       </section>
@@ -114,39 +95,23 @@ export default function PadelCourtPage() {
                 className="font-heading font-black text-3xl md:text-4xl mb-6 leading-tight"
                 style={{ color: "#1a8fc1" }}
               >
-                Set up your padel court
+                {content.title}
               </h1>
               <p className="text-white/60 leading-relaxed mb-4 text-center">
-                Padel, the fastest-growing fitness trend, is taking the sports world by storm. With
-                its exciting gameplay, accessibility, and social appeal, Padel is capturing the
-                hearts of fitness enthusiasts and athletes of all ages.
+                {content.p1}
               </p>
               <p className="text-white/60 leading-relaxed text-center">
-                At Faris Group, we recognize the immense potential of Padel and are proud to offer
-                comprehensive Padel Court solutions. Our state-of-the-art Padel Courts are designed
-                to deliver an unparalleled playing experience, combining elements of tennis and
-                squash to create a dynamic and engaging sport.
+                {content.p2}
               </p>
             </div>
           </div>
 
-          {/* Row 2: text+button left, image right */}
+          {/* Row 2: text left, image right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Last 2 paragraphs + button */}
             <div className="text-center">
-              <p className="text-white/60 leading-relaxed mb-4">
-                Whether you&apos;re a sports facility owner, a fitness club manager, or an
-                individual looking to bring Padel to your community, our expertise in Padel court
-                design, construction, and equipment supply ensures a seamless and exceptional
-                experience from start to finish.
-              </p>
-              <p className="text-white/60 leading-relaxed mb-8">
-                Experience the thrill of Padel with Faris Group, and be a part of the fitness trend
-                that is sweeping the globe. Join us in revolutionizing the way people stay active,
-                have fun, and connect through the power of Padel.
-              </p>
+              <p className="text-white/60 leading-relaxed mb-4">{content.p3}</p>
+              <p className="text-white/60 leading-relaxed mb-8">{content.p4}</p>
             </div>
-            {/* Image */}
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
                 src="https://farisgroup.net/wp-content/uploads/2023/05/Al-Bustan-Padel-Courts-8-1-1536x1152.jpeg"
@@ -164,14 +129,14 @@ export default function PadelCourtPage() {
           <div className="text-center mb-14">
             <h2 className="font-heading font-black text-3xl md:text-4xl text-white flex items-center justify-center gap-3">
               <span style={{ color: "#00e5cc" }}>▶</span>
-              Why Us
+              {content.whyUsTitle}
               <span style={{ color: "#00e5cc" }}>◀</span>
             </h2>
           </div>
 
           {/* Top row — 3 cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-            {whyUs.slice(0, 3).map((item, index) => (
+            {content.whyUs.slice(0, 3).map((item, index) => (
               <div
                 key={index}
                 className="rounded-2xl p-8 text-center border transition-all duration-300 hover:-translate-y-1"
@@ -180,7 +145,7 @@ export default function PadelCourtPage() {
                   borderColor: index === 0 ? "#00e5cc" : "rgba(255,255,255,0.1)",
                 }}
               >
-                {item.icon}
+                {whyUsIcons[index]}
                 <h3 className="font-heading font-bold text-xl text-white mb-3">{item.title}</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
               </div>
@@ -189,7 +154,7 @@ export default function PadelCourtPage() {
 
           {/* Bottom row — 2 cards centered */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            {whyUs.slice(3).map((item, index) => (
+            {content.whyUs.slice(3).map((item, index) => (
               <div
                 key={index}
                 className="rounded-2xl p-8 text-center border transition-all duration-300 hover:-translate-y-1"
@@ -198,7 +163,7 @@ export default function PadelCourtPage() {
                   borderColor: "rgba(255,255,255,0.1)",
                 }}
               >
-                {item.icon}
+                {whyUsIcons[index + 3]}
                 <h3 className="font-heading font-bold text-xl text-white mb-3">{item.title}</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
               </div>
@@ -211,10 +176,8 @@ export default function PadelCourtPage() {
       <section className="py-20">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <span className="section-subtitle block">Our Work</span>
-            <h2 className="section-title">
-              Projects
-            </h2>
+            <span className="section-subtitle block">{t("common.ourWork")}</span>
+            <h2 className="section-title">{t("common.projects")}</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {projectImages.map((src, index) => (
