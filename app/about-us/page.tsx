@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronRight, Quote } from "lucide-react";
 import ClientsSection from "@/components/sections/ClientsSection";
 import CTASection from "@/components/sections/CTASection";
+import { useT } from "@/lib/useT";
 
 const testimonials = [
   {
@@ -33,6 +34,7 @@ const testimonials = [
 ];
 
 export default function AboutPage() {
+  const t = useT();
   return (
     <>
       {/* ── Hero / Page Header ───────────────────────── */}
@@ -55,13 +57,13 @@ export default function AboutPage() {
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
             <Link href="/" className="hover:text-white transition-colors">
-              Home
+              {t("common.home")}
             </Link>
             <ChevronRight size={14} className="text-white/60" />
-            <span style={{ color: "#F47B20" }}>ABOUT US</span>
+            <span style={{ color: "#F47B20" }}>{t("nav.aboutUs")}</span>
           </nav>
           <h1 className="font-heading font-black text-4xl md:text-5xl lg:text-6xl leading-tight">
-            ABOUT US
+            {t("aboutPage.heroTitle")}
           </h1>
         </div>
       </section>
@@ -72,28 +74,20 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Text */}
             <div>
-              <span className="section-subtitle block">About Us</span>
+              <span className="section-subtitle block">{t("aboutPage.badge")}</span>
               <h2 className="section-title">
-                FARIS GROUP FOR{" "}
-                <span style={{ color: "#F47B20" }}>SPORTS SOLUTIONS</span>
+                {t("aboutPage.title")}{" "}
+                <span style={{ color: "#F47B20" }}>{t("aboutPage.titleHighlight")}</span>
               </h2>
               <div className="mt-5 space-y-4 text-white/60 leading-relaxed">
                 <p>
-                  With over 20 years of experience, Faris Group is an established name in the
-                  Sports and Leisure industry. Recognized as the leading supplier of superior
-                  quality sports and entertainment equipment in the Middle East, Faris Group is
-                  an official distributor of top international brands.
+                  {t("aboutPage.p1")}
                 </p>
                 <p>
-                  Whether you require a private cinema or an Olympic sized football field,
-                  Faris Group is there from start to finish. Delivering turn-key projects such
-                  as bowling centers, shooting ranges, climbing walls, recreation centers,
-                  fitness clubs, playground parks, squash courts and running tracks to name a
-                  few.
+                  {t("aboutPage.p2")}
                 </p>
                 <p>
-                  Constantly abreast with new products and innovations, Faris Group is the
-                  Total Sports Solution.
+                  {t("aboutPage.p3")}
                 </p>
               </div>
             </div>
@@ -128,14 +122,10 @@ export default function AboutPage() {
                 </span>
               </div>
               <h3 className="font-heading font-bold text-2xl mb-4" style={{ color: "#ffffff" }}>
-                Mission
+                {t("aboutPage.missionTitle")}
               </h3>
               <p className="text-white/60 leading-relaxed">
-                Our mission is to improve the leisure industry by delivering comprehensive
-                sports and entertainment solutions, offering top-quality equipment and services
-                that exceed customer expectations. We strive to create exceptional recreational
-                spaces that promote active lifestyles, foster social connections, and contribute
-                to the overall well-being of individuals and communities.
+                {t("aboutPage.missionText")}
               </p>
             </div>
 
@@ -153,12 +143,10 @@ export default function AboutPage() {
                 </span>
               </div>
               <h3 className="font-heading font-bold text-2xl mb-4" style={{ color: "#ffffff" }}>
-                Vision
+                {t("aboutPage.visionTitle")}
               </h3>
               <p className="text-white/60 leading-relaxed">
-                To be the premier provider of sports and leisure solutions, transforming the
-                industry through innovation and superior quality, while enhancing the overall
-                experience for individuals and communities.
+                {t("aboutPage.visionText")}
               </p>
             </div>
           </div>
@@ -171,10 +159,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <span className="section-subtitle block">Testimonials</span>
             <h2 className="section-title">
-              Don&apos;t just take our word for it.{" "}
-              <span style={{ color: "#F47B20" }}>
-                Hear what our amazing customers say about our business.
-              </span>
+              {t("aboutPage.testimonialsTitle")}
             </h2>
           </div>
 

@@ -1,6 +1,9 @@
+"use client";
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
+import { useT } from "@/lib/useT";
 
 export const metadata: Metadata = {
   title: "Construction - Faris Group",
@@ -9,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function ConstructionPage() {
+  const t = useT();
   return (
     <>
       {/* Hero */}

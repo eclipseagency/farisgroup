@@ -21,6 +21,7 @@ const projectImages = [
 ];
 
 export default function SportEquipmentPage() {
+  const t = useT();
   return (
     <>
       {/* Hero */}

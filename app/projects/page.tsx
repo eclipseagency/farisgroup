@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Phone, Mail } from "lucide-react";
+import { useT } from "@/lib/useT";
 
 const projects = [
   { title: "Sportplex Squash Courts", category: "Squash & Padel", image: "https://farisgroup.net/wp-content/uploads/2025/12/41ee54a4-f914-4478-896e-de5e93f0b369-960x720.webp" },
@@ -45,6 +46,7 @@ const projects = [
 const categories = ["All", "Bowling", "Climbing Wall", "Fitness & Gym", "Others", "Padel Court", "Playground", "Shooting Range", "Sport Equipment", "Squash & Padel"];
 
 export default function ProjectsPage() {
+  const t = useT();
   const [active, setActive] = useState("All");
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);

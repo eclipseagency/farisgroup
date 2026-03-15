@@ -1,6 +1,9 @@
+"use client";
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
+import { useT } from "@/lib/useT";
 
 export const metadata: Metadata = {
   title: "Strength Machines - Faris Group",
@@ -18,6 +21,7 @@ const projectImages = [
 ];
 
 export default function StrengthMachinesPage() {
+  const t = useT();
   return (
     <>
       {/* Hero */}

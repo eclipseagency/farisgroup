@@ -1,8 +1,11 @@
+"use client";
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/ui/PageHeader";
 import CTASection from "@/components/sections/CTASection";
 import { ArrowRight } from "lucide-react";
+import { useT } from "@/lib/useT";
 
 export const metadata: Metadata = {
   title: "Products - Faris Group",
@@ -105,13 +108,14 @@ const productCategories = [
 ];
 
 export default function ProductsPage() {
+  const t = useT();
   return (
     <>
       <PageHeader
-        title="Our Products"
-        subtitle="OUR STORE"
-        description="Learn about Faris Group products."
-        breadcrumbs={[{ label: "Products" }]}
+        title={t("pages.products.title")}
+        subtitle={t("pages.products.subtitle")}
+        description={t("pages.products.description")}
+        breadcrumbs={[{ label: t("pages.products.title") }]}
         backgroundImage="https://farisgroup.net/wp-content/uploads/2023/05/Private-Villa-Padel-Court-Riyadh-4-1024x768-1.jpeg"
       />
 
