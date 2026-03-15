@@ -3,6 +3,7 @@
 import { useState } from "react";
 import PageHeader from "@/components/ui/PageHeader";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { useT } from "@/lib/useT";
 
 const offices = [
   {
@@ -49,6 +50,7 @@ const offices = [
 ];
 
 export default function ContactUsPage() {
+  const t = useT();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -77,10 +79,10 @@ export default function ContactUsPage() {
   return (
     <>
       <PageHeader
-        title="Contact Us"
-        subtitle="Get in Touch"
-        description="Have a project in mind? Our expert team across KSA, UAE, and Italy is ready to help you find the perfect sports solution."
-        breadcrumbs={[{ label: "Contact Us" }]}
+        title={t("contactPage.heroTitle")}
+        subtitle={t("contactPage.heroSubtitle")}
+        description={t("contactPage.heroDescription")}
+        breadcrumbs={[{ label: t("contactPage.heroTitle") }]}
         backgroundImage="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80"
       />
 
@@ -88,9 +90,9 @@ export default function ContactUsPage() {
       <section className="py-16" style={{ background: "rgba(255,255,255,0.02)" }}>
         <div className="container-custom">
           <div className="text-center mb-10">
-            <span className="section-subtitle block">Our Locations</span>
+            <span className="section-subtitle block">{t("contactPage.officesSub")}</span>
             <h2 className="section-title">
-              Global <span style={{ color: "#F47B20" }}>Offices</span>
+              {t("contactPage.officesTitle")} <span style={{ color: "#F47B20" }}>{t("contactPage.officesHighlight")}</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -139,23 +141,22 @@ export default function ContactUsPage() {
             {/* Contact Info */}
             <div className="lg:col-span-1 space-y-6">
               <div>
-                <span className="section-subtitle block">Reach Us</span>
+                <span className="section-subtitle block">{t("contactPage.formSectionSub")}</span>
                 <h2 className="font-heading font-bold text-2xl md:text-3xl" style={{ color: "#ffffff" }}>
-                  Send Us a <span style={{ color: "#F47B20" }}>Message</span>
+                  {t("contactPage.formSectionTitle")} <span style={{ color: "#F47B20" }}>{t("contactPage.formSectionHighlight")}</span>
                 </h2>
                 <p className="text-white/60 mt-4 text-sm leading-relaxed">
-                  Whether you need a quote, have questions about a product, or want to discuss a
-                  project, we&apos;re here to help.
+                  {t("contactPage.formSectionDesc")}
                 </p>
               </div>
 
               <div className="space-y-5">
                 {[
-                  { icon: MapPin, title: "HQ Address", detail: "Mosadia 3, Madinah Road, Jeddah 21573, KSA" },
-                  { icon: Phone, title: "KSA Phone", detail: "+966 55 668 8883" },
+                  { icon: MapPin, title: t("contactPage.hqAddress"), detail: "Mosadia 3, Madinah Road, Jeddah 21573, KSA" },
+                  { icon: Phone, title: t("contactPage.phone"), detail: "+966 55 668 8883" },
                   { icon: Phone, title: "UAE Phone", detail: "+971 55 336 6241" },
-                  { icon: Mail, title: "Email", detail: "info@farisgroup.net" },
-                  { icon: Clock, title: "Working Hours", detail: "Mon–Fri: 8AM–6PM | Sat: 9AM–1PM" },
+                  { icon: Mail, title: t("contactPage.email"), detail: "info@farisgroup.net" },
+                  { icon: Clock, title: t("contactPage.workingHours"), detail: t("contactPage.workingHoursValue") },
                 ].map((item, i) => {
                   const Icon = item.icon;
                   return (
@@ -187,17 +188,17 @@ export default function ContactUsPage() {
                 >
                   <CheckCircle size={64} className="mb-4" style={{ color: "#F47B20" }} />
                   <h3 className="font-heading font-bold text-2xl mb-3" style={{ color: "#ffffff" }}>
-                    Message Sent!
+                    {t("cta.successTitle")}
                   </h3>
                   <p className="text-white/60 leading-relaxed max-w-md">
-                    Thank you for contacting Faris Group. Our team will respond within 24 hours.
+                    {t("cta.successMessage")}
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="mt-8 px-8 py-3 text-white text-sm font-semibold uppercase tracking-wider"
                     style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
                   >
-                    Send Another Message
+                    {t("cta.sendAnother")}
                   </button>
                 </div>
               ) : (
@@ -210,38 +211,38 @@ export default function ContactUsPage() {
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-white/70 mb-1.5">Full Name *</label>
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">{t("cta.nameLabel")} *</label>
                       <input
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        placeholder="Your full name"
+                        placeholder={t("cta.namePlaceholder")}
                         className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none focus:ring-1 transition-colors"
                         style={{ "--tw-ring-color": "#F47B20" } as React.CSSProperties}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-white/70 mb-1.5">Email Address *</label>
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">{t("cta.emailLabel")} *</label>
                       <input
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        placeholder="your@email.com"
+                        placeholder={t("cta.emailPlaceholder")}
                         className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-white/70 mb-1.5">Phone Number</label>
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">{t("cta.phoneLabel")}</label>
                       <input
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+966 / +971"
+                        placeholder={t("cta.phonePlaceholder")}
                         className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors"
                       />
                     </div>
@@ -257,7 +258,7 @@ export default function ContactUsPage() {
                       />
                     </div>
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-white/70 mb-1.5">Subject *</label>
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">{t("cta.subjectLabel")} *</label>
                       <select
                         name="subject"
                         value={formData.subject}
@@ -265,27 +266,27 @@ export default function ContactUsPage() {
                         required
                         className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors" style={{ background: "rgba(255,255,255,0.06)", color: "white" }}
                       >
-                        <option value="">Select a subject</option>
-                        <option value="sports-equipment">Sports Equipment</option>
-                        <option value="fitness-gym">Fitness & Gym</option>
-                        <option value="padel-court">Padel Court</option>
-                        <option value="bleachers-seating">Bleachers & Seating</option>
-                        <option value="shooting-range">Shooting Range</option>
-                        <option value="construction">Construction</option>
-                        <option value="supply">Supply</option>
-                        <option value="maintenance">Maintenance</option>
-                        <option value="general">General Inquiry</option>
+                        <option value="">{t("cta.subjects.select")}</option>
+                        <option value="sports-equipment">{t("cta.subjects.sportsEquipment")}</option>
+                        <option value="fitness-gym">{t("cta.subjects.fitnessGym")}</option>
+                        <option value="padel-court">{t("cta.subjects.padelCourt")}</option>
+                        <option value="bleachers-seating">{t("cta.subjects.bleachersSeating")}</option>
+                        <option value="shooting-range">{t("cta.subjects.shootingRange")}</option>
+                        <option value="construction">{t("cta.subjects.construction")}</option>
+                        <option value="supply">{t("cta.subjects.supply")}</option>
+                        <option value="maintenance">{t("cta.subjects.maintenance")}</option>
+                        <option value="general">{t("cta.subjects.general")}</option>
                       </select>
                     </div>
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-white/70 mb-1.5">Message *</label>
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">{t("cta.messageLabel")} *</label>
                       <textarea
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
                         required
                         rows={5}
-                        placeholder="Tell us about your project or inquiry..."
+                        placeholder={t("cta.messagePlaceholder")}
                         className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors resize-none"
                       />
                     </div>
@@ -299,12 +300,12 @@ export default function ContactUsPage() {
                     {loading ? (
                       <>
                         <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        Sending...
+                        {t("cta.sending")}
                       </>
                     ) : (
                       <>
                         <Send size={16} />
-                        Send Message
+                        {t("cta.sendButton")}
                       </>
                     )}
                   </button>

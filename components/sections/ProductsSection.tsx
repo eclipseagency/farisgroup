@@ -4,59 +4,36 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useT } from "@/lib/useT";
+import { useLocale } from "@/contexts/LocaleContext";
+import { translations } from "@/lib/translations";
 
-const products = [
-  {
-    title: "Bowling Alley",
-    description:
-      "Create a striking entertainment experience with our comprehensive Bowling solutions. From modern bowling lanes to top-quality equipment, our offerings ensure a memorable time for bowlers of all ages and skill levels.",
-    href: "/construction",
-    image: "https://farisgroup.net/wp-content/uploads/2023/06/DSC05991-scaled-1.jpg",
-    tag: "Entertainment",
-  },
-  {
-    title: "Padel Court",
-    description:
-      "Experience the excitement of Padel with our top-quality Padel Courts. Designed for both recreational and competitive play, our courts offer excellent durability and performance, ensuring a thrilling game every time.",
-    href: "/padel-court",
-    image: "https://farisgroup.net/wp-content/uploads/2023/06/Private-Villa-Padel-Court-Riyadh-4-1024x768-1-1.jpeg",
-    tag: "Sports",
-  },
-  {
-    title: "Fitness & Gym",
-    description:
-      "Set up a world-class fitness facility with our cutting-edge Fitness & Gym equipment. Our range includes treadmills, weight machines, cardio equipment, and more, designed to support diverse fitness goals.",
-    href: "/fitness-and-gym",
-    image: "https://farisgroup.net/wp-content/uploads/2023/07/Al-Midra-Recreation-Center-Saudi-Aramco-11-1.jpeg",
-    tag: "Fitness",
-  },
-  {
-    title: "Playground",
-    description:
-      "At Faris Group, we understand the importance of creating engaging and safe playgrounds for children. Our product range encompasses a wide variety of equipment suitable for schools, public parks, private homes, and compounds.",
-    href: "/products",
-    image: "https://farisgroup.net/wp-content/uploads/2023/06/phoro10-1-1.jpg",
-    tag: "Recreation",
-  },
-  {
-    title: "Climbing Wall",
-    description:
-      "Inspire adventure and challenge with our innovative Climbing Walls. Built to the highest safety standards, our walls offer varying levels of difficulty, providing a thrilling experience for climbers of all skill levels.",
-    href: "/construction",
-    image: "https://farisgroup.net/wp-content/uploads/2023/06/LawnZ-Wall-Climbing_Danube-Properties-1-1.jpeg",
-    tag: "Adventure",
-  },
-  {
-    title: "Shooting Range",
-    description:
-      "Ensure precision and safety in shooting sports with our advanced Shooting Range solutions. Our range includes target systems, bullet traps, and shooting accessories, providing a controlled and safe environment.",
-    href: "/shooting-range",
-    image: "https://farisgroup.net/wp-content/uploads/2023/06/Rangers-Range-3-lanes-indoor-target-shooting-project-1-1-1.jpeg",
-    tag: "Precision",
-  },
+const productHrefs = [
+  "/construction",
+  "/padel-court",
+  "/fitness-and-gym",
+  "/products",
+  "/construction",
+  "/shooting-range",
+];
+
+const productImages = [
+  "https://farisgroup.net/wp-content/uploads/2023/06/DSC05991-scaled-1.jpg",
+  "https://farisgroup.net/wp-content/uploads/2023/06/Private-Villa-Padel-Court-Riyadh-4-1024x768-1-1.jpeg",
+  "https://farisgroup.net/wp-content/uploads/2023/07/Al-Midra-Recreation-Center-Saudi-Aramco-11-1.jpeg",
+  "https://farisgroup.net/wp-content/uploads/2023/06/phoro10-1-1.jpg",
+  "https://farisgroup.net/wp-content/uploads/2023/06/LawnZ-Wall-Climbing_Danube-Properties-1-1.jpeg",
+  "https://farisgroup.net/wp-content/uploads/2023/06/Rangers-Range-3-lanes-indoor-target-shooting-project-1-1-1.jpeg",
 ];
 
 export default function ProductsSection() {
+  const t = useT();
+  const { locale } = useLocale();
+  const products = translations[locale].productsSection.items.map((item, i) => ({
+    ...item,
+    href: productHrefs[i],
+    image: productImages[i],
+  }));
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -79,9 +56,9 @@ export default function ProductsSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <span className="section-subtitle block">OUR PRODUCTS</span>
+          <span className="section-subtitle block">{t("productsSection.badge")}</span>
           <h2 className="section-title">
-            OUR{" "}
+            {t("productsSection.title1")}{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #F47B20, #F89B4B)",
@@ -90,7 +67,7 @@ export default function ProductsSection() {
                 backgroundClip: "text",
               }}
             >
-              SOLUTIONS
+              {t("productsSection.title2")}
             </span>
           </h2>
           <p className="text-white/50 mt-3 text-base max-w-xl mx-auto">
@@ -173,7 +150,7 @@ export default function ProductsSection() {
             className="group inline-flex items-center gap-2.5 px-10 py-4 font-bold text-sm tracking-widest uppercase text-white rounded-sm transition-all duration-300 hover:opacity-90 hover:gap-3 hover:shadow-xl hover:-translate-y-0.5"
             style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
           >
-            VIEW ALL PROJECTS
+            {t("common.viewAllProjects")}
             <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
           </Link>
           <Link
@@ -181,7 +158,7 @@ export default function ProductsSection() {
             className="inline-flex items-center gap-2.5 px-10 py-4 border-2 font-bold text-sm tracking-widest uppercase text-white rounded-sm transition-all duration-300 hover:bg-white/10"
             style={{ borderColor: "rgba(255,255,255,0.25)" }}
           >
-            SPORTS EQUIPMENT
+            {t("common.viewAllProducts")}
           </Link>
         </motion.div>
       </div>

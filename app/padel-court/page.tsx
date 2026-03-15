@@ -1,11 +1,7 @@
-import type { Metadata } from "next";
+"use client";
+
 import CTASection from "@/components/sections/CTASection";
 
-export const metadata: Metadata = {
-  title: "Padel Court - Faris Group",
-  description:
-    "Set up your padel court with Faris Group. Professional padel court solutions with VISION, PANORAMIC, and FORTE models. Available in 50+ countries.",
-};
 
 const whyUs = [
   {

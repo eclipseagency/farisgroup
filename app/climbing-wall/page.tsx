@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
-export const metadata: Metadata = {
-  title: "Climbing Wall - Faris Group",
-  description:
-    "Faris Group offers indoor and outdoor climbing wall facilities from high quality reinforced fiberglass panels. Custom designs and full range of climbing accessories.",
-};
 
 const projectImages = [
   "https://farisgroup.net/wp-content/uploads/2023/05/American-School-Wall-Climbing-Installation-5.jpeg",

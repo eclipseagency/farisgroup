@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
-export const metadata: Metadata = {
-  title: "Bowling - Faris Group",
-  description:
-    "Faris Group specializes in creating captivating bowling experiences. Comprehensive bowling lane design, installation, and equipment for all ages and skill levels.",
-};
 
 const projectImages = [
   "https://farisgroup.net/wp-content/uploads/2023/05/DSC05930-scaled.jpg",

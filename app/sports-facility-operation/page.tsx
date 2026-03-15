@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Sports Facility Operation - Faris Group",
-  description:
-    "Faris Group offers sports facility operation contracts to assist our clients especially in the early days of operation.",
-};
 
 export default function SportsFacilityOperationPage() {
   return (

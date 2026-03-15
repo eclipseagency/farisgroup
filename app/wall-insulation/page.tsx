@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
-export const metadata: Metadata = {
-  title: "Wall Insulation - Faris Group",
-  description:
-    "Faris Group wall insulation solutions provide superior thermal and acoustic insulation for homes, offices, retail spaces, and industrial facilities.",
-};
 
 const whyChoose = [
   {

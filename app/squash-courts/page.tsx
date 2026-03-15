@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
-export const metadata: Metadata = {
-  title: "Squash Courts - Faris Group",
-  description:
-    "Faris Group delivers excellence in squash court design, construction, and installation. Top-notch facilities meeting international standards for players of all levels.",
-};
 
 
 export default function SquashCourtsPage() {

@@ -4,15 +4,14 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-
-const highlights = [
-  "Official distributor of top international brands",
-  "Turnkey projects from concept to completion",
-  "20+ years of industry excellence",
-  "Operating across 5 countries",
-];
+import { useT } from "@/lib/useT";
+import { useLocale } from "@/contexts/LocaleContext";
+import { translations } from "@/lib/translations";
 
 export default function AboutSection() {
+  const t = useT();
+  const { locale } = useLocale();
+  const highlights = translations[locale].aboutSection.highlights;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -52,7 +51,7 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
             >
               <div className="text-5xl font-black font-heading leading-none">20+</div>
-              <div className="text-sm font-semibold mt-1 opacity-90">Years of Excellence</div>
+              <div className="text-sm font-semibold mt-1 opacity-90">{t("aboutSection.yearsLabel")}</div>
             </motion.div>
 
             <motion.div
@@ -76,26 +75,20 @@ export default function AboutSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="section-subtitle block">About FARIS GROUP</span>
+            <span className="section-subtitle block">{t("aboutSection.badge")}</span>
 
             <h2 className="section-title mb-6">
-              FARIS GROUP{" "}
+              {t("aboutSection.title1")}{" "}
               <span style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                TOTAL SPORTS SOLUTIONS.
+                {t("aboutSection.title2")}
               </span>
             </h2>
 
             <p className="text-white/55 leading-relaxed text-base mb-4">
-              With over 20 years of experience, Faris Group is an established name in the Sports
-              and Leisure industry. Recognized as the leading supplier of superior quality sports
-              and entertainment equipment in the Middle East, Faris Group is an official
-              distributor of top international brands.
+              {t("aboutSection.description1")}
             </p>
             <p className="text-white/55 leading-relaxed text-base mb-8">
-              Whether you require a private cinema or an Olympic sized football field, Faris Group
-              is there from start to finish — delivering turn-key projects such as bowling centers,
-              shooting ranges, climbing walls, recreation centers, fitness clubs, playground parks,
-              squash courts and running tracks.
+              {t("aboutSection.description2")}
             </p>
 
             <div className="space-y-3 mb-10">
@@ -120,7 +113,7 @@ export default function AboutSection() {
               className="group inline-flex items-center gap-3 px-8 py-4 font-bold text-sm tracking-widest uppercase text-white rounded-sm transition-all duration-300 hover:opacity-90 hover:gap-4 hover:shadow-xl hover:-translate-y-0.5"
               style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
             >
-              Read More
+              {t("aboutSection.cta")}
               <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>

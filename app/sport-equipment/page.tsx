@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
-export const metadata: Metadata = {
-  title: "Sport Equipment - Faris Group",
-  description:
-    "Faris Group offers a wide range of high-quality sports equipment. Basketball hoops, soccer goals, volleyball nets, tennis rackets, and more.",
-};
 
 const projectImages = [
   "https://farisgroup.net/wp-content/uploads/2024/07/3ab20840-2f91-49f0-996f-ea00aebf8534.png",

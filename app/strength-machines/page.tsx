@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
-export const metadata: Metadata = {
-  title: "Strength Machines - Faris Group",
-  description:
-    "Faris Group provides a complete supply of strength machines, multi-purpose gym machines, benches, plate racks, and more with the Canali System Auxotonic Line.",
-};
 
 const projectImages = [
   "https://farisgroup.net/wp-content/uploads/2023/05/539329_532844793427625_838698630_n.jpg",

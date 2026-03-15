@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Supply - Faris Group",
-  description:
-    "A distributor of top quality international brands for a range of sports and entertainment supplies and equipment.",
-};
 
 export default function SupplyPage() {
   return (

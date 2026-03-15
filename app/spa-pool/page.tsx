@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
-export const metadata: Metadata = {
-  title: "SPA & Pool - Faris Group",
-  description:
-    "Faris Group offers a complete line of saunas, steam generators, hot tubs, and wellness equipment. Luxurious SPA systems for every space, taste, and budget.",
-};
 
 const projectImages = [
   {

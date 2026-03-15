@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
-export const metadata: Metadata = {
-  title: "Shooting Range - Faris Group",
-  description:
-    "Advanced Shooting Range solutions by Faris Group. Supply and installation of target systems, bullet traps, and shooting accessories built to the highest safety standards.",
-};
 
 const projectImages = [
   "https://farisgroup.net/wp-content/uploads/2023/05/Alforsan-Club-Acrylic-Sport-Flooring.jpg",

@@ -4,35 +4,27 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useT } from "@/lib/useT";
+import { useLocale } from "@/contexts/LocaleContext";
+import { translations } from "@/lib/translations";
 
-const serviceCards = [
-  {
-    title: "Maintenance",
-    description: "Maintenance services for sports fields",
-    href: "/maintenance",
-    image: "https://farisgroup.net/wp-content/uploads/2023/06/DSC05991-scaled-1.jpg",
-  },
-  {
-    title: "Project Management",
-    description: "Management for sports projects",
-    href: "/project-management",
-    image: "https://farisgroup.net/wp-content/uploads/2023/07/Al-Midra-Recreation-Center-Saudi-Aramco-11-1.jpeg",
-  },
-  {
-    title: "Supply",
-    description: "Sports and entertainment supplies",
-    href: "/supply",
-    image: "https://farisgroup.net/wp-content/uploads/2023/06/LawnZ-Wall-Climbing_Danube-Properties-1-1.jpeg",
-  },
-  {
-    title: "Construction",
-    description: "Faris Group delivers projects with distinction",
-    href: "/construction",
-    image: "https://farisgroup.net/wp-content/uploads/2023/06/Rangers-Range-3-lanes-indoor-target-shooting-project-1-1-1.jpeg",
-  },
+const serviceHrefs = ["/maintenance", "/project-management", "/supply", "/construction"];
+
+const serviceImages = [
+  "https://farisgroup.net/wp-content/uploads/2023/06/DSC05991-scaled-1.jpg",
+  "https://farisgroup.net/wp-content/uploads/2023/07/Al-Midra-Recreation-Center-Saudi-Aramco-11-1.jpeg",
+  "https://farisgroup.net/wp-content/uploads/2023/06/LawnZ-Wall-Climbing_Danube-Properties-1-1.jpeg",
+  "https://farisgroup.net/wp-content/uploads/2023/06/Rangers-Range-3-lanes-indoor-target-shooting-project-1-1-1.jpeg",
 ];
 
 export default function ServicesSection() {
+  const t = useT();
+  const { locale } = useLocale();
+  const serviceCards = translations[locale].servicesSection.items.map((item, i) => ({
+    ...item,
+    href: serviceHrefs[i],
+    image: serviceImages[i],
+  }));
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -57,9 +49,9 @@ export default function ServicesSection() {
         >
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <div>
-              <span className="section-subtitle block">SERVICES</span>
+              <span className="section-subtitle block">{t("servicesSection.badge")}</span>
               <h2 className="section-title">
-                OUR{" "}
+                {t("servicesSection.title1")}{" "}
                 <span
                   style={{
                     background: "linear-gradient(135deg, #F47B20, #F89B4B)",
@@ -68,7 +60,7 @@ export default function ServicesSection() {
                     backgroundClip: "text",
                   }}
                 >
-                  SERVICES
+                  {t("servicesSection.title2")}
                 </span>
               </h2>
             </div>
@@ -77,7 +69,7 @@ export default function ServicesSection() {
               className="group inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:gap-3"
               style={{ color: "#F47B20" }}
             >
-              View All Services
+              {t("servicesSection.viewAll")}
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
