@@ -36,7 +36,7 @@ const services = [
     title: "SPARE PARTS",
     description:
       "Available in our inventory are a number of spare parts for bowling and sports equipment.",
-    href: "/services",
+    href: "/spare-parts",
   },
   {
     icon: (
@@ -78,7 +78,7 @@ const services = [
     title: "PROJECT PLANNING",
     description:
       "Our team of professionals are ready and available to help you in planning your facility and assist you to turn your ideas into reality.",
-    href: "/services",
+    href: "/project-facility-planning",
   },
   {
     icon: (
@@ -92,7 +92,7 @@ const services = [
     title: "PROJECT MANAGEMENT",
     description:
       "With over 20 years of experience, Faris Group offers clients a complete solution to deliver their projects on time and within budget.",
-    href: "/services",
+    href: "/project-management",
   },
   {
     icon: (
@@ -106,7 +106,7 @@ const services = [
     title: "FACILITY OPERATION",
     description:
       "Faris Group offers sports facility operation contracts to assist our clients especially in the early days of operation.",
-    href: "/services",
+    href: "/sports-facility-operation",
   },
 ];
 

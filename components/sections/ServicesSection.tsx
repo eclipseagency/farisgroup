@@ -13,7 +13,7 @@ const serviceCards = [
   {
     title: "Project Management",
     description: "Management for sports projects",
-    href: "/services",
+    href: "/project-management",
     image: "https://farisgroup.net/wp-content/uploads/2023/07/Al-Midra-Recreation-Center-Saudi-Aramco-11-1.jpeg",
   },
   {
