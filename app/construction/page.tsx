@@ -1,209 +1,167 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHeader from "@/components/ui/PageHeader";
-import CTASection from "@/components/sections/CTASection";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Construction - Faris Group",
   description:
-    "Faris Group delivers complete sports facility construction from squash courts and home cinemas to bowling centers and football fields.",
+    "From squash courts to football fields, Faris Group delivers construction projects with distinction using decades of experience in sports facilities.",
 };
-
-const constructionTypes = [
-  {
-    title: "Squash Courts",
-    description:
-      "State-of-the-art squash courts built to international standards with excellent ball rebound and optimal playing conditions.",
-    image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80",
-    features: ["International standard dimensions", "Glass back wall option", "Optimized acoustics", "Professional flooring"],
-  },
-  {
-    title: "Padel Courts",
-    description:
-      "Complete padel court construction including foundation, structure, glass walls, flooring, and lighting systems.",
-    image: "https://images.unsplash.com/photo-1554284126-aa88f22d8b74?w=600&q=80",
-    features: ["VISION, PANORAMIC, FORTE", "Artificial turf installation", "LED lighting", "Fencing systems"],
-  },
-  {
-    title: "Football Fields",
-    description:
-      "Full-sized and mini football fields with natural or artificial turf, lighting, and spectator facilities.",
-    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80",
-    features: ["Natural & artificial turf", "Floodlighting", "Drainage systems", "Goal posts & equipment"],
-  },
-  {
-    title: "Basketball Courts",
-    description:
-      "Indoor and outdoor basketball courts to international FIBA standards with professional flooring and equipment.",
-    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80",
-    features: ["FIBA-certified", "Hardwood or sport court", "Backboard systems", "Court markings"],
-  },
-  {
-    title: "Bowling Centers",
-    description:
-      "Complete bowling center construction and installation including lanes, automatic scoring, and recreational areas.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
-    features: ["Professional lanes", "Automated scoring", "Pinsetters", "Ball return systems"],
-  },
-  {
-    title: "Home Cinemas & Entertainment",
-    description:
-      "High-end home cinema and entertainment room construction with premium AV systems and soundproofing.",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80",
-    features: ["Professional AV systems", "Acoustic treatment", "Custom seating", "Smart home integration"],
-  },
-];
-
-const processSteps = [
-  { step: "01", title: "Consultation", description: "Initial consultation to understand your vision, requirements, and budget." },
-  { step: "02", title: "Design", description: "Our experts create detailed designs and 3D renderings for your approval." },
-  { step: "03", title: "Planning", description: "Comprehensive project planning including timelines, materials, and permits." },
-  { step: "04", title: "Construction", description: "Professional construction by our experienced teams using premium materials." },
-  { step: "05", title: "Installation", description: "Equipment installation, testing, and system commissioning." },
-  { step: "06", title: "Handover", description: "Full project handover with training, documentation, and warranty support." },
-];
 
 export default function ConstructionPage() {
   return (
     <>
-      <PageHeader
-        title="Construction"
-        subtitle="Full Build Solutions"
-        description="Faris Group delivers complete sports facility construction — from squash courts and home cinemas to bowling centers and football fields."
-        breadcrumbs={[{ label: "Construction" }]}
-        backgroundImage="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
-      />
+      {/* Hero */}
+      <section className="relative w-full h-screen min-h-[500px] overflow-hidden flex items-center justify-center">
+        <img
+          src="https://farisgroup.net/wp-content/uploads/2023/05/45518666_356687755099112_7281876042573152256_n-1-1.jpg"
+          alt="Construction Hero"
+          className="absolute inset-0 w-full h-full object-cover object-bottom"
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.55)" }} />
+        <div className="relative z-10 text-center text-white px-4 max-w-3xl">
+          <h1 className="font-heading font-black text-4xl md:text-6xl mb-6 leading-tight uppercase tracking-widest">
+            Construction
+          </h1>
+        </div>
+      </section>
 
-      {/* Overview */}
+      {/* Breadcrumb */}
+      <div className="bg-gray-50 border-b border-gray-200 py-3">
+        <div className="container-custom">
+          <nav className="flex items-center gap-2 text-sm text-gray-500">
+            <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-gray-800 font-medium">CONSTRUCTION</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* Content Section */}
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="section-subtitle block">Build Services</span>
-              <h2 className="section-title">
-                Complete Sports Facility{" "}
-                <span style={{ color: "#c9a227" }}>Construction</span>
+              <h2 className="font-heading font-black text-3xl md:text-4xl uppercase tracking-widest mb-6" style={{ color: "#0a1628" }}>
+                CONSTRUCTION
               </h2>
-              <p className="text-gray-600 mt-5 leading-relaxed">
-                Faris Group delivers project construction across a broad scope — from squash courts
-                and home cinemas to bowling centers and football fields. Our construction division
-                handles everything from initial design and planning to final handover.
+              <p className="text-gray-600 leading-relaxed">
+                From squash courts, to running tracks, home cinema and bowling centers, mini golf
+                to football fields, Faris Group delivers projects with distinction. Our
+                decades-long experience, along with our in-depth knowledge on sports empowers us
+                to accomplish our projects faster and more efficiently while upholding quality and
+                aesthetics.
               </p>
-              <p className="text-gray-600 mt-4 leading-relaxed">
-                With our team of experienced engineers, architects, and project managers, we ensure
-                every facility is built to the highest international standards on time and within
-                budget.
-              </p>
-              <div className="mt-8 space-y-2">
-                {[
-                  "End-to-end project management",
-                  "International standard compliance",
-                  "Experienced engineering team",
-                  "Premium materials and equipment",
-                  "On-time delivery guarantee",
-                  "Post-construction support",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <CheckCircle size={16} style={{ color: "#c9a227" }} />
-                    <span className="text-gray-700 text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
             </div>
             <div className="rounded-xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+                src="https://farisgroup.net/wp-content/uploads/2023/05/vrr.jpg"
                 alt="Construction"
-                className="w-full h-96 object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Construction Types */}
-      <section className="py-20" style={{ backgroundColor: "#f8f9fc" }}>
-        <div className="container-custom">
-          <div className="text-center mb-14">
-            <span className="section-subtitle block">What We Build</span>
-            <h2 className="section-title">
-              Construction <span style={{ color: "#c9a227" }}>Specialties</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {constructionTypes.map((type, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-gray-100"
-              >
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={type.image}
-                    alt={type.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,22,40,0.7) 0%, transparent 60%)" }} />
-                  <h3 className="absolute bottom-3 left-4 font-heading font-bold text-lg text-white">{type.title}</h3>
-                </div>
-                <div className="p-5">
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{type.description}</p>
-                  <ul className="space-y-1">
-                    {type.features.map((f, i) => (
-                      <li key={i} className="flex items-center gap-2 text-xs text-gray-600">
-                        <CheckCircle size={12} style={{ color: "#c9a227" }} />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+      {/* Quote / Contact Section */}
+      <section
+        className="relative py-24 overflow-hidden"
+        style={{
+          backgroundImage:
+            "url(https://farisgroup.net/wp-content/uploads/2023/05/45518666_356687755099112_7281876042573152256_n-1-1.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "bottom",
+        }}
+      >
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.7)" }} />
+        <div className="relative z-10 container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-2xl max-w-5xl mx-auto">
+            {/* Left dark panel */}
+            <div className="p-10 flex flex-col justify-center" style={{ backgroundColor: "#0a1628" }}>
+              <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9a227" }}>
+                QUOTE
+              </p>
+              <h2 className="font-heading font-black text-4xl md:text-5xl text-white leading-tight mb-4">
+                REQUEST A QUOTE
+              </h2>
+              <p className="text-white font-semibold text-base mb-1">Let&apos;s get in touch</p>
+              <p className="text-white/60 text-sm mb-8">
+                We&apos;re open for any suggestion or just to have a chat
+              </p>
+              <div className="space-y-3">
+                {[
+                  "+966 53 800 7018 (KSA)",
+                  "+971 55 336 6241 (UAE)",
+                  "+39 328 819 7804 (Italy)",
+                ].map((phone) => (
+                  <a
+                    key={phone}
+                    href={`tel:${phone.split(" ")[0]}`}
+                    className="flex items-center gap-2 text-white/70 text-sm hover:text-white transition-colors"
+                  >
+                    <Phone size={14} style={{ color: "#c9a227" }} />
+                    {phone}
+                  </a>
+                ))}
+                {["info@farisgroup.net", "faris@farisgroup.net"].map((email) => (
+                  <a
+                    key={email}
+                    href={`mailto:${email}`}
+                    className="flex items-center gap-2 text-white/70 text-sm hover:text-white transition-colors"
+                  >
+                    <Mail size={14} style={{ color: "#c9a227" }} />
+                    {email}
+                  </a>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
 
-      {/* Process */}
-      <section className="py-20 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-14">
-            <span className="section-subtitle block">How We Work</span>
-            <h2 className="section-title">
-              Our Construction <span style={{ color: "#c9a227" }}>Process</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {processSteps.map((step, index) => (
-              <div key={index} className="flex gap-4">
-                <div
-                  className="font-heading font-black text-4xl flex-shrink-0 leading-none"
-                  style={{ color: "rgba(201,162,39,0.3)" }}
+            {/* Right form panel */}
+            <div className="bg-white p-10">
+              <form className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                />
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                />
+                <input
+                  type="text"
+                  placeholder="Company Name"
+                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                />
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                />
+                <textarea
+                  rows={4}
+                  placeholder="Message"
+                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400 resize-none"
+                />
+                <button
+                  type="submit"
+                  className="w-full py-3 font-semibold text-white text-sm tracking-widest uppercase rounded transition-all duration-300 hover:opacity-90"
+                  style={{ backgroundColor: "#0a1628" }}
                 >
-                  {step.step}
-                </div>
-                <div>
-                  <h3 className="font-heading font-bold text-lg mb-2" style={{ color: "#1a3a6b" }}>
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-10 py-4 text-white font-semibold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: "#c9a227" }}
-            >
-              Start Your Project
-              <ArrowRight size={16} />
-            </Link>
+                  Send a message
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
-
-      <CTASection />
     </>
   );
 }
