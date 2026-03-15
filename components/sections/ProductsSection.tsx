@@ -71,7 +71,7 @@ export default function ProductsSection() {
             </span>
           </h2>
           <p className="text-white/50 mt-3 text-base max-w-xl mx-auto">
-            World-class sports and entertainment solutions tailored to your vision.
+            {t("productsSection.subtitle")}
           </p>
         </motion.div>
 
@@ -123,7 +123,7 @@ export default function ProductsSection() {
                     className="group/link inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 hover:gap-3"
                     style={{ color: "#F47B20" }}
                   >
-                    Explore More
+                    {t("productsSection.exploreMore")}
                     <ArrowRight size={14} className="transition-transform group-hover/link:translate-x-1" />
                   </Link>
                 </div>

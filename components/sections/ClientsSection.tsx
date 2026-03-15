@@ -58,7 +58,7 @@ export default function ClientsSection() {
           <div className="absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
             style={{ background: "linear-gradient(to left, #0a1628, transparent)" }} />
 
-          <div className="flex items-center animate-clients-scroll">
+          <div className="flex items-center animate-clients-scroll" dir="ltr">
             {[...clients, ...clients].map((client, index) => (
               <div
                 key={index}

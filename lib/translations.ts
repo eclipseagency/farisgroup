@@ -150,6 +150,8 @@ const en = {
     badge: "OUR PRODUCTS",
     title1: "OUR",
     title2: "PRODUCTS",
+    subtitle: "World-class sports and entertainment solutions tailored to your vision.",
+    exploreMore: "Explore More",
     items: [
       {
         title: "Bowling Alley",
@@ -196,6 +198,11 @@ const en = {
     title1: "OUR",
     title2: "SERVICES",
     viewAll: "View All Services",
+    learnMore: "Learn More",
+    desc1Title: "Sports Facility Design and Construction:",
+    desc1: "We specialize in creating state-of-the-art sports facilities tailored to your unique needs. From concept to completion, we ensure every aspect of the design and construction process is meticulously executed.",
+    desc2Title: "Equipment and Supply:",
+    desc2: "Discover a wide range of top-quality sports equipment and supplies to enhance your facility. Whether you need fitness equipment, court accessories, or specialized gear, we offer reliable products that meet the highest industry standards.",
     items: [
       { title: "Maintenance", description: "Maintenance services for sports fields" },
       { title: "Project Management", description: "Management for sports projects" },
@@ -227,6 +234,29 @@ const en = {
     visionText:
       "To be the most trusted name in sports infrastructure across the region, creating world-class facilities that inspire active, healthy communities.",
     testimonialsTitle: "What Our Clients Say",
+    testimonialsBadge: "TESTIMONIALS",
+    testimonials: [
+      {
+        quote: "Faris Group's innovative equipment transformed our fitness club, attracting more members and enhancing their experience. Highly recommended!",
+        name: "Khalid Al-Rashid",
+        role: "Owner of a Sports Complex",
+      },
+      {
+        quote: "Faris Group played a pivotal role in transforming our school's sports facilities. Their expertise and dedication resulted in top-quality sports equipment and spaces that inspire our students to excel. We're grateful for their exceptional services.",
+        name: "Saad Al-Muhanna",
+        role: "Community Center Manager",
+      },
+      {
+        quote: "I'm impressed by Faris Group's commitment to innovation. Their equipment and facilities have taken my sports experience to a whole new level. Thank you!",
+        name: "Mohammed Al-Abdulaziz",
+        role: "Sports Enthusiast",
+      },
+      {
+        quote: "Faris Group exceeded our expectations with their exceptional sports solutions. Our facility has become a top-notch recreation center, thanks to their expertise and attention to detail.",
+        name: "Fatima Al-Malik",
+        role: "Director of a Fitness Club",
+      },
+    ],
     stats: [
       { value: "20+", label: "Years of Experience" },
       { value: "500+", label: "Projects Completed" },
@@ -397,6 +427,30 @@ const en = {
       description: "Explore our portfolio of sports facility projects across the region.",
     },
   },
+
+  // ─── Products Page ────────────────────────────────────────────────────────
+  productsPage: {
+    badge: "OUR SPECIALIZATIONS",
+    heading1: "OUR",
+    heading2: "PRODUCTS",
+    sectionSubtitle: "Learn about Faris Group products.",
+    seeMore: "See more",
+    categories: [
+      { title: "Wall Insulation", description: "At Faris Group, we understand the importance of a well-insulated space. Our state-of-the-art wall insulation solutions are designed to provide superior thermal and acoustic insulation, ensuring comfort, energy efficiency, and tranquility in your home, office, or any other space." },
+      { title: "Bowling Alley", description: "Create a striking entertainment experience with our comprehensive Bowling solutions. From modern bowling lanes to top-quality equipment, our offerings ensure a memorable time for bowlers of all ages and skill levels." },
+      { title: "Padel Court", description: "Experience the excitement of Padel with our top-quality Padel Courts. Designed for both recreational and competitive play, our courts offer excellent durability and performance, ensuring a thrilling game every time." },
+      { title: "Fitness & Gym", description: "Set up a world-class fitness facility with our cutting-edge Fitness & Gym equipment. Our range includes treadmills, weight machines, cardio equipment, and more, designed to support diverse fitness goals." },
+      { title: "Playground", description: "At Faris Group, we understand the importance of creating engaging and safe playgrounds for children. Our product range encompasses a wide variety of equipment that is suitable for playgrounds in schools, public parks, private homes, and compounds." },
+      { title: "Climbing Wall", description: "Inspire adventure and challenge with our innovative Climbing Walls. Built to the highest safety standards and quality, our walls offer varying levels of difficulty, providing a thrilling experience for climbers while promoting physical fitness and skill development." },
+      { title: "Shooting Range", description: "Ensure precision and safety in shooting sports with our advanced Shooting Range solutions. Our range includes target systems, bullet traps, and shooting accessories, providing a controlled and safe environment for enthusiasts and professionals." },
+      { title: "Billiards", description: "Elevate your entertainment space with our premium Billiard tables. Crafted with precision and style, our tables provide an authentic playing experience, perfect for leisurely games or professional tournaments." },
+      { title: "Sport Equipment", description: "Equip your sports facility with our wide range of high-quality sports equipment. From basketball hoops and soccer goals to volleyball nets and tennis rackets, we offer reliable and durable solutions for various sporting activities." },
+      { title: "Spa & Pool", description: "Creating luxurious and rejuvenating experiences through our exceptional SPA and Pool solutions. Whether you're looking to create a tranquil oasis for relaxation or a refreshing aquatic environment." },
+      { title: "Squash", description: "Enhance your fitness facility or sports complex with our state-of-the-art Squash Courts. Built to international standards, our courts offer excellent ball rebound and optimal playing conditions, catering to players of all levels." },
+      { title: "Bleachers & Seating", description: "Maximize spectator comfort and viewing experience with our durable and ergonomic Bleachers & Seating solutions. Whether it's for stadiums, arenas, or outdoor events, our seating options offer excellent sightlines and superior comfort." },
+      { title: "Urban Furniture", description: "Enhance public spaces and recreational areas with our stylish and functional Urban Furniture. From benches and picnic tables to bike racks and waste management systems, our designs blend aesthetics with durability, creating inviting environments for communities." },
+    ],
+  },
 };
 
 // ─── Arabic Translations ────────────────────────────────────────────────────
@@ -540,6 +594,8 @@ const ar = {
     badge: "منتجاتنا",
     title1: "منتجاتنا",
     title2: "",
+    subtitle: "حلول رياضية وترفيهية عالمية المستوى مصمّمة وفق رؤيتك.",
+    exploreMore: "استعرض المزيد",
     items: [
       {
         title: "صالة البولينج",
@@ -579,6 +635,11 @@ const ar = {
     title1: "خدماتنا",
     title2: "",
     viewAll: "عرض جميع الخدمات",
+    learnMore: "اعرف المزيد",
+    desc1Title: "تصميم وإنشاء المنشآت الرياضية:",
+    desc1: "نتخصص في إنشاء منشآت رياضية متطورة مصمّمة خصيصًا لاحتياجاتك. من الفكرة حتى الاكتمال، نضمن تنفيذ كل جانب من جوانب التصميم والبناء بدقة متناهية.",
+    desc2Title: "المعدات والتوريد:",
+    desc2: "اكتشف مجموعة واسعة من معدات ومستلزمات رياضية عالية الجودة لتعزيز منشأتك. سواء احتجت إلى معدات لياقة أو إكسسوارات ملاعب أو تجهيزات متخصصة، نقدم لك منتجات موثوقة تلبي أعلى المعايير.",
     items: [
       { title: "الصيانة", description: "خدمات صيانة للملاعب والمنشآت الرياضية" },
       { title: "إدارة المشاريع", description: "إدارة احترافية للمشاريع الرياضية" },
@@ -608,6 +669,29 @@ const ar = {
     visionText:
       "أن نكون الاسم الأكثر ثقةً في البنية التحتية الرياضية بالمنطقة، عبر إنشاء منشآت عالمية المستوى تُلهم مجتمعات نشطة وصحية.",
     testimonialsTitle: "ماذا يقول عملاؤنا",
+    testimonialsBadge: "آراء العملاء",
+    testimonials: [
+      {
+        quote: "معدات مجموعة فارس المبتكرة حوّلت ناديينا الرياضي، وجذبت أعضاء جدد وعزّزت تجربتهم. أنصح بهم بشدة!",
+        name: "خالد الراشد",
+        role: "مالك مجمع رياضي",
+      },
+      {
+        quote: "أدّت مجموعة فارس دورًا محوريًا في تطوير المرافق الرياضية بمدرستنا. أسفرت خبرتهم وتفانيهم عن معدات ومساحات رياضية عالية الجودة تُلهم طلابنا للتميز. نحن ممتنون لخدماتهم الاستثنائية.",
+        name: "سعد المهنا",
+        role: "مدير مركز مجتمعي",
+      },
+      {
+        quote: "أنا معجب بالتزام مجموعة فارس بالابتكار. لقد ارتقت معداتهم ومرافقهم بتجربتي الرياضية إلى مستوى جديد كليًا. شكرًا لكم!",
+        name: "محمد العبدالعزيز",
+        role: "مهتم بالرياضة",
+      },
+      {
+        quote: "تجاوزت مجموعة فارس توقعاتنا بحلولها الرياضية الاستثنائية. أصبحت منشأتنا مركزًا ترفيهيًا من الدرجة الأولى بفضل خبرتهم واهتمامهم بالتفاصيل.",
+        name: "فاطمة المالك",
+        role: "مديرة نادي لياقة",
+      },
+    ],
     stats: [
       { value: "+20", label: "سنة خبرة" },
       { value: "+500", label: "مشروع منجز" },
@@ -772,6 +856,30 @@ const ar = {
       subtitle: "معرض الأعمال",
       description: "استعرض محفظة مشاريعنا في المنشآت الرياضية بالمنطقة.",
     },
+  },
+
+  // ─── Products Page ────────────────────────────────────────────────────────
+  productsPage: {
+    badge: "تخصصاتنا",
+    heading1: "منتجاتنا",
+    heading2: "",
+    sectionSubtitle: "تعرف على منتجات مجموعة فارس.",
+    seeMore: "عرض المزيد",
+    categories: [
+      { title: "عزل الجدران", description: "في مجموعة فارس، ندرك أهمية المساحة المعزولة جيدًا. حلول عزل الجدران المتطورة لدينا مصممة لتوفير عزل حراري وصوتي متميز، مما يضمن الراحة وكفاءة الطاقة والهدوء في منزلك أو مكتبك أو أي مكان آخر." },
+      { title: "صالة البولينج", description: "أنشئ تجربة ترفيهية لافتة مع حلول البولينج الشاملة لدينا. من مسارات البولينج الحديثة إلى المعدات عالية الجودة، تضمن عروضنا وقتًا لا يُنسى لجميع الأعمار ومستويات المهارة." },
+      { title: "ملعب البادل", description: "استمتع بإثارة البادل مع ملاعبنا عالية الجودة. مصممة للاستخدام الترفيهي والتنافسي، تتميز ملاعبنا بمتانة وأداء ممتازين لتجربة لعب مثيرة في كل مرة." },
+      { title: "اللياقة والصالات", description: "أنشئ منشأة لياقة عالمية المستوى مع معداتنا المتطورة. تشمل مجموعتنا أجهزة المشي وآلات الأثقال ومعدات الكارديو والمزيد، مصممة لدعم أهداف اللياقة المتنوعة." },
+      { title: "الملاعب", description: "في مجموعة فارس، ندرك أهمية إنشاء ملاعب جذابة وآمنة للأطفال. تشمل مجموعة منتجاتنا مجموعة واسعة من المعدات المناسبة للملاعب في المدارس والحدائق العامة والمنازل الخاصة والمجمعات السكنية." },
+      { title: "جدار التسلق", description: "ألهم روح المغامرة والتحدي مع جدران التسلق المبتكرة لدينا. مبنية وفق أعلى معايير السلامة والجودة، توفر جدراننا مستويات متفاوتة من الصعوبة لتجربة مثيرة تعزز اللياقة البدنية." },
+      { title: "ميدان الرماية", description: "ضمان الدقة والسلامة في رياضة الرماية مع حلول ميادين الرماية المتقدمة لدينا. تشمل مجموعتنا أنظمة الأهداف ومصائد الرصاص وإكسسوارات الرماية، لتوفير بيئة آمنة ومنضبطة للهواة والمحترفين." },
+      { title: "البلياردو", description: "ارفع مستوى مساحتك الترفيهية مع طاولات البلياردو المتميزة لدينا. مصنوعة بدقة وأناقة، توفر طاولاتنا تجربة لعب أصيلة، مثالية للألعاب الترفيهية أو البطولات الاحترافية." },
+      { title: "المعدات الرياضية", description: "جهز منشأتك الرياضية بمجموعتنا الواسعة من المعدات الرياضية عالية الجودة. من أطواق كرة السلة وأهداف كرة القدم إلى شبكات الكرة الطائرة ومضارب التنس، نقدم حلولاً موثوقة ومتينة لمختلف الأنشطة الرياضية." },
+      { title: "السبا والمسبح", description: "إنشاء تجارب فاخرة ومنعشة من خلال حلول السبا والمسبح الاستثنائية لدينا. سواء كنت تسعى لإنشاء واحة هادئة للاسترخاء أو بيئة مائية منعشة، لدينا الحل المناسب." },
+      { title: "الإسكواش", description: "عزز منشأتك الرياضية مع ملاعب الإسكواش المتطورة لدينا. مبنية وفق المعايير الدولية، توفر ملاعبنا ارتداد كرة ممتاز وظروف لعب مثالية تلبي احتياجات اللاعبين من جميع المستويات." },
+      { title: "المدرجات والمقاعد", description: "حقق أقصى درجات الراحة وجودة المشاهدة للجماهير مع حلول المدرجات والمقاعد المتينة والمريحة لدينا. سواء كان ذلك للملاعب أو الصالات أو الفعاليات الخارجية، توفر خيارات مقاعدنا مشهدية ممتازة وراحة فائقة." },
+      { title: "الأثاث الحضري", description: "عزز المساحات العامة والمناطق الترفيهية مع الأثاث الحضري الأنيق والوظيفي لدينا. من المقاعد وطاولات النزهة إلى حوامل الدراجات وأنظمة إدارة النفايات، تجمع تصاميمنا بين الجمالية والمتانة." },
+    ],
   },
 };
 
