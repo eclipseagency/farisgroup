@@ -29,54 +29,84 @@ const contactPhones = [
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#0a1628" }} className="text-white">
-      <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer
+      className="relative overflow-hidden text-white"
+      style={{ backgroundColor: "#06101e" }}
+    >
+      {/* Top gold line */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{ background: "linear-gradient(90deg, transparent 0%, #c9a227 30%, #e8bc35 50%, #c9a227 70%, transparent 100%)" }}
+      />
+
+      {/* Decorative mesh */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-40"
+        style={{
+          backgroundImage:
+            "radial-gradient(at 10% 20%, rgba(201,162,39,0.06) 0px, transparent 40%), radial-gradient(at 90% 80%, rgba(26,58,107,0.3) 0px, transparent 40%)",
+        }}
+      />
+
+      <div className="container-custom py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+
           {/* Company Info */}
           <div>
             <div className="mb-6">
               <img
                 src="https://farisgroup.net/wp-content/uploads/2023/05/Faris-Group-Logo-twt.png"
                 alt="Faris Group"
-                className="h-16 w-auto object-contain brightness-0 invert"
+                className="h-14 w-auto object-contain brightness-0 invert"
               />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+            <p className="text-white/50 text-sm leading-relaxed mb-5">
               With over 20 years of experience, Faris Group is the leading supplier of superior
               quality sports and entertainment equipment in the Middle East.
             </p>
-            <div className="flex items-start gap-2 text-gray-400 text-xs mb-5">
-              <Clock size={13} className="flex-shrink-0 mt-0.5" style={{ color: "#c9a227" }} />
+            <div className="flex items-start gap-2.5 text-white/40 text-xs mb-6">
+              <Clock size={12} className="flex-shrink-0 mt-0.5" style={{ color: "#c9a227" }} />
               <span>Saturday – Thursday: 08:00 AM – 05:00 PM</span>
             </div>
-            <div className="flex items-center gap-3">
-              <a href="https://www.facebook.com/FarisGroupSports" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                style={{ backgroundColor: "#1a3a6b" }}>
-                <Facebook size={16} />
-              </a>
-              <a href="https://www.linkedin.com/showcase/faris-group-sports" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                style={{ backgroundColor: "#1a3a6b" }}>
-                <Linkedin size={16} />
-              </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                style={{ backgroundColor: "#1a3a6b" }}>
-                <Instagram size={16} />
-              </a>
+            <div className="flex items-center gap-2.5">
+              {[
+                { href: "https://www.facebook.com/FarisGroupSports", icon: <Facebook size={15} /> },
+                { href: "https://www.linkedin.com/showcase/faris-group-sports", icon: <Linkedin size={15} /> },
+                { href: "https://www.instagram.com", icon: <Instagram size={15} /> },
+              ].map((social, i) => (
+                <a
+                  key={i}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl flex items-center justify-center text-white/50 hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                  style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading font-bold text-sm uppercase tracking-widest mb-5 pb-2 border-b border-gray-700">
+            <h3
+              className="font-heading font-bold text-xs uppercase tracking-[0.2em] mb-6 pb-3"
+              style={{ borderBottom: "1px solid rgba(201,162,39,0.2)", color: "#e8e8e8" }}
+            >
               Quick Links
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-400 text-sm hover:text-white transition-colors">
+                  <Link
+                    href={link.href}
+                    className="group text-white/45 text-sm hover:text-white transition-colors duration-200 flex items-center gap-2"
+                  >
+                    <span
+                      className="w-0 group-hover:w-3 h-px transition-all duration-300 flex-shrink-0"
+                      style={{ backgroundColor: "#c9a227" }}
+                    />
                     {link.name}
                   </Link>
                 </li>
@@ -86,13 +116,23 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <h3 className="font-heading font-bold text-sm uppercase tracking-widest mb-5 pb-2 border-b border-gray-700">
+            <h3
+              className="font-heading font-bold text-xs uppercase tracking-[0.2em] mb-6 pb-3"
+              style={{ borderBottom: "1px solid rgba(201,162,39,0.2)", color: "#e8e8e8" }}
+            >
               Our Products
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {productLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-400 text-sm hover:text-white transition-colors">
+                  <Link
+                    href={link.href}
+                    className="group text-white/45 text-sm hover:text-white transition-colors duration-200 flex items-center gap-2"
+                  >
+                    <span
+                      className="w-0 group-hover:w-3 h-px transition-all duration-300 flex-shrink-0"
+                      style={{ backgroundColor: "#c9a227" }}
+                    />
                     {link.name}
                   </Link>
                 </li>
@@ -102,30 +142,38 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-heading font-bold text-sm uppercase tracking-widest mb-5 pb-2 border-b border-gray-700">
+            <h3
+              className="font-heading font-bold text-xs uppercase tracking-[0.2em] mb-6 pb-3"
+              style={{ borderBottom: "1px solid rgba(201,162,39,0.2)", color: "#e8e8e8" }}
+            >
               Contact Details
             </h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {contactPhones.map((p) => (
                 <li key={p.label}>
-                  <a href={`tel:${p.label.replace(/\s/g, "")}`}
-                    className="flex items-center gap-2 text-gray-400 text-xs hover:text-white transition-colors">
-                    <Phone size={11} style={{ color: "#c9a227" }} />
-                    {p.label} <span className="text-gray-600">({p.country})</span>
+                  <a
+                    href={`tel:${p.label.replace(/\s/g, "")}`}
+                    className="flex items-center gap-2 text-white/45 text-xs hover:text-white transition-colors"
+                  >
+                    <Phone size={10} style={{ color: "#c9a227", flexShrink: 0 }} />
+                    {p.label}{" "}
+                    <span className="text-white/25">({p.country})</span>
                   </a>
                 </li>
               ))}
               {["info@farisgroup.net", "faris@farisgroup.net"].map((email) => (
                 <li key={email}>
-                  <a href={`mailto:${email}`}
-                    className="flex items-center gap-2 text-gray-400 text-xs hover:text-white transition-colors">
-                    <Mail size={11} style={{ color: "#c9a227" }} />
+                  <a
+                    href={`mailto:${email}`}
+                    className="flex items-center gap-2 text-white/45 text-xs hover:text-white transition-colors"
+                  >
+                    <Mail size={10} style={{ color: "#c9a227", flexShrink: 0 }} />
                     {email}
                   </a>
                 </li>
               ))}
-              <li className="flex items-start gap-2 text-gray-400 text-xs pt-1">
-                <MapPin size={11} className="flex-shrink-0 mt-0.5" style={{ color: "#c9a227" }} />
+              <li className="flex items-start gap-2 text-white/45 text-xs pt-1">
+                <MapPin size={10} className="flex-shrink-0 mt-0.5" style={{ color: "#c9a227" }} />
                 <div className="leading-relaxed">
                   <p>Jeddah - Riyadh - Saudi Arabia</p>
                   <p>Abu Dhabi - United Arab Emirates</p>
@@ -140,10 +188,15 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
-        <div className="container-custom py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+      <div
+        className="relative z-10"
+        style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
+      >
+        <div className="container-custom py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/25">
           <p>© Copyright 2023 - FarisGroup | All Rights Reserved. Powered By Eclipse</p>
-          <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy policy</Link>
+          <Link href="/privacy-policy" className="hover:text-white/70 transition-colors">
+            Privacy policy
+          </Link>
         </div>
       </div>
     </footer>
