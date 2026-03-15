@@ -85,7 +85,7 @@ export default function ContactUsPage() {
       />
 
       {/* Offices */}
-      <section className="py-16" style={{ backgroundColor: "#f8f9fc" }}>
+      <section className="py-16" style={{ background: "rgba(255,255,255,0.02)" }}>
         <div className="container-custom">
           <div className="text-center mb-10">
             <span className="section-subtitle block">Our Locations</span>
@@ -97,29 +97,29 @@ export default function ContactUsPage() {
             {offices.map((office, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
+                className="rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-white/10"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-2xl">{office.flag}</span>
                   <div>
-                    <div className="font-heading font-bold text-base" style={{ color: "#1a3a6b" }}>
+                    <div className="font-heading font-bold text-base" style={{ color: "#ffffff" }}>
                       {office.city}
                     </div>
                     <div className="text-xs text-gray-400 uppercase tracking-wider">{office.label}</div>
                   </div>
                 </div>
                 <div className="space-y-2 text-sm">
-                  <div className="flex gap-2 text-gray-600">
+                  <div className="flex gap-2 text-white/60">
                     <MapPin size={14} className="flex-shrink-0 mt-0.5" style={{ color: "#F47B20" }} />
                     <span>{office.address}</span>
                   </div>
-                  <div className="flex gap-2 text-gray-600">
+                  <div className="flex gap-2 text-white/60">
                     <Phone size={14} className="flex-shrink-0 mt-0.5" style={{ color: "#F47B20" }} />
                     <a href={`tel:${office.phone.replace(/\s/g, "")}`} className="hover:text-primary">
                       {office.phone}
                     </a>
                   </div>
-                  <div className="flex gap-2 text-gray-600">
+                  <div className="flex gap-2 text-white/60">
                     <Mail size={14} className="flex-shrink-0 mt-0.5" style={{ color: "#F47B20" }} />
                     <a href={`mailto:${office.email}`} className="hover:text-primary">
                       {office.email}
@@ -133,17 +133,17 @@ export default function ContactUsPage() {
       </section>
 
       {/* Contact Form + Info */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Info */}
             <div className="lg:col-span-1 space-y-6">
               <div>
                 <span className="section-subtitle block">Reach Us</span>
-                <h2 className="font-heading font-bold text-2xl md:text-3xl" style={{ color: "#0a1628" }}>
+                <h2 className="font-heading font-bold text-2xl md:text-3xl" style={{ color: "#ffffff" }}>
                   Send Us a <span style={{ color: "#F47B20" }}>Message</span>
                 </h2>
-                <p className="text-gray-600 mt-4 text-sm leading-relaxed">
+                <p className="text-white/60 mt-4 text-sm leading-relaxed">
                   Whether you need a quote, have questions about a product, or want to discuss a
                   project, we&apos;re here to help.
                 </p>
@@ -162,15 +162,15 @@ export default function ContactUsPage() {
                     <div key={i} className="flex gap-4">
                       <div
                         className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                        style={{ backgroundColor: "rgba(201,162,39,0.1)" }}
+                        style={{ backgroundColor: "rgba(244,123,32,0.15)" }}
                       >
                         <Icon size={18} style={{ color: "#F47B20" }} />
                       </div>
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-0.5">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-0.5">
                           {item.title}
                         </p>
-                        <p className="text-sm text-gray-700">{item.detail}</p>
+                        <p className="text-sm text-white/70">{item.detail}</p>
                       </div>
                     </div>
                   );
@@ -186,16 +186,16 @@ export default function ContactUsPage() {
                   style={{ borderColor: "#F47B20", backgroundColor: "rgba(201,162,39,0.04)" }}
                 >
                   <CheckCircle size={64} className="mb-4" style={{ color: "#F47B20" }} />
-                  <h3 className="font-heading font-bold text-2xl mb-3" style={{ color: "#1a3a6b" }}>
+                  <h3 className="font-heading font-bold text-2xl mb-3" style={{ color: "#ffffff" }}>
                     Message Sent!
                   </h3>
-                  <p className="text-gray-600 leading-relaxed max-w-md">
+                  <p className="text-white/60 leading-relaxed max-w-md">
                     Thank you for contacting Faris Group. Our team will respond within 24 hours.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="mt-8 px-8 py-3 text-white text-sm font-semibold uppercase tracking-wider"
-                    style={{ backgroundColor: "#1a3a6b" }}
+                    style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
                   >
                     Send Another Message
                   </button>
@@ -203,14 +203,14 @@ export default function ContactUsPage() {
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="bg-white rounded-xl shadow-lg p-8 border border-gray-100"
+                  className="rounded-xl shadow-lg p-8 border border-white/10"
                 >
-                  <h3 className="font-heading font-bold text-xl mb-6" style={{ color: "#1a3a6b" }}>
+                  <h3 className="font-heading font-bold text-xl mb-6" style={{ color: "#ffffff" }}>
                     Inquiry Form
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Full Name *</label>
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">Full Name *</label>
                       <input
                         type="text"
                         name="name"
@@ -218,12 +218,12 @@ export default function ContactUsPage() {
                         onChange={handleChange}
                         required
                         placeholder="Your full name"
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 transition-colors"
-                        style={{ "--tw-ring-color": "#1a3a6b" } as React.CSSProperties}
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none focus:ring-1 transition-colors"
+                        style={{ "--tw-ring-color: #F47B20 } as React.CSSProperties}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Email Address *</label>
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">Email Address *</label>
                       <input
                         type="email"
                         name="email"
@@ -231,39 +231,39 @@ export default function ContactUsPage() {
                         onChange={handleChange}
                         required
                         placeholder="your@email.com"
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">Phone Number</label>
                       <input
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+966 / +971"
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Company</label>
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">Company</label>
                       <input
                         type="text"
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="Your organization"
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors"
                       />
                     </div>
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Subject *</label>
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">Subject *</label>
                       <select
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none transition-colors bg-white"
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors" style={{ background: "rgba(255,255,255,0.06)", color: "white" }}
                       >
                         <option value="">Select a subject</option>
                         <option value="sports-equipment">Sports Equipment</option>
@@ -278,7 +278,7 @@ export default function ContactUsPage() {
                       </select>
                     </div>
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Message *</label>
+                      <label className="block text-sm font-medium text-white/70 mb-1.5">Message *</label>
                       <textarea
                         name="message"
                         value={formData.message}
@@ -286,7 +286,7 @@ export default function ContactUsPage() {
                         required
                         rows={5}
                         placeholder="Tell us about your project or inquiry..."
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none transition-colors resize-none"
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors resize-none"
                       />
                     </div>
                   </div>

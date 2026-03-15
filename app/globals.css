@@ -23,8 +23,13 @@ html {
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  color: #1a1a1a;
-  background: #ffffff;
+  color: rgba(255,255,255,0.85);
+  background-color: #0a1628;
+  background-image:
+    radial-gradient(at 80% 15%, rgba(26,58,107,0.7) 0px, transparent 55%),
+    radial-gradient(at 20% 85%, rgba(244,123,32,0.06) 0px, transparent 45%),
+    radial-gradient(at 50% 50%, rgba(10,22,40,0.9) 0px, transparent 70%);
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
@@ -48,12 +53,24 @@ h1, h2, h3, h4, h5, h6 {
 
   .section-title {
     @apply text-3xl md:text-4xl lg:text-5xl font-black font-heading mb-4;
-    color: #0a1628;
+    color: #ffffff;
   }
 
   .section-subtitle {
     @apply font-bold text-xs tracking-[0.25em] uppercase mb-3;
     color: #F47B20;
+  }
+
+  .dark-card {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 1rem;
+  }
+
+  .dark-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(244,123,32,0.25);
   }
 
   .container-custom {

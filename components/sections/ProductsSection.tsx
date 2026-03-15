@@ -61,12 +61,12 @@ export default function ProductsSection() {
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section className="py-28 bg-white relative overflow-hidden">
+    <section className="py-28 relative overflow-hidden">
       {/* Background decoration */}
       <div
-        className="absolute top-0 left-0 w-72 h-72 rounded-full pointer-events-none opacity-20"
+        className="absolute top-0 left-0 w-72 h-72 rounded-full pointer-events-none opacity-30"
         style={{
-          background: "radial-gradient(circle, rgba(201,162,39,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(244,123,32,0.12) 0%, transparent 70%)",
           transform: "translate(-30%, -30%)",
         }}
       />
@@ -93,7 +93,7 @@ export default function ProductsSection() {
               SOLUTIONS
             </span>
           </h2>
-          <p className="text-gray-400 mt-3 text-base max-w-xl mx-auto">
+          <p className="text-white/50 mt-3 text-base max-w-xl mx-auto">
             World-class sports and entertainment solutions tailored to your vision.
           </p>
         </motion.div>
@@ -103,7 +103,8 @@ export default function ProductsSection() {
           {products.map((product, index) => (
             <motion.div
               key={index}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 transition-all duration-500 hover:-translate-y-2 flex flex-col"
+              className="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 flex flex-col"
+              style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)", backdropFilter: "blur(12px)" }}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
@@ -123,7 +124,7 @@ export default function ProductsSection() {
                 {/* Tag */}
                 <span
                   className="absolute top-4 left-4 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full"
-                  style={{ backgroundColor: "rgba(201,162,39,0.9)", color: "#fff" }}
+                  style={{ backgroundColor: "rgba(244,123,32,0.9)", color: "#fff" }}
                 >
                   {product.tag}
                 </span>
@@ -132,15 +133,14 @@ export default function ProductsSection() {
               {/* Content */}
               <div className="p-6 flex flex-col flex-1">
                 <h3
-                  className="font-heading font-bold text-xl mb-3 transition-colors group-hover:text-[#F47B20]"
-                  style={{ color: "#0a1628" }}
+                  className="font-heading font-bold text-xl mb-3 text-white transition-colors group-hover:text-[#F47B20]"
                 >
                   {product.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed flex-1 line-clamp-3">
+                <p className="text-white/50 text-sm leading-relaxed flex-1 line-clamp-3">
                   {product.description}
                 </p>
-                <div className="mt-5 pt-4 border-t border-gray-100">
+                <div className="mt-5 pt-4 border-t border-white/10">
                   <Link
                     href={product.href}
                     className="group/link inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 hover:gap-3"
@@ -171,15 +171,15 @@ export default function ProductsSection() {
           <Link
             href="/projects"
             className="group inline-flex items-center gap-2.5 px-10 py-4 font-bold text-sm tracking-widest uppercase text-white rounded-sm transition-all duration-300 hover:opacity-90 hover:gap-3 hover:shadow-xl hover:-translate-y-0.5"
-            style={{ backgroundColor: "#0a1628" }}
+            style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
           >
             VIEW ALL PROJECTS
             <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
           </Link>
           <Link
             href="/products"
-            className="inline-flex items-center gap-2.5 px-10 py-4 border-2 font-bold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 hover:bg-[#0a1628] hover:text-white hover:border-[#0a1628]"
-            style={{ borderColor: "#0a1628", color: "#0a1628" }}
+            className="inline-flex items-center gap-2.5 px-10 py-4 border-2 font-bold text-sm tracking-widest uppercase text-white rounded-sm transition-all duration-300 hover:bg-white/10"
+            style={{ borderColor: "rgba(255,255,255,0.25)" }}
           >
             SPORTS EQUIPMENT
           </Link>

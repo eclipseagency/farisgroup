@@ -67,23 +67,23 @@ export default function ProjectsPage() {
       </section>
 
       {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-200 py-3">
+      <div className="py-3 border-b border-white/10" style={{ background: "rgba(255,255,255,0.04)" }}>
         <div className="container-custom">
-          <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+          <nav className="flex items-center gap-2 text-sm text-white/50">
+            <Link href="/" className="text-white/70 hover:text-gold transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-gray-800 font-medium">OUR PROJECTS</span>
+            <span className="text-white/80 font-medium">OUR PROJECTS</span>
           </nav>
         </div>
       </div>
 
       {/* Gallery */}
-      <section className="py-16 bg-white">
+      <section className="py-16">
         <div className="container-custom">
           <div className="text-center mb-10">
             <span className="section-subtitle block">PROJECTS</span>
             <h2 className="section-title">OUR PROJECTS GALLERY</h2>
-            <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-sm leading-relaxed">
+            <p className="text-white/50 mt-4 max-w-2xl mx-auto text-sm leading-relaxed">
               With 30 years of experience in the field, get acquainted with our most inspiring projects.
             </p>
           </div>
@@ -120,8 +120,8 @@ export default function ProjectsPage() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-3 bg-white border border-gray-100 border-t-0">
-                  <p className="text-sm font-semibold text-center" style={{ color: "#0a1628" }}>
+                <div className="p-3 border border-white/10 border-t-0">
+                  <p className="text-sm font-semibold text-center" style={{ color: "#ffffff" }}>
                     {project.title}
                   </p>
                 </div>
@@ -182,42 +182,42 @@ export default function ProjectsPage() {
                 ))}
               </div>
             </div>
-            <div className="bg-white p-10">
+            <div className="p-10" style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(12px)" }}>
               <form className="space-y-4">
                 <input
                   type="text"
                   placeholder="Your name"
-                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 />
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 />
                 <input
                   type="tel"
                   placeholder="Phone Number"
-                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 />
                 <input
                   type="text"
                   placeholder="Company Name"
-                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 />
                 <input
                   type="text"
                   placeholder="Subject"
-                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 />
                 <textarea
                   rows={4}
                   placeholder="Message"
-                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400 resize-none"
+                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none resize-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 />
                 <button
                   type="submit"
                   className="w-full py-3 font-semibold text-white text-sm tracking-widest uppercase rounded transition-all duration-300 hover:opacity-90"
-                  style={{ backgroundColor: "#0a1628" }}
+                  style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
                 >
                   Send a message
                 </button>

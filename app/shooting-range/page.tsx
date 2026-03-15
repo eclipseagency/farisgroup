@@ -35,18 +35,18 @@ export default function ShootingRangePage() {
       </section>
 
       {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-200 py-3">
+      <div className="py-3 border-b border-white/10" style={{ background: "rgba(255,255,255,0.04)" }}>
         <div className="container-custom">
-          <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+          <nav className="flex items-center gap-2 text-sm text-white/50">
+            <Link href="/" className="text-white/70 hover:text-gold transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-gray-800 font-medium">Supply and Installation of Shooting Range Equipment</span>
+            <span className="text-white/80 font-medium">Supply and Installation of Shooting Range Equipment</span>
           </nav>
         </div>
       </div>
 
       {/* Intro */}
-      <section className="py-16 bg-white">
+      <section className="py-16">
         <div className="container-custom">
           {/* Row 1: image left, title+text right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
@@ -64,7 +64,7 @@ export default function ShootingRangePage() {
               >
                 Shooting Range
               </h2>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-white/60 leading-relaxed">
                 When it comes to shooting sports, precision and safety are of utmost importance. At
                 Faris Group, we offer advanced Shooting Range solutions designed to meet the needs
                 of shooting enthusiasts and professionals alike. Our comprehensive range includes
@@ -77,7 +77,7 @@ export default function ShootingRangePage() {
           {/* Row 2: text left, image right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center">
-              <p className="text-gray-600 leading-relaxed mb-8">
+              <p className="text-white/60 leading-relaxed mb-8">
                 Our shooting ranges provide a controlled environment that allows shooters to hone
                 their skills and enjoy their passion with confidence. The target systems we provide
                 are designed for accuracy, reliability, and versatility, catering to various
@@ -105,7 +105,7 @@ export default function ShootingRangePage() {
       </section>
 
       {/* Projects Gallery */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="container-custom">
           <div className="text-center mb-12">
             <span className="section-subtitle block">Our Work</span>
@@ -126,37 +126,37 @@ export default function ShootingRangePage() {
       </section>
 
       {/* Quote Form */}
-      <section id="quote" className="py-20" style={{ backgroundColor: "#f8f9fc" }}>
+      <section id="quote" className="py-20" style={{ background: "rgba(255,255,255,0.02)" }}>
         <div className="container-custom max-w-2xl">
           <div className="text-center mb-10">
             <span className="section-subtitle block">QUOTE</span>
             <h2 className="section-title">Request a Quote</h2>
-            <p className="text-gray-500 text-sm mt-2">
+            <p className="text-white/50 text-sm mt-2">
               Your email address will not be published. Required fields are marked *
             </p>
           </div>
-          <form className="bg-white rounded-2xl shadow-lg p-8 space-y-5">
+          <form className="rounded-2xl shadow-lg p-8 space-y-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <input
                 type="text"
                 placeholder="Your Name *"
-                className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none"
+                className="w-full border border-white/10 rounded-md px-4 py-3 text-sm focus:outline-none"
               />
               <input
                 type="email"
                 placeholder="Your Email *"
-                className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none"
+                className="w-full border border-white/10 rounded-md px-4 py-3 text-sm focus:outline-none"
               />
             </div>
             <input
               type="tel"
               placeholder="Phone Number"
-              className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none"
+              className="w-full border border-white/10 rounded-md px-4 py-3 text-sm focus:outline-none"
             />
             <textarea
               rows={5}
               placeholder="Your Message *"
-              className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none resize-none"
+              className="w-full border border-white/10 rounded-md px-4 py-3 text-sm focus:outline-none resize-none"
             />
             <button
               type="submit"

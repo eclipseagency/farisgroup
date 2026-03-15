@@ -57,7 +57,7 @@ export default function AboutPage() {
             <Link href="/" className="hover:text-white transition-colors">
               Home
             </Link>
-            <ChevronRight size={14} className="text-gray-600" />
+            <ChevronRight size={14} className="text-white/60" />
             <span style={{ color: "#F47B20" }}>ABOUT US</span>
           </nav>
           <h1 className="font-heading font-black text-4xl md:text-5xl lg:text-6xl leading-tight">
@@ -67,7 +67,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Main About Content ───────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Text */}
@@ -77,7 +77,7 @@ export default function AboutPage() {
                 FARIS GROUP FOR{" "}
                 <span style={{ color: "#F47B20" }}>SPORTS SOLUTIONS</span>
               </h2>
-              <div className="mt-5 space-y-4 text-gray-600 leading-relaxed">
+              <div className="mt-5 space-y-4 text-white/60 leading-relaxed">
                 <p>
                   With over 20 years of experience, Faris Group is an established name in the
                   Sports and Leisure industry. Recognized as the leading supplier of superior
@@ -111,26 +111,26 @@ export default function AboutPage() {
       </section>
 
       {/* ── Mission & Vision ─────────────────────────── */}
-      <section className="py-20" style={{ backgroundColor: "#f8f9fc" }}>
+      <section className="py-20" style={{ background: "rgba(255,255,255,0.02)" }}>
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Mission */}
             <div
-              className="bg-white rounded-xl p-10 shadow-md border-t-4"
+              className="rounded-xl p-10 shadow-md border-t-4"
               style={{ borderColor: "#1a3a6b" }}
             >
               <div
                 className="w-12 h-12 rounded-lg flex items-center justify-center mb-6"
                 style={{ backgroundColor: "rgba(26,58,107,0.08)" }}
               >
-                <span className="font-heading font-black text-xl" style={{ color: "#1a3a6b" }}>
+                <span className="font-heading font-black text-xl" style={{ color: "#ffffff" }}>
                   M
                 </span>
               </div>
-              <h3 className="font-heading font-bold text-2xl mb-4" style={{ color: "#1a3a6b" }}>
+              <h3 className="font-heading font-bold text-2xl mb-4" style={{ color: "#ffffff" }}>
                 Mission
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-white/60 leading-relaxed">
                 Our mission is to improve the leisure industry by delivering comprehensive
                 sports and entertainment solutions, offering top-quality equipment and services
                 that exceed customer expectations. We strive to create exceptional recreational
@@ -141,7 +141,7 @@ export default function AboutPage() {
 
             {/* Vision */}
             <div
-              className="bg-white rounded-xl p-10 shadow-md border-t-4"
+              className="rounded-xl p-10 shadow-md border-t-4"
               style={{ borderColor: "#F47B20" }}
             >
               <div
@@ -152,10 +152,10 @@ export default function AboutPage() {
                   V
                 </span>
               </div>
-              <h3 className="font-heading font-bold text-2xl mb-4" style={{ color: "#1a3a6b" }}>
+              <h3 className="font-heading font-bold text-2xl mb-4" style={{ color: "#ffffff" }}>
                 Vision
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-white/60 leading-relaxed">
                 To be the premier provider of sports and leisure solutions, transforming the
                 industry through innovation and superior quality, while enhancing the overall
                 experience for individuals and communities.
@@ -166,7 +166,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Testimonials ─────────────────────────────── */}
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="py-20  overflow-hidden">
         <div className="container-custom">
           <div className="text-center mb-12">
             <span className="section-subtitle block">Testimonials</span>
@@ -184,14 +184,14 @@ export default function AboutPage() {
               {[...testimonials, ...testimonials].map((t, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 w-80 bg-white rounded-xl p-7 shadow-md border border-gray-100 flex flex-col"
+                  className="flex-shrink-0 w-80 rounded-xl p-7 shadow-md border border-white/10 flex flex-col"
                 >
                   <Quote size={28} className="mb-4 flex-shrink-0" style={{ color: "#F47B20" }} />
-                  <p className="text-gray-600 text-sm leading-relaxed flex-1 italic">
+                  <p className="text-white/60 text-sm leading-relaxed flex-1 italic">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <div className="mt-5 pt-4 border-t border-gray-100">
-                    <p className="font-heading font-bold text-sm" style={{ color: "#1a3a6b" }}>
+                  <div className="mt-5 pt-4 border-t border-white/10">
+                    <p className="font-heading font-bold text-sm" style={{ color: "#ffffff" }}>
                       {t.name}
                     </p>
                     <p className="text-xs text-gray-400 mt-0.5">{t.role}</p>

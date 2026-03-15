@@ -129,23 +129,23 @@ export default function ServicesPage() {
       </section>
 
       {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-200 py-3">
+      <div className="py-3 border-b border-white/10" style={{ background: "rgba(255,255,255,0.04)" }}>
         <div className="container-custom">
-          <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+          <nav className="flex items-center gap-2 text-sm text-white/50">
+            <Link href="/" className="text-white/70 hover:text-gold transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-gray-800 font-medium">Services</span>
+            <span className="text-white/80 font-medium">Services</span>
           </nav>
         </div>
       </div>
 
       {/* Services Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container-custom">
           <div className="text-center mb-14">
             <span className="section-subtitle block">What We Do</span>
             <h2 className="section-title">OUR SERVICES</h2>
-            <p className="text-gray-500 mt-4 max-w-3xl mx-auto text-base leading-relaxed">
+            <p className="text-white/50 mt-4 max-w-3xl mx-auto text-base leading-relaxed">
               Our company can provide a comprehensive range of services such as sports facilities
               maintenance, construction, supply of sports equipment, spare parts, planning,
               management and operation for your project in order to meet your needs and achieve
@@ -158,13 +158,13 @@ export default function ServicesPage() {
             {services.slice(0, 4).map((service, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center text-center p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="flex flex-col items-center text-center p-6 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
                 <div className="mb-4">{service.icon}</div>
-                <h3 className="font-heading font-bold text-sm uppercase tracking-widest mb-3" style={{ color: "#0a1628" }}>
+                <h3 className="font-heading font-bold text-sm uppercase tracking-widest mb-3" style={{ color: "#ffffff" }}>
                   {service.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
+                <p className="text-white/50 text-sm leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -174,13 +174,13 @@ export default function ServicesPage() {
             {services.slice(4).map((service, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center text-center p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="flex flex-col items-center text-center p-6 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
                 <div className="mb-4">{service.icon}</div>
-                <h3 className="font-heading font-bold text-sm uppercase tracking-widest mb-3" style={{ color: "#0a1628" }}>
+                <h3 className="font-heading font-bold text-sm uppercase tracking-widest mb-3" style={{ color: "#ffffff" }}>
                   {service.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
+                <p className="text-white/50 text-sm leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -241,42 +241,42 @@ export default function ServicesPage() {
             </div>
 
             {/* Right form panel */}
-            <div className="bg-white p-10">
+            <div className="p-10" style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(12px)" }}>
               <form className="space-y-4">
                 <input
                   type="text"
                   placeholder="Your name"
-                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 />
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 />
                 <input
                   type="tel"
                   placeholder="Phone Number"
-                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 />
                 <input
                   type="text"
                   placeholder="Company Name"
-                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 />
                 <input
                   type="text"
                   placeholder="Subject"
-                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400"
+                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 />
                 <textarea
                   rows={4}
                   placeholder="Message"
-                  className="w-full border border-gray-200 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-400 resize-none"
+                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none resize-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 />
                 <button
                   type="submit"
                   className="w-full py-3 font-semibold text-white text-sm tracking-widest uppercase rounded transition-all duration-300 hover:opacity-90"
-                  style={{ backgroundColor: "#0a1628" }}
+                  style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
                 >
                   Send a message
                 </button>
