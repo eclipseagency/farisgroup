@@ -153,7 +153,7 @@ export default function Navbar() {
 
                   {/* Level-1 Dropdown */}
                   {item.children && activeDropdown === item.name && (
-                    <div className="absolute top-full left-0 mt-0 w-64 shadow-2xl rounded-b-xl py-2 z-50 overflow-hidden" style={{ backgroundColor: "rgba(8,18,36,0.98)", backdropFilter: "blur(24px)", borderTop: "2px solid #F47B20", border: "1px solid rgba(255,255,255,0.08)", borderTopColor: "#F47B20" }}>
+                    <div className="absolute top-full left-0 mt-0 w-64 shadow-2xl rounded-b-xl py-2 z-50" style={{ backgroundColor: "rgba(8,18,36,0.98)", backdropFilter: "blur(24px)", borderTop: "2px solid #F47B20", border: "1px solid rgba(255,255,255,0.08)", borderTopColor: "#F47B20" }}>
                       {item.children.map((child) => (
                         <div
                           key={child.name}
