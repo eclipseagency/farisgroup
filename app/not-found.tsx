@@ -10,7 +10,7 @@ export default function NotFound() {
       <div className="text-center text-white px-4">
         <div
           className="font-heading font-black text-9xl mb-4 leading-none"
-          style={{ color: "#c9a227" }}
+          style={{ color: "#F47B20" }}
         >
           404
         </div>
@@ -22,7 +22,7 @@ export default function NotFound() {
         <Link
           href="/"
           className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-sm uppercase tracking-wider text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#c9a227" }}
+          style={{ backgroundColor: "#F47B20" }}
         >
           Back to Home
           <ArrowRight size={16} />

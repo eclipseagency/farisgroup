@@ -260,7 +260,7 @@ export default function PadelCourtPage() {
                 type="text"
                 placeholder="Your Name *"
                 className="w-full border border-gray-200 rounded-md px-4 py-3 text-sm focus:outline-none focus:border-gold"
-                style={{ "--tw-ring-color": "#c9a227" } as React.CSSProperties}
+                style={{ "--tw-ring-color": "#F47B20" } as React.CSSProperties}
               />
               <input
                 type="email"
@@ -281,7 +281,7 @@ export default function PadelCourtPage() {
             <button
               type="submit"
               className="w-full py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-sm transition-all duration-300 hover:opacity-90"
-              style={{ backgroundColor: "#c9a227" }}
+              style={{ backgroundColor: "#F47B20" }}
             >
               Send Request
             </button>

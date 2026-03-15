@@ -19,9 +19,20 @@ const config: Config = {
           900: "#0a1628",
         },
         gold: {
-          light: "#f5d78e",
-          DEFAULT: "#c9a227",
-          dark: "#9b7a1a",
+          light: "#FBBF8A",
+          DEFAULT: "#F47B20",
+          dark: "#C05E0E",
+        },
+        orange: {
+          light: "#FBBF8A",
+          DEFAULT: "#F47B20",
+          dark: "#C05E0E",
+        },
+        green: {
+          brand: "#39B54A",
+        },
+        blue: {
+          brand: "#29ABE2",
         },
         navy: {
           DEFAULT: "#0a1628",

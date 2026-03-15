@@ -71,7 +71,7 @@ export default function StatsSection() {
                 <div
                   className="text-5xl md:text-6xl lg:text-7xl font-black font-heading mb-2 transition-transform duration-300 group-hover:scale-105"
                   style={{
-                    background: "linear-gradient(135deg, #c9a227, #f5d78e, #c9a227)",
+                    background: "linear-gradient(135deg, #F47B20, #FBBF8A, #F47B20)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -88,7 +88,7 @@ export default function StatsSection() {
                 {/* Gold underline on hover */}
                 <div
                   className="mx-auto mt-3 h-0.5 w-0 group-hover:w-12 transition-all duration-500 rounded-full"
-                  style={{ backgroundColor: "#c9a227" }}
+                  style={{ backgroundColor: "#F47B20" }}
                 />
               </div>
             </motion.div>

@@ -52,7 +52,7 @@ export default function AboutSection() {
             {/* 20+ badge */}
             <motion.div
               className="absolute -bottom-6 -right-6 px-7 py-6 rounded-2xl shadow-2xl text-white hidden md:block"
-              style={{ background: "linear-gradient(135deg, #c9a227, #e8bc35)" }}
+              style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
               initial={{ opacity: 0, scale: 0.7 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
@@ -88,7 +88,7 @@ export default function AboutSection() {
               FARIS GROUP{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #c9a227, #e8bc35)",
+                  background: "linear-gradient(135deg, #F47B20, #F89B4B)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -125,7 +125,7 @@ export default function AboutSection() {
                     className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
                     style={{ backgroundColor: "rgba(201,162,39,0.15)" }}
                   >
-                    <CheckCircle size={12} style={{ color: "#c9a227" }} />
+                    <CheckCircle size={12} style={{ color: "#F47B20" }} />
                   </div>
                   <span className="text-sm text-gray-600 font-medium">{item}</span>
                 </motion.div>

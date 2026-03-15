@@ -121,7 +121,7 @@ export default function ProductsPage() {
           <div className="text-center mb-14">
             <span className="section-subtitle block">OUR SPECIALIZATIONS</span>
             <h2 className="section-title">
-              OUR <span style={{ color: "#c9a227" }}>PRODUCTS</span>
+              OUR <span style={{ color: "#F47B20" }}>PRODUCTS</span>
             </h2>
             <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-base leading-relaxed">
               Learn about Faris Group products.
@@ -155,7 +155,7 @@ export default function ProductsPage() {
                   </div>
                   <span
                     className="inline-flex items-center gap-2 text-sm font-semibold transition-gap duration-300 group-hover:gap-3"
-                    style={{ color: "#c9a227" }}
+                    style={{ color: "#F47B20" }}
                   >
                     See more
                     <ArrowRight size={14} />

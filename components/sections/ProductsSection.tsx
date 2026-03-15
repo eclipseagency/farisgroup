@@ -84,7 +84,7 @@ export default function ProductsSection() {
             OUR{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #c9a227, #e8bc35)",
+                background: "linear-gradient(135deg, #F47B20, #F89B4B)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -132,7 +132,7 @@ export default function ProductsSection() {
               {/* Content */}
               <div className="p-6 flex flex-col flex-1">
                 <h3
-                  className="font-heading font-bold text-xl mb-3 transition-colors group-hover:text-[#c9a227]"
+                  className="font-heading font-bold text-xl mb-3 transition-colors group-hover:text-[#F47B20]"
                   style={{ color: "#0a1628" }}
                 >
                   {product.title}
@@ -144,7 +144,7 @@ export default function ProductsSection() {
                   <Link
                     href={product.href}
                     className="group/link inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 hover:gap-3"
-                    style={{ color: "#c9a227" }}
+                    style={{ color: "#F47B20" }}
                   >
                     Explore More
                     <ArrowRight size={14} className="transition-transform group-hover/link:translate-x-1" />
@@ -155,7 +155,7 @@ export default function ProductsSection() {
               {/* Bottom gold line on hover */}
               <div
                 className="h-0.5 w-0 group-hover:w-full transition-all duration-500"
-                style={{ background: "linear-gradient(90deg, #c9a227, #e8bc35)" }}
+                style={{ background: "linear-gradient(90deg, #F47B20, #F89B4B)" }}
               />
             </motion.div>
           ))}

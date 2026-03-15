@@ -58,7 +58,7 @@ export default function AboutPage() {
               Home
             </Link>
             <ChevronRight size={14} className="text-gray-600" />
-            <span style={{ color: "#c9a227" }}>ABOUT US</span>
+            <span style={{ color: "#F47B20" }}>ABOUT US</span>
           </nav>
           <h1 className="font-heading font-black text-4xl md:text-5xl lg:text-6xl leading-tight">
             ABOUT US
@@ -75,7 +75,7 @@ export default function AboutPage() {
               <span className="section-subtitle block">About Us</span>
               <h2 className="section-title">
                 FARIS GROUP FOR{" "}
-                <span style={{ color: "#c9a227" }}>SPORTS SOLUTIONS</span>
+                <span style={{ color: "#F47B20" }}>SPORTS SOLUTIONS</span>
               </h2>
               <div className="mt-5 space-y-4 text-gray-600 leading-relaxed">
                 <p>
@@ -142,13 +142,13 @@ export default function AboutPage() {
             {/* Vision */}
             <div
               className="bg-white rounded-xl p-10 shadow-md border-t-4"
-              style={{ borderColor: "#c9a227" }}
+              style={{ borderColor: "#F47B20" }}
             >
               <div
                 className="w-12 h-12 rounded-lg flex items-center justify-center mb-6"
                 style={{ backgroundColor: "rgba(201,162,39,0.1)" }}
               >
-                <span className="font-heading font-black text-xl" style={{ color: "#c9a227" }}>
+                <span className="font-heading font-black text-xl" style={{ color: "#F47B20" }}>
                   V
                 </span>
               </div>
@@ -172,7 +172,7 @@ export default function AboutPage() {
             <span className="section-subtitle block">Testimonials</span>
             <h2 className="section-title">
               Don&apos;t just take our word for it.{" "}
-              <span style={{ color: "#c9a227" }}>
+              <span style={{ color: "#F47B20" }}>
                 Hear what our amazing customers say about our business.
               </span>
             </h2>
@@ -186,7 +186,7 @@ export default function AboutPage() {
                   key={i}
                   className="flex-shrink-0 w-80 bg-white rounded-xl p-7 shadow-md border border-gray-100 flex flex-col"
                 >
-                  <Quote size={28} className="mb-4 flex-shrink-0" style={{ color: "#c9a227" }} />
+                  <Quote size={28} className="mb-4 flex-shrink-0" style={{ color: "#F47B20" }} />
                   <p className="text-gray-600 text-sm leading-relaxed flex-1 italic">
                     &ldquo;{t.quote}&rdquo;
                   </p>

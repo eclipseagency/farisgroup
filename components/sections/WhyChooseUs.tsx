@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
         <div className="text-center mb-14">
           <span className="section-subtitle block">Our Advantage</span>
           <h2 className="section-title">
-            Why Choose <span style={{ color: "#c9a227" }}>Faris Group</span>
+            Why Choose <span style={{ color: "#F47B20" }}>Faris Group</span>
           </h2>
           <p className="text-gray-500 mt-4 max-w-xl mx-auto text-base leading-relaxed">
             We are your one-stop shop for all sports needs, always ready to deliver the right
