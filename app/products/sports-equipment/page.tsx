@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import PageHeader from "@/components/ui/PageHeader";
 import CTASection from "@/components/sections/CTASection";
-import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Sports Equipment - Faris Group",
@@ -84,16 +82,6 @@ export default function SportsEquipmentPage() {
             </div>
           ))}
 
-          <div className="text-center mt-12">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-10 py-4 text-white font-semibold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: "#F47B20" }}
-            >
-              Request a Quote
-              <ArrowRight size={16} />
-            </Link>
-          </div>
         </div>
       </section>
 

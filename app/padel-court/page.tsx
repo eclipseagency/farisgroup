@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
@@ -150,13 +149,6 @@ export default function PadelCourtPage() {
                 that is sweeping the globe. Join us in revolutionizing the way people stay active,
                 have fun, and connect through the power of Padel.
               </p>
-              <Link
-                href="#quote"
-                className="inline-block px-10 py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-full transition-all duration-300 hover:opacity-90"
-                style={{ backgroundColor: "#0d1f3c" }}
-              >
-                Start Now
-              </Link>
             </div>
             {/* Image */}
             <div className="rounded-2xl overflow-hidden shadow-xl">
@@ -239,53 +231,6 @@ export default function PadelCourtPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Quote Form */}
-      <section id="quote" className="py-20" style={{ background: "rgba(255,255,255,0.02)" }}>
-        <div className="container-custom max-w-2xl">
-          <div className="text-center mb-10">
-            <span className="section-subtitle block">QUOTE</span>
-            <h2 className="section-title">
-              Get your own court now!
-            </h2>
-            <p className="text-white/50 text-sm mt-2">
-              Your email address will not be published. Required fields are marked *
-            </p>
-          </div>
-          <form className="rounded-2xl shadow-lg p-8 space-y-5">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <input
-                type="text"
-                placeholder="Your Name *"
-                className="w-full border border-white/10 rounded-md px-4 py-3 text-sm focus:outline-none focus:border-gold"
-                style={{ "--tw-ring-color": "#F47B20" } as React.CSSProperties}
-              />
-              <input
-                type="email"
-                placeholder="Your Email *"
-                className="w-full border border-white/10 rounded-md px-4 py-3 text-sm focus:outline-none focus:border-gold"
-              />
-            </div>
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className="w-full border border-white/10 rounded-md px-4 py-3 text-sm focus:outline-none"
-            />
-            <textarea
-              rows={5}
-              placeholder="Your Message *"
-              className="w-full border border-white/10 rounded-md px-4 py-3 text-sm focus:outline-none resize-none"
-            />
-            <button
-              type="submit"
-              className="w-full py-4 font-semibold text-white text-sm uppercase tracking-widest rounded-sm transition-all duration-300 hover:opacity-90"
-              style={{ backgroundColor: "#F47B20" }}
-            >
-              Send Request
-            </button>
-          </form>
         </div>
       </section>
 
