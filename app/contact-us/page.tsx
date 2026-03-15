@@ -219,7 +219,7 @@ export default function ContactUsPage() {
                         required
                         placeholder="Your full name"
                         className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none focus:ring-1 transition-colors"
-                        style={{ "--tw-ring-color: #F47B20 } as React.CSSProperties}
+                        style={{ "--tw-ring-color": "#F47B20" } as React.CSSProperties}
                       />
                     </div>
                     <div>
