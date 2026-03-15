@@ -34,9 +34,9 @@ export default function CTASection() {
           >
             <span
               className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase mb-5 px-4 py-2 rounded-full"
-              style={{ color: "#c9a227", backgroundColor: "rgba(201,162,39,0.1)", border: "1px solid rgba(201,162,39,0.25)" }}
+              style={{ color: "#F47B20", backgroundColor: "rgba(201,162,39,0.1)", border: "1px solid rgba(201,162,39,0.25)" }}
             >
-              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#c9a227" }} />
+              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#F47B20" }} />
               Get a quote from
             </span>
 
@@ -45,7 +45,7 @@ export default function CTASection() {
               <br />
               <span
                 style={{
-                  background: "linear-gradient(135deg, #c9a227, #f5d78e, #c9a227)",
+                  background: "linear-gradient(135deg, #F47B20, #FBBF8A, #F47B20)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -63,7 +63,7 @@ export default function CTASection() {
             <Link
               href="/contact-us"
               className="group inline-flex items-center gap-3 px-10 py-4 font-bold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 hover:gap-4 hover:shadow-2xl hover:-translate-y-0.5"
-              style={{ background: "linear-gradient(135deg, #c9a227, #e8bc35)", color: "#fff" }}
+              style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)", color: "#fff" }}
             >
               Contact Us
               <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
@@ -86,7 +86,7 @@ export default function CTASection() {
                 className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
                 style={{ background: "linear-gradient(135deg, rgba(201,162,39,0.2), rgba(201,162,39,0.05))", border: "1px solid rgba(201,162,39,0.2)" }}
               >
-                <Phone size={18} style={{ color: "#c9a227" }} />
+                <Phone size={18} style={{ color: "#F47B20" }} />
               </div>
               <div className="space-y-1.5">
                 {["+966 55 668 8883 (KSA)", "+971 55 336 6241 (UAE)", "+39 328 819 7804 (Italy)"].map((phone) => (
@@ -107,7 +107,7 @@ export default function CTASection() {
                 className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
                 style={{ background: "linear-gradient(135deg, rgba(201,162,39,0.2), rgba(201,162,39,0.05))", border: "1px solid rgba(201,162,39,0.2)" }}
               >
-                <Mail size={18} style={{ color: "#c9a227" }} />
+                <Mail size={18} style={{ color: "#F47B20" }} />
               </div>
               <div className="space-y-1.5">
                 {["info@farisgroup.net", "faris@farisgroup.net"].map((email) => (
@@ -128,7 +128,7 @@ export default function CTASection() {
                 className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
                 style={{ background: "linear-gradient(135deg, rgba(201,162,39,0.2), rgba(201,162,39,0.05))", border: "1px solid rgba(201,162,39,0.2)" }}
               >
-                <MapPin size={18} style={{ color: "#c9a227" }} />
+                <MapPin size={18} style={{ color: "#F47B20" }} />
               </div>
               <div className="text-white/70 text-sm space-y-1">
                 <p>Jeddah - Riyadh - Saudi Arabia</p>

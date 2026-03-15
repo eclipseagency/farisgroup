@@ -67,7 +67,7 @@ export default function BleachersSeatingPage() {
               <span className="section-subtitle block">Spectator Solutions</span>
               <h2 className="section-title">
                 Premium Seating for{" "}
-                <span style={{ color: "#c9a227" }}>Every Venue</span>
+                <span style={{ color: "#F47B20" }}>Every Venue</span>
               </h2>
               <p className="text-gray-600 mt-5 leading-relaxed">
                 Faris Group provides durable and ergonomic bleachers and seating solutions to
@@ -85,7 +85,7 @@ export default function BleachersSeatingPage() {
                   "Compliance with international safety standards",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <CheckCircle size={16} style={{ color: "#c9a227" }} />
+                    <CheckCircle size={16} style={{ color: "#F47B20" }} />
                     <span className="text-gray-700 text-sm">{item}</span>
                   </div>
                 ))}
@@ -111,7 +111,7 @@ export default function BleachersSeatingPage() {
           <div className="text-center mb-14">
             <span className="section-subtitle block">Our Range</span>
             <h2 className="section-title">
-              Seating <span style={{ color: "#c9a227" }}>Solutions</span>
+              Seating <span style={{ color: "#F47B20" }}>Solutions</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -137,7 +137,7 @@ export default function BleachersSeatingPage() {
                       <span
                         key={i}
                         className="text-xs px-3 py-1 rounded-full font-medium"
-                        style={{ backgroundColor: "rgba(201,162,39,0.1)", color: "#9b7a1a" }}
+                        style={{ backgroundColor: "rgba(201,162,39,0.1)", color: "#C05E0E" }}
                       >
                         {f}
                       </span>

@@ -36,7 +36,7 @@ export default function Footer() {
       {/* Top gold line */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent 0%, #c9a227 30%, #e8bc35 50%, #c9a227 70%, transparent 100%)" }}
+        style={{ background: "linear-gradient(90deg, transparent 0%, #F47B20 30%, #F89B4B 50%, #F47B20 70%, transparent 100%)" }}
       />
 
       {/* Decorative mesh */}
@@ -65,7 +65,7 @@ export default function Footer() {
               quality sports and entertainment equipment in the Middle East.
             </p>
             <div className="flex items-start gap-2.5 text-white/40 text-xs mb-6">
-              <Clock size={12} className="flex-shrink-0 mt-0.5" style={{ color: "#c9a227" }} />
+              <Clock size={12} className="flex-shrink-0 mt-0.5" style={{ color: "#F47B20" }} />
               <span>Saturday – Thursday: 08:00 AM – 05:00 PM</span>
             </div>
             <div className="flex items-center gap-2.5">
@@ -105,7 +105,7 @@ export default function Footer() {
                   >
                     <span
                       className="w-0 group-hover:w-3 h-px transition-all duration-300 flex-shrink-0"
-                      style={{ backgroundColor: "#c9a227" }}
+                      style={{ backgroundColor: "#F47B20" }}
                     />
                     {link.name}
                   </Link>
@@ -131,7 +131,7 @@ export default function Footer() {
                   >
                     <span
                       className="w-0 group-hover:w-3 h-px transition-all duration-300 flex-shrink-0"
-                      style={{ backgroundColor: "#c9a227" }}
+                      style={{ backgroundColor: "#F47B20" }}
                     />
                     {link.name}
                   </Link>
@@ -155,7 +155,7 @@ export default function Footer() {
                     href={`tel:${p.label.replace(/\s/g, "")}`}
                     className="flex items-center gap-2 text-white/45 text-xs hover:text-white transition-colors"
                   >
-                    <Phone size={10} style={{ color: "#c9a227", flexShrink: 0 }} />
+                    <Phone size={10} style={{ color: "#F47B20", flexShrink: 0 }} />
                     {p.label}{" "}
                     <span className="text-white/25">({p.country})</span>
                   </a>
@@ -167,13 +167,13 @@ export default function Footer() {
                     href={`mailto:${email}`}
                     className="flex items-center gap-2 text-white/45 text-xs hover:text-white transition-colors"
                   >
-                    <Mail size={10} style={{ color: "#c9a227", flexShrink: 0 }} />
+                    <Mail size={10} style={{ color: "#F47B20", flexShrink: 0 }} />
                     {email}
                   </a>
                 </li>
               ))}
               <li className="flex items-start gap-2 text-white/45 text-xs pt-1">
-                <MapPin size={10} className="flex-shrink-0 mt-0.5" style={{ color: "#c9a227" }} />
+                <MapPin size={10} className="flex-shrink-0 mt-0.5" style={{ color: "#F47B20" }} />
                 <div className="leading-relaxed">
                   <p>Jeddah - Riyadh - Saudi Arabia</p>
                   <p>Abu Dhabi - United Arab Emirates</p>

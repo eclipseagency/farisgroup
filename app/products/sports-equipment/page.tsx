@@ -88,7 +88,7 @@ export default function SportsEquipmentPage() {
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-10 py-4 text-white font-semibold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: "#c9a227" }}
+              style={{ backgroundColor: "#F47B20" }}
             >
               Request a Quote
               <ArrowRight size={16} />

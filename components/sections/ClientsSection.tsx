@@ -21,7 +21,7 @@ export default function ClientsSection() {
       {/* Top border */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-0.5"
-        style={{ background: "linear-gradient(90deg, transparent, #c9a227, transparent)" }}
+        style={{ background: "linear-gradient(90deg, transparent, #F47B20, transparent)" }}
       />
 
       <div className="container-custom">
@@ -36,7 +36,7 @@ export default function ClientsSection() {
             OUR{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #c9a227, #e8bc35)",
+                background: "linear-gradient(135deg, #F47B20, #F89B4B)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",

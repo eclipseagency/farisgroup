@@ -62,7 +62,7 @@ export default function ServicesSection() {
                 OUR{" "}
                 <span
                   style={{
-                    background: "linear-gradient(135deg, #c9a227, #e8bc35)",
+                    background: "linear-gradient(135deg, #F47B20, #F89B4B)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -75,7 +75,7 @@ export default function ServicesSection() {
             <Link
               href="/services"
               className="group inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:gap-3"
-              style={{ color: "#c9a227" }}
+              style={{ color: "#F47B20" }}
             >
               View All Services
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
@@ -108,7 +108,7 @@ export default function ServicesSection() {
             <Link
               href="/services"
               className="group inline-flex items-center gap-2.5 px-8 py-4 font-bold text-sm tracking-widest uppercase text-white rounded-sm transition-all duration-300 hover:opacity-90 hover:gap-3 hover:shadow-xl hover:-translate-y-0.5"
-              style={{ background: "linear-gradient(135deg, #c9a227, #e8bc35)" }}
+              style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
             >
               Learn More
               <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
@@ -155,7 +155,7 @@ export default function ServicesSection() {
                 {/* Gold bottom accent */}
                 <div
                   className="absolute bottom-0 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
-                  style={{ background: "linear-gradient(90deg, #c9a227, #e8bc35)" }}
+                  style={{ background: "linear-gradient(90deg, #F47B20, #F89B4B)" }}
                 />
               </Link>
             </motion.div>

@@ -90,7 +90,7 @@ export default function ContactUsPage() {
           <div className="text-center mb-10">
             <span className="section-subtitle block">Our Locations</span>
             <h2 className="section-title">
-              Global <span style={{ color: "#c9a227" }}>Offices</span>
+              Global <span style={{ color: "#F47B20" }}>Offices</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -110,17 +110,17 @@ export default function ContactUsPage() {
                 </div>
                 <div className="space-y-2 text-sm">
                   <div className="flex gap-2 text-gray-600">
-                    <MapPin size={14} className="flex-shrink-0 mt-0.5" style={{ color: "#c9a227" }} />
+                    <MapPin size={14} className="flex-shrink-0 mt-0.5" style={{ color: "#F47B20" }} />
                     <span>{office.address}</span>
                   </div>
                   <div className="flex gap-2 text-gray-600">
-                    <Phone size={14} className="flex-shrink-0 mt-0.5" style={{ color: "#c9a227" }} />
+                    <Phone size={14} className="flex-shrink-0 mt-0.5" style={{ color: "#F47B20" }} />
                     <a href={`tel:${office.phone.replace(/\s/g, "")}`} className="hover:text-primary">
                       {office.phone}
                     </a>
                   </div>
                   <div className="flex gap-2 text-gray-600">
-                    <Mail size={14} className="flex-shrink-0 mt-0.5" style={{ color: "#c9a227" }} />
+                    <Mail size={14} className="flex-shrink-0 mt-0.5" style={{ color: "#F47B20" }} />
                     <a href={`mailto:${office.email}`} className="hover:text-primary">
                       {office.email}
                     </a>
@@ -141,7 +141,7 @@ export default function ContactUsPage() {
               <div>
                 <span className="section-subtitle block">Reach Us</span>
                 <h2 className="font-heading font-bold text-2xl md:text-3xl" style={{ color: "#0a1628" }}>
-                  Send Us a <span style={{ color: "#c9a227" }}>Message</span>
+                  Send Us a <span style={{ color: "#F47B20" }}>Message</span>
                 </h2>
                 <p className="text-gray-600 mt-4 text-sm leading-relaxed">
                   Whether you need a quote, have questions about a product, or want to discuss a
@@ -164,7 +164,7 @@ export default function ContactUsPage() {
                         className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
                         style={{ backgroundColor: "rgba(201,162,39,0.1)" }}
                       >
-                        <Icon size={18} style={{ color: "#c9a227" }} />
+                        <Icon size={18} style={{ color: "#F47B20" }} />
                       </div>
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-0.5">
@@ -183,9 +183,9 @@ export default function ContactUsPage() {
               {submitted ? (
                 <div
                   className="h-full flex flex-col items-center justify-center text-center p-12 rounded-xl border-2"
-                  style={{ borderColor: "#c9a227", backgroundColor: "rgba(201,162,39,0.04)" }}
+                  style={{ borderColor: "#F47B20", backgroundColor: "rgba(201,162,39,0.04)" }}
                 >
-                  <CheckCircle size={64} className="mb-4" style={{ color: "#c9a227" }} />
+                  <CheckCircle size={64} className="mb-4" style={{ color: "#F47B20" }} />
                   <h3 className="font-heading font-bold text-2xl mb-3" style={{ color: "#1a3a6b" }}>
                     Message Sent!
                   </h3>
@@ -294,7 +294,7 @@ export default function ContactUsPage() {
                     type="submit"
                     disabled={loading}
                     className="mt-6 w-full flex items-center justify-center gap-2 py-4 text-white font-semibold text-sm uppercase tracking-wider transition-opacity hover:opacity-90 disabled:opacity-70"
-                    style={{ backgroundColor: "#c9a227" }}
+                    style={{ backgroundColor: "#F47B20" }}
                   >
                     {loading ? (
                       <>

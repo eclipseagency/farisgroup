@@ -60,7 +60,7 @@ export default function FeaturedProducts() {
           <div>
             <span className="section-subtitle block">Our Portfolio</span>
             <h2 className="section-title">
-              Featured <span style={{ color: "#c9a227" }}>Products &amp; Services</span>
+              Featured <span style={{ color: "#F47B20" }}>Products &amp; Services</span>
             </h2>
           </div>
           <Link
@@ -90,14 +90,14 @@ export default function FeaturedProducts() {
               style={{ background: "linear-gradient(to top, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.4) 50%, transparent 100%)" }}
             />
             <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <p className="text-xs font-semibold tracking-widest uppercase mb-1.5" style={{ color: "#c9a227" }}>
+              <p className="text-xs font-semibold tracking-widest uppercase mb-1.5" style={{ color: "#F47B20" }}>
                 {categories[0].subtitle}
               </p>
               <h3 className="font-heading font-bold text-2xl mb-2">{categories[0].title}</h3>
               <p className="text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-w-xs">
                 {categories[0].description}
               </p>
-              <span className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#c9a227" }}>
+              <span className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#F47B20" }}>
                 Explore <ArrowRight size={14} />
               </span>
             </div>
@@ -120,11 +120,11 @@ export default function FeaturedProducts() {
                 style={{ background: "linear-gradient(to top, rgba(10,22,40,0.9) 0%, rgba(10,22,40,0.3) 60%, transparent 100%)" }}
               />
               <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "#c9a227" }}>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "#F47B20" }}>
                   {cat.subtitle}
                 </p>
                 <h3 className="font-heading font-bold text-lg mb-1">{cat.title}</h3>
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color: "#c9a227" }}>
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color: "#F47B20" }}>
                   Explore <ArrowRight size={12} />
                 </span>
               </div>

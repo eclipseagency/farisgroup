@@ -82,7 +82,7 @@ export default function MaintenancePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-2xl max-w-5xl mx-auto">
             {/* Left dark panel */}
             <div className="p-10 flex flex-col justify-center" style={{ backgroundColor: "#0a1628" }}>
-              <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9a227" }}>
+              <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#F47B20" }}>
                 QUOTE
               </p>
               <h2 className="font-heading font-black text-4xl md:text-5xl text-white leading-tight mb-4">
@@ -103,7 +103,7 @@ export default function MaintenancePage() {
                     href={`tel:${phone.split(" ")[0]}`}
                     className="flex items-center gap-2 text-white/70 text-sm hover:text-white transition-colors"
                   >
-                    <Phone size={14} style={{ color: "#c9a227" }} />
+                    <Phone size={14} style={{ color: "#F47B20" }} />
                     {phone}
                   </a>
                 ))}
@@ -113,7 +113,7 @@ export default function MaintenancePage() {
                     href={`mailto:${email}`}
                     className="flex items-center gap-2 text-white/70 text-sm hover:text-white transition-colors"
                   >
-                    <Mail size={14} style={{ color: "#c9a227" }} />
+                    <Mail size={14} style={{ color: "#F47B20" }} />
                     {email}
                   </a>
                 ))}

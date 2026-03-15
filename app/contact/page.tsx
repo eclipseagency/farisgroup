@@ -72,7 +72,7 @@ export default function ContactPage() {
                 <span className="section-subtitle block">Reach Us</span>
                 <h2 className="font-heading font-bold text-2xl md:text-3xl" style={{ color: "#0a1628" }}>
                   Let&apos;s Start a{" "}
-                  <span style={{ color: "#c9a227" }}>Conversation</span>
+                  <span style={{ color: "#F47B20" }}>Conversation</span>
                 </h2>
                 <p className="text-gray-600 mt-4 text-sm leading-relaxed">
                   Whether you have a question about our products, need a quote, or want to discuss
@@ -88,7 +88,7 @@ export default function ContactPage() {
                       className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
                       style={{ backgroundColor: "rgba(201,162,39,0.1)" }}
                     >
-                      <Icon size={20} style={{ color: "#c9a227" }} />
+                      <Icon size={20} style={{ color: "#F47B20" }} />
                     </div>
                     <div>
                       <h3 className="font-semibold text-sm mb-1" style={{ color: "#1a3a6b" }}>
@@ -110,9 +110,9 @@ export default function ContactPage() {
               {submitted ? (
                 <div
                   className="h-full flex flex-col items-center justify-center text-center p-12 rounded-xl border-2"
-                  style={{ borderColor: "#c9a227", backgroundColor: "rgba(201,162,39,0.05)" }}
+                  style={{ borderColor: "#F47B20", backgroundColor: "rgba(201,162,39,0.05)" }}
                 >
-                  <CheckCircle size={64} className="mb-4" style={{ color: "#c9a227" }} />
+                  <CheckCircle size={64} className="mb-4" style={{ color: "#F47B20" }} />
                   <h3 className="font-heading font-bold text-2xl mb-3" style={{ color: "#1a3a6b" }}>
                     Message Sent Successfully!
                   </h3>
@@ -235,7 +235,7 @@ export default function ContactPage() {
                     type="submit"
                     disabled={loading}
                     className="mt-6 w-full flex items-center justify-center gap-2 py-4 text-white font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:opacity-90 disabled:opacity-70"
-                    style={{ backgroundColor: "#c9a227" }}
+                    style={{ backgroundColor: "#F47B20" }}
                   >
                     {loading ? (
                       <>

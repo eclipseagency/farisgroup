@@ -69,14 +69,14 @@ export default function HeroSection() {
               <span
                 className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase mb-6 px-4 py-2 rounded-full"
                 style={{
-                  color: "#c9a227",
+                  color: "#F47B20",
                   backgroundColor: "rgba(201,162,39,0.1)",
                   border: "1px solid rgba(201,162,39,0.25)",
                 }}
               >
                 <span
                   className="w-1.5 h-1.5 rounded-full animate-pulse-glow"
-                  style={{ backgroundColor: "#c9a227" }}
+                  style={{ backgroundColor: "#F47B20" }}
                 />
                 Your Trusted Partner Since 2003
               </span>
@@ -116,7 +116,7 @@ export default function HeroSection() {
               <Link
                 href="/products"
                 className="group inline-flex items-center gap-2.5 px-8 py-4 font-bold text-sm tracking-widest uppercase text-white rounded-sm transition-all duration-300 hover:gap-4 hover:shadow-2xl hover:-translate-y-0.5"
-                style={{ background: "linear-gradient(135deg, #c9a227, #e8bc35)" }}
+                style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
               >
                 Explore Products
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />

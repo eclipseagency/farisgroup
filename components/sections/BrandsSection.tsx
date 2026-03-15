@@ -63,7 +63,7 @@ export default function BrandsSection() {
           <span className="section-subtitle block">Trusted By</span>
           <h2 className="font-heading font-bold text-2xl md:text-3xl" style={{ color: "#0a1628" }}>
             Our{" "}
-            <span style={{ color: "#c9a227" }}>Valued Clients</span>
+            <span style={{ color: "#F47B20" }}>Valued Clients</span>
           </h2>
           <p className="text-gray-500 text-sm mt-3 max-w-lg mx-auto">
             Faris Group is a qualified vendor trusted by leading private and government

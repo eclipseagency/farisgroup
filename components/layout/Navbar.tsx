@@ -155,7 +155,7 @@ export default function Navbar() {
 
                   {/* Level-1 Dropdown */}
                   {item.children && activeDropdown === item.name && (
-                    <div className="absolute top-full left-0 mt-0 w-64 shadow-2xl rounded-b-xl py-2 z-50 overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.97)", backdropFilter: "blur(20px)", borderTop: "2px solid #c9a227", border: "1px solid rgba(0,0,0,0.06)", borderTopColor: "#c9a227" }}>
+                    <div className="absolute top-full left-0 mt-0 w-64 shadow-2xl rounded-b-xl py-2 z-50 overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.97)", backdropFilter: "blur(20px)", borderTop: "2px solid #F47B20", border: "1px solid rgba(0,0,0,0.06)", borderTopColor: "#F47B20" }}>
                       {item.children.map((child) => (
                         <div
                           key={child.name}
@@ -233,7 +233,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ml-2 px-6 py-2.5 text-sm font-semibold text-white rounded-sm transition-all duration-300 hover:opacity-90"
-                style={{ backgroundColor: "#c9a227" }}
+                style={{ backgroundColor: "#F47B20" }}
               >
                 OUR STORE
               </a>
@@ -312,7 +312,7 @@ export default function Navbar() {
               <Link
                 href="/contact-us"
                 className="block text-center mt-4 px-6 py-3 text-sm font-semibold text-white"
-                style={{ backgroundColor: "#c9a227" }}
+                style={{ backgroundColor: "#F47B20" }}
                 onClick={() => setIsOpen(false)}
               >
                 Get a Quote
