@@ -84,16 +84,12 @@ export default function ServicesSection() {
         >
           <div className="lg:col-span-2 space-y-4 text-white/55 text-base leading-relaxed">
             <p>
-              <strong className="text-white/80">Sports Facility Design and Construction:</strong>{" "}
-              We specialize in creating state-of-the-art sports facilities tailored to your unique needs.
-              From concept to completion, we ensure every aspect of the design and construction process
-              is meticulously executed.
+              <strong className="text-white/80">{t("servicesSection.desc1Title")}</strong>{" "}
+              {t("servicesSection.desc1")}
             </p>
             <p>
-              <strong className="text-white/80">Equipment and Supply:</strong>{" "}
-              Discover a wide range of top-quality sports equipment and supplies to enhance your facility.
-              Whether you need fitness equipment, court accessories, or specialized gear, we offer
-              reliable products that meet the highest industry standards.
+              <strong className="text-white/80">{t("servicesSection.desc2Title")}</strong>{" "}
+              {t("servicesSection.desc2")}
             </p>
           </div>
           <div className="flex items-end">
@@ -102,7 +98,7 @@ export default function ServicesSection() {
               className="group inline-flex items-center gap-2.5 px-8 py-4 font-bold text-sm tracking-widest uppercase text-white rounded-sm transition-all duration-300 hover:opacity-90 hover:gap-3 hover:shadow-xl hover:-translate-y-0.5"
               style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
             >
-              Learn More
+              {t("servicesSection.learnMore")}
               <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

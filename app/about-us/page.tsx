@@ -5,36 +5,13 @@ import { ChevronRight, Quote } from "lucide-react";
 import ClientsSection from "@/components/sections/ClientsSection";
 import CTASection from "@/components/sections/CTASection";
 import { useT } from "@/lib/useT";
-
-const testimonials = [
-  {
-    quote:
-      "Faris Group's innovative equipment transformed our fitness club, attracting more members and enhancing their experience. Highly recommended!",
-    name: "Khalid Al-Rashid",
-    role: "Owner of a Sports Complex",
-  },
-  {
-    quote:
-      "Faris Group played a pivotal role in transforming our school's sports facilities. Their expertise and dedication resulted in top-quality sports equipment and spaces that inspire our students to excel. We're grateful for their exceptional services.",
-    name: "Saad Al-Muhanna",
-    role: "Community Center Manager",
-  },
-  {
-    quote:
-      "I'm impressed by Faris Group's commitment to innovation. Their equipment and facilities have taken my sports experience to a whole new level. Thank you!",
-    name: "Mohammed Al-Abdulaziz",
-    role: "Sports Enthusiast",
-  },
-  {
-    quote:
-      "Faris Group exceeded our expectations with their exceptional sports solutions. Our facility has become a top-notch recreation center, thanks to their expertise and attention to detail.",
-    name: "Fatima Al-Malik",
-    role: "Director of a Fitness Club",
-  },
-];
+import { useLocale } from "@/contexts/LocaleContext";
+import { translations } from "@/lib/translations";
 
 export default function AboutPage() {
   const t = useT();
+  const { locale } = useLocale();
+  const testimonials = translations[locale].aboutPage.testimonials;
   return (
     <>
       {/* ── Hero / Page Header ───────────────────────── */}
@@ -157,7 +134,7 @@ export default function AboutPage() {
       <section className="py-20  overflow-hidden">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <span className="section-subtitle block">Testimonials</span>
+            <span className="section-subtitle block">{t("aboutPage.testimonialsBadge")}</span>
             <h2 className="section-title">
               {t("aboutPage.testimonialsTitle")}
             </h2>
@@ -165,21 +142,21 @@ export default function AboutPage() {
 
           {/* Scrolling row */}
           <div className="relative overflow-hidden">
-            <div className="flex gap-6 animate-testimonials-scroll">
-              {[...testimonials, ...testimonials].map((t, i) => (
+            <div className="flex gap-6 animate-testimonials-scroll" dir="ltr">
+              {[...testimonials, ...testimonials].map((item, i) => (
                 <div
                   key={i}
                   className="flex-shrink-0 w-80 rounded-xl p-7 shadow-md border border-white/10 flex flex-col"
                 >
                   <Quote size={28} className="mb-4 flex-shrink-0" style={{ color: "#F47B20" }} />
                   <p className="text-white/60 text-sm leading-relaxed flex-1 italic">
-                    &ldquo;{t.quote}&rdquo;
+                    &ldquo;{item.quote}&rdquo;
                   </p>
                   <div className="mt-5 pt-4 border-t border-white/10">
                     <p className="font-heading font-bold text-sm" style={{ color: "#ffffff" }}>
-                      {t.name}
+                      {item.name}
                     </p>
-                    <p className="text-xs text-gray-400 mt-0.5">{t.role}</p>
+                    <p className="text-xs text-gray-400 mt-0.5">{item.role}</p>
                   </div>
                 </div>
               ))}
