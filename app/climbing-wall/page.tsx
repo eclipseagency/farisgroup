@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
-import { useT } from "@/lib/useT";
 
 
 const projectImages = [
@@ -21,7 +20,6 @@ const projectImages = [
 ];
 
 export default function ClimbingWallPage() {
-  const t = useT();
   return (
     <>
       {/* Hero */}

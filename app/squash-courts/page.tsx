@@ -2,12 +2,10 @@
 
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
-import { useT } from "@/lib/useT";
 
 
 
 export default function SquashCourtsPage() {
-  const t = useT();
   return (
     <>
       {/* Hero — Static Image */}

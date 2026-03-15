@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
-import { useT } from "@/lib/useT";
 
 
 export default function ProjectManagementPage() {
-  const t = useT();
   return (
     <>
       {/* Hero */}

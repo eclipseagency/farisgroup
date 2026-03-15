@@ -1,7 +1,6 @@
 "use client";
 
 import CTASection from "@/components/sections/CTASection";
-import { useT } from "@/lib/useT";
 
 
 const whyUs = [
@@ -77,7 +76,6 @@ const projectImages = [
 ];
 
 export default function PadelCourtPage() {
-  const t = useT();
   return (
     <>
       {/* Hero — Video */}

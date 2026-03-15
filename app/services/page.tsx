@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
-import { useT } from "@/lib/useT";
 
 
 const services = [
@@ -108,7 +107,6 @@ const services = [
 ];
 
 export default function ServicesPage() {
-  const t = useT();
   return (
     <>
       {/* Hero */}

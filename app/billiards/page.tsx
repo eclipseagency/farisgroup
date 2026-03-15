@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
-import { useT } from "@/lib/useT";
 
 
 const galleryImages = [
@@ -41,7 +40,6 @@ const galleryImages = [
 ];
 
 export default function BilliardsPage() {
-  const t = useT();
   return (
     <>
       {/* Hero — Static Image */}

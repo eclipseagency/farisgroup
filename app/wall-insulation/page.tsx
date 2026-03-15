@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
-import { useT } from "@/lib/useT";
 
 
 const whyChoose = [
@@ -96,7 +95,6 @@ const projectImages = [
 ];
 
 export default function WallInsulationPage() {
-  const t = useT();
   return (
     <>
       {/* Hero */}
