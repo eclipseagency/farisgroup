@@ -220,7 +220,7 @@ export default function ContactUsPage() {
                         required
                         placeholder={t("cta.namePlaceholder")}
                         className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none focus:ring-1 transition-colors"
-                        style={{ "--tw-ring-color": "#F47B20" } as React.CSSProperties}
+                        style={{ "--tw-ring-color": "#F47B20", background: "rgba(255,255,255,0.06)", color: "white" } as React.CSSProperties}
                       />
                     </div>
                     <div>
@@ -233,6 +233,7 @@ export default function ContactUsPage() {
                         required
                         placeholder={t("cta.emailPlaceholder")}
                         className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors"
+                        style={{ background: "rgba(255,255,255,0.06)", color: "white" }}
                       />
                     </div>
                     <div>
@@ -244,6 +245,7 @@ export default function ContactUsPage() {
                         onChange={handleChange}
                         placeholder={t("cta.phonePlaceholder")}
                         className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors"
+                        style={{ background: "rgba(255,255,255,0.06)", color: "white" }}
                       />
                     </div>
                     <div>
@@ -255,6 +257,7 @@ export default function ContactUsPage() {
                         onChange={handleChange}
                         placeholder="Your organization"
                         className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors"
+                        style={{ background: "rgba(255,255,255,0.06)", color: "white" }}
                       />
                     </div>
                     <div className="md:col-span-2">
@@ -264,18 +267,19 @@ export default function ContactUsPage() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors" style={{ background: "rgba(255,255,255,0.06)", color: "white" }}
+                        className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors"
+                        style={{ background: "rgba(10,22,40,0.9)", color: "white" }}
                       >
-                        <option value="">{t("cta.subjects.select")}</option>
-                        <option value="sports-equipment">{t("cta.subjects.sportsEquipment")}</option>
-                        <option value="fitness-gym">{t("cta.subjects.fitnessGym")}</option>
-                        <option value="padel-court">{t("cta.subjects.padelCourt")}</option>
-                        <option value="bleachers-seating">{t("cta.subjects.bleachersSeating")}</option>
-                        <option value="shooting-range">{t("cta.subjects.shootingRange")}</option>
-                        <option value="construction">{t("cta.subjects.construction")}</option>
-                        <option value="supply">{t("cta.subjects.supply")}</option>
-                        <option value="maintenance">{t("cta.subjects.maintenance")}</option>
-                        <option value="general">{t("cta.subjects.general")}</option>
+                        <option value="" style={{ background: "#0a1628" }}>{t("cta.subjects.select")}</option>
+                        <option value="sports-equipment" style={{ background: "#0a1628" }}>{t("cta.subjects.sportsEquipment")}</option>
+                        <option value="fitness-gym" style={{ background: "#0a1628" }}>{t("cta.subjects.fitnessGym")}</option>
+                        <option value="padel-court" style={{ background: "#0a1628" }}>{t("cta.subjects.padelCourt")}</option>
+                        <option value="bleachers-seating" style={{ background: "#0a1628" }}>{t("cta.subjects.bleachersSeating")}</option>
+                        <option value="shooting-range" style={{ background: "#0a1628" }}>{t("cta.subjects.shootingRange")}</option>
+                        <option value="construction" style={{ background: "#0a1628" }}>{t("cta.subjects.construction")}</option>
+                        <option value="supply" style={{ background: "#0a1628" }}>{t("cta.subjects.supply")}</option>
+                        <option value="maintenance" style={{ background: "#0a1628" }}>{t("cta.subjects.maintenance")}</option>
+                        <option value="general" style={{ background: "#0a1628" }}>{t("cta.subjects.general")}</option>
                       </select>
                     </div>
                     <div className="md:col-span-2">
@@ -288,6 +292,7 @@ export default function ContactUsPage() {
                         rows={5}
                         placeholder={t("cta.messagePlaceholder")}
                         className="w-full px-4 py-3 border border-white/10 rounded-lg text-sm focus:outline-none transition-colors resize-none"
+                        style={{ background: "rgba(255,255,255,0.06)", color: "white" }}
                       />
                     </div>
                   </div>

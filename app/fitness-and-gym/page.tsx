@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
-
+import { useT } from "@/lib/useT";
+import { useLocale } from "@/contexts/LocaleContext";
+import { translations } from "@/lib/translations";
 
 const projectImages = [
   "https://farisgroup.net/wp-content/uploads/2023/07/Al-Midra-Recreation-Center-Saudi-Aramco-11.jpeg",
@@ -20,6 +22,10 @@ const projectImages = [
 ];
 
 export default function FitnessGymPage() {
+  const t = useT();
+  const { locale } = useLocale();
+  const content = translations[locale].pageContent.fitnessGym;
+
   return (
     <>
       {/* Hero */}
@@ -32,9 +38,9 @@ export default function FitnessGymPage() {
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.6)" }} />
         <div className="relative z-10 text-center text-white px-4 max-w-3xl">
           <h1 className="font-heading font-black text-4xl md:text-6xl mb-4 leading-tight uppercase tracking-widest">
-            Fitness &amp; Gym
+            {content.heroTitle}
           </h1>
-          <p className="text-lg text-gray-200">THE FUTURE IS HUMAN</p>
+          <p className="text-lg text-gray-200">{content.heroSubtitle}</p>
         </div>
       </section>
 
@@ -42,9 +48,9 @@ export default function FitnessGymPage() {
       <div className="py-3 border-b border-white/10" style={{ background: "rgba(255,255,255,0.04)" }}>
         <div className="container-custom">
           <nav className="flex items-center gap-2 text-sm text-white/50">
-            <Link href="/" className="text-white/70 hover:text-gold transition-colors">Home</Link>
+            <Link href="/" className="text-white/70 hover:text-gold transition-colors">{t("common.home")}</Link>
             <span>/</span>
-            <span className="text-white/80 font-medium">Fitness &amp; Gym</span>
+            <span className="text-white/80 font-medium">{content.heroTitle}</span>
           </nav>
         </div>
       </div>
@@ -53,13 +59,10 @@ export default function FitnessGymPage() {
       <section className="py-16">
         <div className="container-custom max-w-3xl text-center">
           <h2 className="font-heading font-black text-3xl md:text-4xl mb-6 uppercase" style={{ color: "#1a8fc1" }}>
-            FITNESS &amp; GYM
+            {content.title}
           </h2>
-          <p className="text-white/60 leading-relaxed mb-4">
-            Set up a world-class fitness facility with our cutting-edge Fitness &amp; Gym equipment.
-            Our range includes treadmills, weight machines, cardio equipment, and more, designed to
-            support diverse fitness goals and promote a healthy lifestyle.
-          </p>
+          <p className="text-white/60 leading-relaxed mb-4">{content.p1}</p>
+          <p className="text-white/60 leading-relaxed">{content.p2}</p>
         </div>
       </section>
 
@@ -160,7 +163,7 @@ export default function FitnessGymPage() {
       </div>
 
       {/* Equipment Carousel */}
-      <section className="py-12  overflow-hidden">
+      <section className="py-12 overflow-hidden">
         <style>{`
           @keyframes marquee {
             0%   { transform: translateX(0); }
@@ -175,7 +178,7 @@ export default function FitnessGymPage() {
             animation-play-state: paused;
           }
         `}</style>
-        <div className="marquee-track">
+        <div className="marquee-track" dir="ltr">
           {[
             "https://farisgroup.net/wp-content/uploads/2024/10/HUMAN-RUN-LED-11-200x200-2.jpg",
             "https://farisgroup.net/wp-content/uploads/2024/10/LAT-MACHINE-2-200x200-1.jpg",
@@ -216,8 +219,8 @@ export default function FitnessGymPage() {
       <section className="py-20">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <span className="section-subtitle block">Our Work</span>
-            <h2 className="section-title">Projects</h2>
+            <span className="section-subtitle block">{t("common.ourWork")}</span>
+            <h2 className="section-title">{t("common.projects")}</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {projectImages.map((src, index) => (

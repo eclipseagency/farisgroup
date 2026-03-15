@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Phone, Mail } from "lucide-react";
+import { useT } from "@/lib/useT";
+import QuoteSection from "@/components/sections/QuoteSection";
 
 const projects = [
   { title: "Sportplex Squash Courts", category: "Squash & Padel", image: "https://farisgroup.net/wp-content/uploads/2025/12/41ee54a4-f914-4478-896e-de5e93f0b369-960x720.webp" },
@@ -42,10 +43,25 @@ const projects = [
   { title: "Irish Vicker's WTC Mall (Abu Dhabi)", category: "Bowling", image: "https://farisgroup.net/wp-content/uploads/2023/05/Irish-Vickers-Bowling-3-scaled-2.jpg" },
 ];
 
-const categories = ["All", "Bowling", "Climbing Wall", "Fitness & Gym", "Others", "Padel Court", "Playground", "Shooting Range", "Sport Equipment", "Squash & Padel"];
+// English category keys used for filtering (must match project.category values)
+const categoryKeys = ["All", "Bowling", "Climbing Wall", "Fitness & Gym", "Others", "Padel Court", "Playground", "Shooting Range", "Sport Equipment", "Squash & Padel"];
 
 export default function ProjectsPage() {
+  const t = useT();
   const [active, setActive] = useState("All");
+
+  const categoryLabels: Record<string, string> = {
+    "All": t("projectsPage.filterAll"),
+    "Bowling": t("projectsPage.categories.bowling"),
+    "Climbing Wall": t("projectsPage.categories.climbingWall"),
+    "Fitness & Gym": t("projectsPage.categories.fitnessGym"),
+    "Others": t("projectsPage.categories.others"),
+    "Padel Court": t("projectsPage.categories.padelCourt"),
+    "Playground": t("projectsPage.categories.playground"),
+    "Shooting Range": t("projectsPage.categories.shootingRange"),
+    "Sport Equipment": t("projectsPage.categories.sportEquipment"),
+    "Squash & Padel": t("projectsPage.categories.squashPadel"),
+  };
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
 
@@ -61,7 +77,7 @@ export default function ProjectsPage() {
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.55)" }} />
         <div className="relative z-10 text-center text-white px-4 max-w-3xl">
           <h1 className="font-heading font-black text-4xl md:text-6xl mb-6 leading-tight uppercase tracking-widest">
-            Projects
+            {t("projectsPage.heroTitle")}
           </h1>
         </div>
       </section>
@@ -70,9 +86,9 @@ export default function ProjectsPage() {
       <div className="py-3 border-b border-white/10" style={{ background: "rgba(255,255,255,0.04)" }}>
         <div className="container-custom">
           <nav className="flex items-center gap-2 text-sm text-white/50">
-            <Link href="/" className="text-white/70 hover:text-gold transition-colors">Home</Link>
+            <Link href="/" className="text-white/70 hover:text-gold transition-colors">{t("common.home")}</Link>
             <span>/</span>
-            <span className="text-white/80 font-medium">OUR PROJECTS</span>
+            <span className="text-white/80 font-medium">{t("projectsPage.breadcrumb")}</span>
           </nav>
         </div>
       </div>
@@ -81,16 +97,16 @@ export default function ProjectsPage() {
       <section className="py-16">
         <div className="container-custom">
           <div className="text-center mb-10">
-            <span className="section-subtitle block">PROJECTS</span>
-            <h2 className="section-title">OUR PROJECTS GALLERY</h2>
+            <span className="section-subtitle block">{t("projectsPage.badge")}</span>
+            <h2 className="section-title">{t("projectsPage.title")}</h2>
             <p className="text-white/50 mt-4 max-w-2xl mx-auto text-sm leading-relaxed">
-              With 30 years of experience in the field, get acquainted with our most inspiring projects.
+              {t("projectsPage.subtitle")}
             </p>
           </div>
 
           {/* Filter Tabs */}
           <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {categories.map((cat) => (
+            {categoryKeys.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
@@ -101,7 +117,7 @@ export default function ProjectsPage() {
                     : { backgroundColor: "#f1f3f7", color: "#555" }
                 }
               >
-                {cat}
+                {categoryLabels[cat]}
               </button>
             ))}
           </div>
@@ -131,101 +147,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Quote / Contact Section */}
-      <section
-        className="relative py-24 overflow-hidden"
-        style={{
-          backgroundImage:
-            "url(https://farisgroup.net/wp-content/uploads/2023/05/45518666_356687755099112_7281876042573152256_n-1-1.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "bottom",
-        }}
-      >
-        <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.7)" }} />
-        <div className="relative z-10 container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-2xl max-w-5xl mx-auto">
-            <div className="p-10 flex flex-col justify-center" style={{ backgroundColor: "#0a1628" }}>
-              <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#F47B20" }}>
-                QUOTE
-              </p>
-              <h2 className="font-heading font-black text-4xl md:text-5xl text-white leading-tight mb-4">
-                REQUEST A QUOTE
-              </h2>
-              <p className="text-white font-semibold text-base mb-1">Let&apos;s get in touch</p>
-              <p className="text-white/60 text-sm mb-8">
-                We&apos;re open for any suggestion or just to have a chat
-              </p>
-              <div className="space-y-3">
-                {[
-                  "+966 53 800 7018 (KSA)",
-                  "+971 55 336 6241 (UAE)",
-                  "+39 328 819 7804 (Italy)",
-                ].map((phone) => (
-                  <a
-                    key={phone}
-                    href={`tel:${phone.split(" ")[0]}`}
-                    className="flex items-center gap-2 text-white/70 text-sm hover:text-white transition-colors"
-                  >
-                    <Phone size={14} style={{ color: "#F47B20" }} />
-                    {phone}
-                  </a>
-                ))}
-                {["info@farisgroup.net", "faris@farisgroup.net"].map((email) => (
-                  <a
-                    key={email}
-                    href={`mailto:${email}`}
-                    className="flex items-center gap-2 text-white/70 text-sm hover:text-white transition-colors"
-                  >
-                    <Mail size={14} style={{ color: "#F47B20" }} />
-                    {email}
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div className="p-10" style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(12px)" }}>
-              <form className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
-                />
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
-                />
-                <input
-                  type="text"
-                  placeholder="Company Name"
-                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
-                />
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
-                />
-                <textarea
-                  rows={4}
-                  placeholder="Message"
-                  className="w-full rounded px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none resize-none" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
-                />
-                <button
-                  type="submit"
-                  className="w-full py-3 font-semibold text-white text-sm tracking-widest uppercase rounded transition-all duration-300 hover:opacity-90"
-                  style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
-                >
-                  Send a message
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      <QuoteSection />
     </>
   );
 }

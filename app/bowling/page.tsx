@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
-
+import { useT } from "@/lib/useT";
+import { useLocale } from "@/contexts/LocaleContext";
+import { translations } from "@/lib/translations";
 
 const projectImages = [
   "https://farisgroup.net/wp-content/uploads/2023/05/DSC05930-scaled.jpg",
@@ -17,19 +19,23 @@ const projectImages = [
 ];
 
 export default function BowlingPage() {
+  const t = useT();
+  const { locale } = useLocale();
+  const content = translations[locale].pageContent.bowling;
+
   return (
     <>
       {/* Hero */}
       <section className="relative w-full h-screen min-h-[500px] overflow-hidden flex items-center justify-center">
         <img
           src="https://farisgroup.net/wp-content/uploads/2023/05/DSC06018-scaled-1.jpg"
-          alt="Bowling Hero"
+          alt="{content.heroTitle}"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.55)" }} />
         <div className="relative z-10 text-center text-white px-4 max-w-3xl">
           <h1 className="font-heading font-black text-4xl md:text-6xl mb-6 leading-tight uppercase tracking-widest">
-            Bowling Lanes
+            {content.heroTitle}
           </h1>
         </div>
       </section>
@@ -38,109 +44,37 @@ export default function BowlingPage() {
       <div className="py-3 border-b border-white/10" style={{ background: "rgba(255,255,255,0.04)" }}>
         <div className="container-custom">
           <nav className="flex items-center gap-2 text-sm text-white/50">
-            <Link href="/" className="text-white/70 hover:text-gold transition-colors">Home</Link>
+            <Link href="/" className="text-white/70 hover:text-gold transition-colors">{t("common.home")}</Link>
             <span>/</span>
-            <span className="text-white/80 font-medium">Bowling</span>
+            <span className="text-white/80 font-medium">{content.heroTitle}</span>
           </nav>
         </div>
       </div>
 
-      {/* Intro — Part 1 */}
+      {/* Intro */}
       <section className="py-16">
         <div className="container-custom">
+          {/* Row 1: image left, title+text right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            {/* Image */}
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img
-                src="https://farisgroup.net/wp-content/uploads/2023/05/DSC05980-scaled.jpg"
-                alt="Bowling Lane"
-                className="w-full h-80 object-cover"
-              />
+              <img src="https://farisgroup.net/wp-content/uploads/2023/05/DSC05980-scaled.jpg" alt="{content.title}" className="w-full h-80 object-cover" />
             </div>
-            {/* Title + text */}
             <div>
-              <h2
-                className="font-heading font-black text-3xl md:text-4xl mb-6 leading-tight uppercase"
-                style={{ color: "#1a8fc1" }}
-              >
-                Bowling Lanes
+              <h2 className="font-heading font-black text-3xl md:text-4xl mb-6 leading-tight uppercase" style={{ color: "#1a8fc1" }}>
+                {content.title}
               </h2>
-              <p className="text-white/60 leading-relaxed mb-4">
-                Step into the world of entertainment with Faris Group&apos;s exceptional Bowling
-                solutions. We specialize in creating captivating experiences that delight bowlers of
-                all ages and skill levels. With our comprehensive range of offerings, we ensure a
-                memorable time filled with strikes, spares, and laughter.
-              </p>
-              <p className="text-white/60 leading-relaxed mb-4">
-                Our modern bowling lanes are designed to deliver a thrilling and immersive
-                experience. Whether you&apos;re a seasoned bowler or a beginner, our lanes provide a
-                perfect platform to showcase your skills and enjoy friendly competition with family
-                and friends.
-              </p>
-              <p className="text-white/60 leading-relaxed">
-                Equipped with state-of-the-art technology and smooth surfaces, our lanes offer a
-                seamless and enjoyable bowling experience.
-              </p>
+              <p className="text-white/60 leading-relaxed mb-4">{content.p1}</p>
+              <p className="text-white/60 leading-relaxed">{content.p2}</p>
             </div>
           </div>
 
-          {/* Part 2: text left, image right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <p className="text-white/60 leading-relaxed mb-4">
-                At Faris Group, we understand that creating a striking entertainment experience goes
-                beyond just the equipment. That&apos;s why our team of experts is dedicated to
-                providing comprehensive services, including design, installation, and maintenance.
-              </p>
-              <p className="text-white/60 leading-relaxed">
-                We work closely with our clients to customize bowling solutions that meet their
-                specific needs and preferences, ensuring that every detail is tailored to
-                perfection.
-              </p>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img
-                src="https://farisgroup.net/wp-content/uploads/2023/05/OWL-Bowling-SMAASH-Mall-8-1.jpeg"
-                alt="Bowling Center"
-                className="w-full h-80 object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Part 3: Everything Bowling */}
-          <div className="text-center mb-10">
-            <h2
-              className="font-heading font-black text-3xl md:text-4xl mb-8 uppercase"
-              style={{ color: "#1a8fc1" }}
-            >
-              Everything Bowling!
-            </h2>
-          </div>
+          {/* Row 2: text left, image right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center">
-              <p className="text-white/60 leading-relaxed mb-4">
-                In addition to our top-quality lanes, we provide a wide selection of bowling
-                equipment to enhance your gameplay. From premium bowling balls and shoes to scoring
-                systems and pinsetters, our offerings are designed to meet the highest standards of
-                performance and durability.
-              </p>
-              <p className="text-white/60 leading-relaxed mb-4">
-                Whether you&apos;re planning to set up a bowling center, upgrade an existing
-                facility, or add a bowling alley to your entertainment complex, Faris Group is your
-                trusted partner. Let us transform your space into a vibrant bowling destination,
-                where bowlers of all ages can gather, compete, and create lasting memories.
-              </p>
-              <p className="text-white/60 leading-relaxed mb-8">
-                Choose Faris Group for comprehensive Bowling solutions that exceed expectations and
-                deliver an exceptional entertainment experience.
-              </p>
+              <p className="text-white/60 leading-relaxed mb-8">{content.p3}</p>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img
-                src="https://farisgroup.net/wp-content/uploads/2023/05/DSC06018-scaled-1.jpg"
-                alt="Bowling Alley"
-                className="w-full h-80 object-cover"
-              />
+              <img src="https://farisgroup.net/wp-content/uploads/2023/05/OWL-Bowling-SMAASH-Mall-8-1.jpeg" alt="{content.title}" className="w-full h-80 object-cover" />
             </div>
           </div>
         </div>
@@ -150,17 +84,13 @@ export default function BowlingPage() {
       <section className="py-20">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <span className="section-subtitle block">Our Work</span>
-            <h2 className="section-title">Projects</h2>
+            <span className="section-subtitle block">{t("common.ourWork")}</span>
+            <h2 className="section-title">{t("common.projects")}</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {projectImages.map((src, index) => (
               <div key={index} className="overflow-hidden rounded-xl shadow-md aspect-square">
-                <img
-                  src={src}
-                  alt={`Bowling project ${index + 1}`}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
+                <img src={src} alt="Bowling project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
             ))}
           </div>
