@@ -1,5 +1,8 @@
+"use client";
+
 import type { Metadata } from "next";
 import CTASection from "@/components/sections/CTASection";
+import { useT } from "@/lib/useT";
 
 export const metadata: Metadata = {
   title: "Padel Court - Faris Group",
@@ -80,6 +83,7 @@ const projectImages = [
 ];
 
 export default function PadelCourtPage() {
+  const t = useT();
   return (
     <>
       {/* Hero — Video */}

@@ -1,6 +1,9 @@
+"use client";
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
+import { useT } from "@/lib/useT";
 
 export const metadata: Metadata = {
   title: "Squash Courts - Faris Group",
@@ -10,6 +13,7 @@ export const metadata: Metadata = {
 
 
 export default function SquashCourtsPage() {
+  const t = useT();
   return (
     <>
       {/* Hero — Static Image */}

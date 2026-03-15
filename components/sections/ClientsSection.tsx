@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useT } from "@/lib/useT";
 
 const clients = [
   { name: "American International School of Jeddah", logo: "https://farisgroup.net/wp-content/uploads/2023/05/AISJ.png" },
@@ -13,6 +14,7 @@ const clients = [
 ];
 
 export default function ClientsSection() {
+  const t = useT();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -31,9 +33,9 @@ export default function ClientsSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-subtitle block">CLIENTS</span>
+          <span className="section-subtitle block">{t("clientsSection.badge")}</span>
           <h2 className="section-title">
-            OUR{" "}
+            {t("clientsSection.title1")}{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #F47B20, #F89B4B)",
@@ -42,7 +44,7 @@ export default function ClientsSection() {
                 backgroundClip: "text",
               }}
             >
-              CLIENTS
+              {t("clientsSection.title2")}
             </span>
           </h2>
         </motion.div>

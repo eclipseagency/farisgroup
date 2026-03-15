@@ -1,23 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, Facebook, Linkedin, Instagram } from "lucide-react";
-
-const quickLinks = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about-us" },
-  { name: "Services", href: "/services" },
-  { name: "Products", href: "/products" },
-  { name: "Our Projects", href: "/projects" },
-  { name: "Contact", href: "/contact-us" },
-];
-
-const productLinks = [
-  { name: "Bowling Alley", href: "/construction" },
-  { name: "Padel Court", href: "/padel-court" },
-  { name: "Fitness & Gym", href: "/fitness-and-gym" },
-  { name: "Playground", href: "/products" },
-  { name: "Climbing Wall", href: "/construction" },
-  { name: "Shooting Range", href: "/shooting-range" },
-];
+import { useT } from "@/lib/useT";
 
 const contactPhones = [
   { label: "+966 53 800 7018", country: "KSA" },
@@ -28,6 +13,26 @@ const contactPhones = [
 ];
 
 export default function Footer() {
+  const t = useT();
+
+  const quickLinks = [
+    { name: t("nav.home"), href: "/" },
+    { name: t("nav.aboutUs"), href: "/about-us" },
+    { name: t("nav.services"), href: "/services" },
+    { name: t("nav.products"), href: "/products" },
+    { name: t("nav.ourProjects"), href: "/projects" },
+    { name: t("nav.contact"), href: "/contact-us" },
+  ];
+
+  const productLinks = [
+    { name: t("footer.bowlingAlley"), href: "/construction" },
+    { name: t("footer.padelCourt"), href: "/padel-court" },
+    { name: t("footer.fitnessGym"), href: "/fitness-and-gym" },
+    { name: t("footer.playground"), href: "/products" },
+    { name: t("footer.climbingWall"), href: "/construction" },
+    { name: t("footer.shootingRange"), href: "/shooting-range" },
+  ];
+
   return (
     <footer
       className="relative overflow-hidden text-white"
@@ -61,12 +66,11 @@ export default function Footer() {
               />
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-5">
-              With over 20 years of experience, Faris Group is the leading supplier of superior
-              quality sports and entertainment equipment in the Middle East.
+              {t("footer.description")}
             </p>
             <div className="flex items-start gap-2.5 text-white/40 text-xs mb-6">
               <Clock size={12} className="flex-shrink-0 mt-0.5" style={{ color: "#F47B20" }} />
-              <span>Saturday – Thursday: 08:00 AM – 05:00 PM</span>
+              <span>{t("footer.workingHours")}</span>
             </div>
             <div className="flex items-center gap-2.5">
               {[
@@ -94,7 +98,7 @@ export default function Footer() {
               className="font-heading font-bold text-xs uppercase tracking-[0.2em] mb-6 pb-3"
               style={{ borderBottom: "1px solid rgba(201,162,39,0.2)", color: "#e8e8e8" }}
             >
-              Quick Links
+              {t("footer.quickLinks")}
             </h3>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
@@ -120,7 +124,7 @@ export default function Footer() {
               className="font-heading font-bold text-xs uppercase tracking-[0.2em] mb-6 pb-3"
               style={{ borderBottom: "1px solid rgba(201,162,39,0.2)", color: "#e8e8e8" }}
             >
-              Our Products
+              {t("footer.ourProducts")}
             </h3>
             <ul className="space-y-2.5">
               {productLinks.map((link) => (
@@ -146,7 +150,7 @@ export default function Footer() {
               className="font-heading font-bold text-xs uppercase tracking-[0.2em] mb-6 pb-3"
               style={{ borderBottom: "1px solid rgba(201,162,39,0.2)", color: "#e8e8e8" }}
             >
-              Contact Details
+              {t("footer.contactDetails")}
             </h3>
             <ul className="space-y-2">
               {contactPhones.map((p) => (
@@ -175,11 +179,11 @@ export default function Footer() {
               <li className="flex items-start gap-2 text-white/45 text-xs pt-1">
                 <MapPin size={10} className="flex-shrink-0 mt-0.5" style={{ color: "#F47B20" }} />
                 <div className="leading-relaxed">
-                  <p>Jeddah - Riyadh - Saudi Arabia</p>
-                  <p>Abu Dhabi - United Arab Emirates</p>
-                  <p>Milano - Italy</p>
-                  <p>Cairo - Egypt</p>
-                  <p>Metro Manila, Philippines</p>
+                  <p>{t("footer.addressJeddah")}</p>
+                  <p>{t("footer.addressAbuDhabi")}</p>
+                  <p>{t("footer.addressMilano")}</p>
+                  <p>{t("footer.addressCairo")}</p>
+                  <p>{t("footer.addressManila")}</p>
                 </div>
               </li>
             </ul>
@@ -193,9 +197,9 @@ export default function Footer() {
         style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
       >
         <div className="container-custom py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/25">
-          <p>© Copyright 2023 - FarisGroup | All Rights Reserved. Powered By Eclipse</p>
+          <p>{t("footer.copyright")}</p>
           <Link href="/privacy-policy" className="hover:text-white/70 transition-colors">
-            Privacy policy
+            {t("footer.privacyPolicy")}
           </Link>
         </div>
       </div>

@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWidgets from "@/components/layout/FloatingWidgets";
+import ClientProviders from "@/components/layout/ClientProviders";
 
 export const metadata: Metadata = {
   title: "Faris Group - Total Sports Solutions",
@@ -27,10 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <FloatingWidgets />
+        <ClientProviders>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <FloatingWidgets />
+        </ClientProviders>
       </body>
     </html>
   );

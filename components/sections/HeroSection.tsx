@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import { useT } from "@/lib/useT";
 
 const easing = [0.22, 1, 0.36, 1] as const;
 
 export default function HeroSection() {
+  const t = useT();
   return (
     <section className="relative h-[100vh] min-h-[640px] overflow-hidden">
       {/* Video Background */}
@@ -78,7 +80,7 @@ export default function HeroSection() {
                   className="w-1.5 h-1.5 rounded-full animate-pulse-glow"
                   style={{ backgroundColor: "#F47B20" }}
                 />
-                Your Trusted Partner Since 2003
+                {t("hero.badge")}
               </span>
             </motion.div>
 
@@ -89,9 +91,9 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25, ease: easing }}
             >
-              Total Sports
+              {t("hero.title1")}
               <br />
-              <span className="text-shimmer">Solutions</span>
+              <span className="text-shimmer">{t("hero.title2")} {t("hero.title3")}</span>
             </motion.h1>
 
             {/* Sub */}
@@ -101,9 +103,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: easing }}
             >
-              Faris Group is the leading supplier of superior quality sports and entertainment
-              equipment in the Middle East — with over 20 years of experience and offices
-              across KSA, UAE, Italy, Egypt and Philippines.
+              {t("hero.subtitle")}
             </motion.p>
 
             {/* CTAs */}
@@ -118,7 +118,7 @@ export default function HeroSection() {
                 className="group inline-flex items-center gap-2.5 px-8 py-4 font-bold text-sm tracking-widest uppercase text-white rounded-sm transition-all duration-300 hover:gap-4 hover:shadow-2xl hover:-translate-y-0.5"
                 style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
               >
-                Explore Products
+                {t("hero.cta1")}
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
@@ -126,7 +126,7 @@ export default function HeroSection() {
                 className="inline-flex items-center gap-2.5 px-8 py-4 font-bold text-sm tracking-widest uppercase text-white rounded-sm transition-all duration-300 hover:bg-white hover:text-[#0a1628]"
                 style={{ border: "1.5px solid rgba(255,255,255,0.35)" }}
               >
-                Contact Us
+                {t("hero.cta2")}
               </Link>
             </motion.div>
 
@@ -159,7 +159,7 @@ export default function HeroSection() {
             onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
             className="flex flex-col items-center gap-1.5 text-white/30 hover:text-white/60 transition-colors"
           >
-            <span className="text-xs tracking-widest uppercase">Scroll</span>
+            <span className="text-xs tracking-widest uppercase">{t("hero.scrollText")}</span>
             <ChevronDown size={16} className="animate-bounce" />
           </button>
         </div>

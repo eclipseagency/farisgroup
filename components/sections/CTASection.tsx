@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
+import { useT } from "@/lib/useT";
 
 export default function CTASection() {
+  const t = useT();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -41,10 +43,10 @@ export default function CTASection() {
             }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#F47B20" }} />
-            Get a Quote
+            {t("cta.badge")}
           </span>
           <h2 className="font-heading font-black text-3xl md:text-4xl text-white">
-            Contact <span style={{ color: "#F47B20" }}>Faris Group</span>
+            {t("cta.title")} <span style={{ color: "#F47B20" }}>{t("cta.titleHighlight")}</span>
           </h2>
         </div>
 
@@ -55,16 +57,16 @@ export default function CTASection() {
               style={{ borderColor: "rgba(244,123,32,0.3)", backgroundColor: "rgba(244,123,32,0.04)" }}
             >
               <CheckCircle size={56} className="mb-4" style={{ color: "#F47B20" }} />
-              <h3 className="font-heading font-bold text-2xl text-white mb-2">Message Sent!</h3>
+              <h3 className="font-heading font-bold text-2xl text-white mb-2">{t("cta.successTitle")}</h3>
               <p className="text-white/60 max-w-sm">
-                Thank you for contacting Faris Group. Our team will respond within 24 hours.
+                {t("cta.successMessage")}
               </p>
               <button
                 onClick={() => { setSubmitted(false); setFormData({ name: "", email: "", phone: "", subject: "", message: "" }); }}
                 className="mt-6 px-8 py-3 text-white text-sm font-semibold uppercase tracking-wider rounded-sm"
                 style={{ background: "linear-gradient(135deg, #F47B20, #F89B4B)" }}
               >
-                Send Another Message
+                {t("cta.sendAnother")}
               </button>
             </div>
           ) : (
@@ -76,7 +78,7 @@ export default function CTASection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">
-                    Full Name *
+                    {t("cta.nameLabel")} *
                   </label>
                   <input
                     type="text"
@@ -84,14 +86,14 @@ export default function CTASection() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="Your full name"
+                    placeholder={t("cta.namePlaceholder")}
                     className="w-full px-4 py-3 rounded-lg text-sm text-white placeholder-white/30 focus:outline-none focus:ring-1 transition-colors"
                     style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", focusRingColor: "#F47B20" } as React.CSSProperties}
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">
-                    Email Address *
+                    {t("cta.emailLabel")} *
                   </label>
                   <input
                     type="email"
@@ -99,28 +101,28 @@ export default function CTASection() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="your@email.com"
+                    placeholder={t("cta.emailPlaceholder")}
                     className="w-full px-4 py-3 rounded-lg text-sm text-white placeholder-white/30 focus:outline-none transition-colors"
                     style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">
-                    Phone Number
+                    {t("cta.phoneLabel")}
                   </label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+966 / +971"
+                    placeholder={t("cta.phonePlaceholder")}
                     className="w-full px-4 py-3 rounded-lg text-sm text-white placeholder-white/30 focus:outline-none transition-colors"
                     style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">
-                    Subject *
+                    {t("cta.subjectLabel")} *
                   </label>
                   <select
                     name="subject"
@@ -130,19 +132,19 @@ export default function CTASection() {
                     className="w-full px-4 py-3 rounded-lg text-sm text-white focus:outline-none transition-colors"
                     style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                   >
-                    <option value="" style={{ background: "#0f172a" }}>Select a subject</option>
-                    <option value="sports-equipment" style={{ background: "#0f172a" }}>Sports Equipment</option>
-                    <option value="fitness-gym" style={{ background: "#0f172a" }}>Fitness &amp; Gym</option>
-                    <option value="padel-court" style={{ background: "#0f172a" }}>Padel Court</option>
-                    <option value="bleachers-seating" style={{ background: "#0f172a" }}>Bleachers &amp; Seating</option>
-                    <option value="shooting-range" style={{ background: "#0f172a" }}>Shooting Range</option>
-                    <option value="construction" style={{ background: "#0f172a" }}>Construction</option>
-                    <option value="general" style={{ background: "#0f172a" }}>General Inquiry</option>
+                    <option value="" style={{ background: "#0f172a" }}>{t("cta.subjectPlaceholder")}</option>
+                    <option value="sports-equipment" style={{ background: "#0f172a" }}>{t("cta.subjects.sportsEquipment")}</option>
+                    <option value="fitness-gym" style={{ background: "#0f172a" }}>{t("cta.subjects.fitnessGym")}</option>
+                    <option value="padel-court" style={{ background: "#0f172a" }}>{t("cta.subjects.padelCourt")}</option>
+                    <option value="bleachers-seating" style={{ background: "#0f172a" }}>{t("cta.subjects.bleachersSeating")}</option>
+                    <option value="shooting-range" style={{ background: "#0f172a" }}>{t("cta.subjects.shootingRange")}</option>
+                    <option value="construction" style={{ background: "#0f172a" }}>{t("cta.subjects.construction")}</option>
+                    <option value="general" style={{ background: "#0f172a" }}>{t("cta.subjects.general")}</option>
                   </select>
                 </div>
                 <div className="md:col-span-2">
                   <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">
-                    Message *
+                    {t("cta.messageLabel")} *
                   </label>
                   <textarea
                     name="message"
@@ -150,7 +152,7 @@ export default function CTASection() {
                     onChange={handleChange}
                     required
                     rows={4}
-                    placeholder="Tell us about your project or inquiry..."
+                    placeholder={t("cta.messagePlaceholder")}
                     className="w-full px-4 py-3 rounded-lg text-sm text-white placeholder-white/30 focus:outline-none transition-colors resize-none"
                     style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                   />
@@ -168,12 +170,12 @@ export default function CTASection() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
                     </svg>
-                    Sending...
+                    {t("cta.sending")}
                   </span>
                 ) : (
                   <>
                     <Send size={16} />
-                    Send Message
+                    {t("cta.sendButton")}
                   </>
                 )}
               </button>

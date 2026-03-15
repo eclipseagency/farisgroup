@@ -1,6 +1,9 @@
+"use client";
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
+import { useT } from "@/lib/useT";
 
 export const metadata: Metadata = {
   title: "Billiards - Faris Group",
@@ -44,6 +47,7 @@ const galleryImages = [
 ];
 
 export default function BilliardsPage() {
+  const t = useT();
   return (
     <>
       {/* Hero — Static Image */}
