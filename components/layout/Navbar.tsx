@@ -109,9 +109,15 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <nav
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-white shadow-lg" : "bg-white shadow-sm"
+        className={`sticky top-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "shadow-2xl border-b border-gray-100"
+            : "shadow-sm border-b border-gray-50"
         }`}
+        style={{
+          backgroundColor: scrolled ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,1)",
+          backdropFilter: scrolled ? "blur(20px)" : "none",
+        }}
       >
         <div className="container-custom">
           <div className="flex items-center justify-between h-20">
@@ -149,7 +155,7 @@ export default function Navbar() {
 
                   {/* Level-1 Dropdown */}
                   {item.children && activeDropdown === item.name && (
-                    <div className="absolute top-full left-0 mt-0 w-64 bg-white shadow-xl border-t-2 border-gold rounded-b-lg py-2 z-50">
+                    <div className="absolute top-full left-0 mt-0 w-64 shadow-2xl rounded-b-xl py-2 z-50 overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.97)", backdropFilter: "blur(20px)", borderTop: "2px solid #c9a227", border: "1px solid rgba(0,0,0,0.06)", borderTopColor: "#c9a227" }}>
                       {item.children.map((child) => (
                         <div
                           key={child.name}
