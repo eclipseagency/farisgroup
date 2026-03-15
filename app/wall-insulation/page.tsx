@@ -106,7 +106,7 @@ export default function WallInsulationPage() {
         <img
           src="https://farisgroup.net/wp-content/uploads/2023/05/45518666_356687755099112_7281876042573152256_n-1-1.jpg"
           alt="Wall Insulation Hero"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-bottom"
         />
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.55)" }} />
         <div className="relative z-10 text-center text-white px-4 max-w-4xl">
