@@ -1,17 +1,11 @@
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/ui/PageHeader";
 import CTASection from "@/components/sections/CTASection";
 import { ArrowRight } from "lucide-react";
 import { useT } from "@/lib/useT";
 
-export const metadata: Metadata = {
-  title: "Products - Faris Group",
-  description:
-    "Browse Faris Group's comprehensive range of sports products and equipment — from fitness gear to padel courts and bleacher seating.",
-};
 
 const productCategories = [
   {

@@ -1,15 +1,9 @@
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 import { useT } from "@/lib/useT";
 
-export const metadata: Metadata = {
-  title: "Playground - Faris Group",
-  description:
-    "Faris Group provides safe and engaging playground equipment for schools, public parks, private homes, and compounds. All products hold necessary safety certificates.",
-};
 
 const projectImages = [
   "https://farisgroup.net/wp-content/uploads/2023/05/University-of-Sharjah-Playground-3.jpeg",

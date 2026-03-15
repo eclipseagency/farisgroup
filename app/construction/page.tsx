@@ -1,15 +1,9 @@
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
 import { useT } from "@/lib/useT";
 
-export const metadata: Metadata = {
-  title: "Construction - Faris Group",
-  description:
-    "From squash courts to football fields, Faris Group delivers construction projects with distinction using decades of experience in sports facilities.",
-};
 
 export default function ConstructionPage() {
   const t = useT();

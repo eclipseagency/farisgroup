@@ -1,15 +1,9 @@
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 import { useT } from "@/lib/useT";
 
-export const metadata: Metadata = {
-  title: "Cardio Machines - Faris Group",
-  description:
-    "Faris Group, together with Canali System, provides a variety of cardio machines — treadmills, bikes, and more for recreation or rehabilitation.",
-};
 
 const projectImages = [
   "https://farisgroup.net/wp-content/uploads/2023/05/5QV4TcUWvsfYmm9hAdWXHD.jpg",

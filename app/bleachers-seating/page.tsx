@@ -1,15 +1,9 @@
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 import { useT } from "@/lib/useT";
 
-export const metadata: Metadata = {
-  title: "Bleachers & Seating - Faris Group",
-  description:
-    "Faris Group offers comprehensive Bleachers and Seating solutions for stadiums, sports arenas, concert halls, and more. Comfort, functionality, and style for every venue.",
-};
 
 const projectImages = [
   "https://farisgroup.net/wp-content/uploads/2023/05/University-of-Sharjah-Playground-9.jpeg",

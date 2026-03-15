@@ -1,15 +1,9 @@
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
 import { useT } from "@/lib/useT";
 
-export const metadata: Metadata = {
-  title: "Spare Parts - Faris Group",
-  description:
-    "Available in our inventory are a number of spare parts for bowling and sports equipment. Non-readily available parts can be ordered with delivery within 60-90 days.",
-};
 
 export default function SparePartsPage() {
   const t = useT();

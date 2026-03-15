@@ -1,15 +1,9 @@
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 import { useT } from "@/lib/useT";
 
-export const metadata: Metadata = {
-  title: "Fitness & Gym - Faris Group",
-  description:
-    "Set up a world-class fitness facility with Faris Group's cutting-edge Fitness & Gym equipment. Canali System – 100% Italian design.",
-};
 
 const projectImages = [
   "https://farisgroup.net/wp-content/uploads/2023/07/Al-Midra-Recreation-Center-Saudi-Aramco-11.jpeg",

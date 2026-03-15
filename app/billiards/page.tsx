@@ -1,15 +1,9 @@
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 import { useT } from "@/lib/useT";
 
-export const metadata: Metadata = {
-  title: "Billiards - Faris Group",
-  description:
-    "Faris Group — your ultimate destination for billiard tables, cues, and accessories. Premium game tables for leisure and professional tournaments.",
-};
 
 const galleryImages = [
   {
