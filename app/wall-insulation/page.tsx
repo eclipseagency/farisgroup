@@ -1,89 +1,51 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
+import { useT } from "@/lib/useT";
+import { useLocale } from "@/contexts/LocaleContext";
+import { translations } from "@/lib/translations";
 
-
-const whyChoose = [
-  {
-    title: "Thermal Comfort",
-    description:
-      "Our insulation materials help maintain a consistent indoor temperature, reducing the need for excessive heating or cooling and leading to significant energy savings.",
-    image: "https://farisgroup.net/wp-content/uploads/2024/07/14fbb757-7447-4eb9-b4ab-a066fe5180b9-1.jpeg",
-  },
-  {
-    title: "Soundproofing",
-    description:
-      "Enjoy a peaceful environment free from external noise. Our insulation solutions effectively reduce noise transmission, creating a quieter and more serene space.",
-    image: "https://farisgroup.net/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-18-at-4.53.53-PM.jpeg",
-  },
-  {
-    title: "Energy Efficiency",
-    description:
-      "By minimizing heat loss in the winter and heat gain in the summer, our wall insulation contributes to lower energy bills and a reduced carbon footprint.",
-    image: "https://farisgroup.net/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-18-at-4.53.54-PM.jpeg",
-  },
-  {
-    title: "Durability",
-    description:
-      "We use high-quality, durable materials that ensure long-lasting performance and require minimal maintenance.",
-    image: "https://farisgroup.net/wp-content/uploads/2024/07/IMG5-1536x1023.jpg",
-  },
-  {
-    title: "Expert Installation",
-    description:
-      "Our team of skilled professionals ensures precise and efficient installation, adhering to the highest industry standards.",
-    image: "https://farisgroup.net/wp-content/uploads/2024/07/IMG4-1536x1023.jpg",
-  },
+const whyChooseImages = [
+  "https://farisgroup.net/wp-content/uploads/2024/07/14fbb757-7447-4eb9-b4ab-a066fe5180b9-1.jpeg",
+  "https://farisgroup.net/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-18-at-4.53.53-PM.jpeg",
+  "https://farisgroup.net/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-18-at-4.53.54-PM.jpeg",
+  "https://farisgroup.net/wp-content/uploads/2024/07/IMG5-1536x1023.jpg",
+  "https://farisgroup.net/wp-content/uploads/2024/07/IMG4-1536x1023.jpg",
 ];
 
-const applications = [
-  {
-    title: "Homes",
-    description: "Create a comfortable and energy-efficient living environment.",
-    icon: (
-      <svg viewBox="0 0 64 64" className="w-12 h-12 mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
-        <path d="M8 32L32 10l24 22v22H8V32z" />
-        <rect x="24" y="40" width="16" height="16" />
-      </svg>
-    ),
-  },
-  {
-    title: "Offices",
-    description: "Enhance productivity and comfort with effective temperature and noise control.",
-    icon: (
-      <svg viewBox="0 0 64 64" className="w-12 h-12 mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
-        <rect x="8" y="8" width="48" height="48" rx="2" />
-        <path d="M8 24h48M24 8v48M8 40h16" />
-        <circle cx="44" cy="44" r="6" />
-        <path d="M44 38v6h6" />
-      </svg>
-    ),
-  },
-  {
-    title: "Retail Spaces",
-    description: "Improve customer experience with a pleasant indoor climate.",
-    icon: (
-      <svg viewBox="0 0 64 64" className="w-12 h-12 mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
-        <path d="M8 24h48l-4 32H12L8 24z" />
-        <path d="M20 24V16a12 12 0 0124 0v8" />
-        <circle cx="32" cy="40" r="4" />
-      </svg>
-    ),
-  },
-  {
-    title: "Industrial Facilities",
-    description: "Maintain optimal working conditions and protect against temperature extremes.",
-    icon: (
-      <svg viewBox="0 0 64 64" className="w-12 h-12 mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
-        <rect x="4" y="32" width="56" height="28" rx="1" />
-        <path d="M4 32l14-20v20M18 32l14-20v20M32 32l14-20v20" />
-        <rect x="12" y="44" width="8" height="16" />
-        <rect x="28" y="44" width="8" height="16" />
-        <rect x="44" y="44" width="8" height="16" />
-      </svg>
-    ),
-  },
+const applicationIcons: (() => React.ReactElement)[] = [
+  () => (
+    <svg viewBox="0 0 64 64" className="w-12 h-12 mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
+      <path d="M8 32L32 10l24 22v22H8V32z" />
+      <rect x="24" y="40" width="16" height="16" />
+    </svg>
+  ),
+  () => (
+    <svg viewBox="0 0 64 64" className="w-12 h-12 mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
+      <rect x="8" y="8" width="48" height="48" rx="2" />
+      <path d="M8 24h48M24 8v48M8 40h16" />
+      <circle cx="44" cy="44" r="6" />
+      <path d="M44 38v6h6" />
+    </svg>
+  ),
+  () => (
+    <svg viewBox="0 0 64 64" className="w-12 h-12 mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
+      <path d="M8 24h48l-4 32H12L8 24z" />
+      <path d="M20 24V16a12 12 0 0124 0v8" />
+      <circle cx="32" cy="40" r="4" />
+    </svg>
+  ),
+  () => (
+    <svg viewBox="0 0 64 64" className="w-12 h-12 mb-4" fill="none" stroke="#00e5cc" strokeWidth="2">
+      <rect x="4" y="32" width="56" height="28" rx="1" />
+      <path d="M4 32l14-20v20M18 32l14-20v20M32 32l14-20v20" />
+      <rect x="12" y="44" width="8" height="16" />
+      <rect x="28" y="44" width="8" height="16" />
+      <rect x="44" y="44" width="8" height="16" />
+    </svg>
+  ),
 ];
 
 const projectImages = [
@@ -95,6 +57,10 @@ const projectImages = [
 ];
 
 export default function WallInsulationPage() {
+  const t = useT();
+  const { locale } = useLocale();
+  const content = translations[locale].pageContent.wallInsulation;
+
   return (
     <>
       {/* Hero */}
@@ -107,7 +73,7 @@ export default function WallInsulationPage() {
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,22,40,0.55)" }} />
         <div className="relative z-10 text-center text-white px-4 max-w-4xl">
           <h1 className="font-heading font-black text-3xl md:text-5xl mb-6 leading-tight">
-            Enhance Comfort and Efficiency with Faris Group Wall Insulation Solutions
+            {content.heroTitle}
           </h1>
         </div>
       </section>
@@ -116,9 +82,9 @@ export default function WallInsulationPage() {
       <div className="py-3 border-b border-white/10" style={{ background: "rgba(255,255,255,0.04)" }}>
         <div className="container-custom">
           <nav className="flex items-center gap-2 text-sm text-white/50">
-            <Link href="/" className="text-white/70 hover:text-gold transition-colors">Home</Link>
+            <Link href="/" className="text-white/70 hover:text-gold transition-colors">{t("common.home")}</Link>
             <span>/</span>
-            <span className="text-white/80 font-medium">Wall Insulation</span>
+            <span className="text-white/80 font-medium">{content.heroTitle}</span>
           </nav>
         </div>
       </div>
@@ -127,13 +93,9 @@ export default function WallInsulationPage() {
       <section className="py-16">
         <div className="container-custom max-w-3xl text-center">
           <h2 className="font-heading font-black text-2xl md:text-3xl mb-4" style={{ color: "#1a8fc1" }}>
-            Enhance Comfort and Efficiency with Faris Group Wall Insulation Solutions
+            {content.title}
           </h2>
-          <p className="text-white/60 leading-relaxed">
-            At Faris Group, we understand the importance of a well-insulated space. Our state-of-the-art
-            wall insulation solutions are designed to provide superior thermal and acoustic insulation,
-            ensuring comfort, energy efficiency, and tranquility in your home, office, or any other space.
-          </p>
+          <p className="text-white/60 leading-relaxed">{content.p1}</p>
         </div>
       </section>
 
@@ -142,12 +104,12 @@ export default function WallInsulationPage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="font-heading font-black text-2xl md:text-3xl" style={{ color: "#1a8fc1" }}>
-              Why Choose Faris Group Wall Insulation?
+              {content.whyChooseTitle}
             </h2>
           </div>
 
           <div className="space-y-14">
-            {whyChoose.map((item, index) => (
+            {content.whyChoose.map((item, index) => (
               <div
                 key={index}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${
@@ -156,7 +118,7 @@ export default function WallInsulationPage() {
               >
                 <div className="rounded-2xl overflow-hidden shadow-xl">
                   <img
-                    src={item.image}
+                    src={whyChooseImages[index]}
                     alt={item.title}
                     className="w-full h-72 object-cover"
                   />
@@ -179,23 +141,22 @@ export default function WallInsulationPage() {
           <div className="text-center mb-4">
             <h2 className="font-heading font-black text-3xl md:text-4xl text-white flex items-center justify-center gap-3">
               <span style={{ color: "#00e5cc" }}>▶</span>
-              Applications
+              {content.applicationsTitle}
               <span style={{ color: "#00e5cc" }}>◀</span>
             </h2>
           </div>
           <p className="text-center text-gray-300 text-sm max-w-2xl mx-auto mb-12">
-            Whether you&apos;re looking to insulate residential, commercial, or industrial spaces,
-            Faris Group offers customized wall insulation solutions tailored to your specific needs:
+            {content.p2}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {applications.map((app, index) => (
+            {content.applications.map((app, index) => (
               <div
                 key={index}
                 className="rounded-2xl p-8 text-center border-2 transition-all duration-300 hover:-translate-y-1"
                 style={{ borderColor: index === 0 ? "#00e5cc" : "transparent" }}
               >
-                <div className="flex justify-center">{app.icon}</div>
-                <h3 className="font-heading font-bold text-xl mb-3" style={{ color: "#0d1f3c" }}>
+                <div className="flex justify-center">{applicationIcons[index]()}</div>
+                <h3 className="font-heading font-bold text-xl mb-3 text-white">
                   {app.title}
                 </h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#00e5cc" }}>
@@ -211,8 +172,8 @@ export default function WallInsulationPage() {
       <section className="py-20">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <span className="section-subtitle block">Our Work</span>
-            <h2 className="section-title">Projects</h2>
+            <span className="section-subtitle block">{t("common.ourWork")}</span>
+            <h2 className="section-title">{t("common.projects")}</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {projectImages.map((src, index) => (
