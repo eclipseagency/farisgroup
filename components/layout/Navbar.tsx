@@ -261,12 +261,12 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu — fixed overlay, scrollable, accordion */}
+        {/* Mobile Menu — scrollable accordion */}
         {isOpen && (
           <div
-            className="lg:hidden fixed left-0 right-0 bottom-0 overflow-y-auto z-40"
+            className="lg:hidden overflow-y-auto"
             style={{
-              top: "5rem",
+              maxHeight: "calc(100vh - 5rem)",
               backgroundColor: "rgba(8,18,36,0.99)",
               borderTop: "1px solid rgba(255,255,255,0.07)",
             }}
