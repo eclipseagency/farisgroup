@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, ChevronRight, Phone, Mail } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, Phone, Mail, Sun, Moon } from "lucide-react";
 import { useT } from "@/lib/useT";
 import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
+import { useTheme } from "@/contexts/ThemeContext";
 
 type NavChild = {
   name: string;
@@ -83,8 +84,11 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeSubDropdown, setActiveSubDropdown] = useState<string | null>(null);
+  const [expandedMobile, setExpandedMobile] = useState<string | null>(null);
   const t = useT();
   const navigation = useNavigation();
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,35 +98,75 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) setIsOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const navBg = isDark
+    ? scrolled ? "rgba(8,16,32,0.97)" : "rgba(10,22,40,0.92)"
+    : scrolled ? "rgba(255,255,255,0.97)" : "rgba(255,255,255,0.92)";
+
+  const navBorder = isDark
+    ? "1px solid rgba(255,255,255,0.07)"
+    : "1px solid rgba(0,0,0,0.08)";
+
+  const topBarBg = isDark
+    ? "rgba(6,12,24,0.95)"
+    : "rgba(241,245,249,0.98)";
+
+  const topBarBorder = isDark
+    ? "1px solid rgba(255,255,255,0.05)"
+    : "1px solid rgba(0,0,0,0.06)";
+
+  const mobileMenuBg = isDark
+    ? "rgba(8,18,36,0.99)"
+    : "rgba(248,250,252,0.99)";
+
+  const dropdownBg = isDark
+    ? "rgba(8,18,36,0.98)"
+    : "rgba(255,255,255,0.98)";
+
+  const dropdownBorder = isDark
+    ? "1px solid rgba(255,255,255,0.08)"
+    : "1px solid rgba(0,0,0,0.1)";
+
   return (
     <>
       {/* Top Bar */}
-      <div className="text-white text-xs py-2 hidden md:block" style={{ backgroundColor: "rgba(6,12,24,0.95)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+      <div
+        className="text-xs py-2 hidden md:block"
+        style={{ backgroundColor: topBarBg, borderBottom: topBarBorder }}
+      >
         <div className="container-custom flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <a href="tel:+966556688883" className="flex items-center gap-2 hover:text-gold transition-colors">
+            <a href="tel:+966556688883" className="flex items-center gap-2 hover:text-gold transition-colors text-white/70">
               <Phone size={12} />
               <span>+966 55 668 8883</span>
             </a>
-            <a href="mailto:info@farisgroup.net" className="flex items-center gap-2 hover:text-gold transition-colors">
+            <a href="mailto:info@farisgroup.net" className="flex items-center gap-2 hover:text-gold transition-colors text-white/70">
               <Mail size={12} />
               <span>info@farisgroup.net</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-gray-400">KSA · UAE · Italy | Leading Sports Solutions</span>
+            <span className="text-white/40">KSA · UAE · Italy | Leading Sports Solutions</span>
           </div>
         </div>
       </div>
 
       {/* Main Navbar */}
       <nav
-        className={`sticky top-0 z-50 transition-all duration-500`}
+        className="sticky top-0 z-50 transition-all duration-500"
         style={{
-          backgroundColor: scrolled ? "rgba(8,16,32,0.97)" : "rgba(10,22,40,0.92)",
+          backgroundColor: navBg,
           backdropFilter: "blur(20px)",
-          borderBottom: "1px solid rgba(255,255,255,0.07)",
-          boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.4)" : "none",
+          borderBottom: navBorder,
+          boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.15)" : "none",
         }}
       >
         <div className="container-custom">
@@ -133,6 +177,7 @@ export default function Navbar() {
                 src="https://farisgroup.net/wp-content/uploads/2023/05/Faris-Group-Logo-twt.png"
                 alt="Faris Group - Total Sports Solutions"
                 className="h-14 w-auto object-contain"
+                style={isDark ? {} : { filter: "brightness(0)" }}
               />
             </Link>
 
@@ -146,7 +191,10 @@ export default function Navbar() {
                   onMouseLeave={() => { setActiveDropdown(null); setActiveSubDropdown(null); }}
                 >
                   {item.children ? (
-                    <Link href={item.href} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-colors rounded-md hover:bg-white/5">
+                    <Link
+                      href={item.href}
+                      className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-colors rounded-md hover:bg-white/5"
+                    >
                       {item.name}
                       <ChevronDown size={14} className={`transition-transform ${activeDropdown === item.href ? "rotate-180" : ""}`} />
                     </Link>
@@ -161,7 +209,16 @@ export default function Navbar() {
 
                   {/* Level-1 Dropdown */}
                   {item.children && activeDropdown === item.href && (
-                    <div className="absolute top-full left-0 mt-0 w-64 shadow-2xl rounded-b-xl py-2 z-50" style={{ backgroundColor: "rgba(8,18,36,0.98)", backdropFilter: "blur(24px)", borderTop: "2px solid #F47B20", border: "1px solid rgba(255,255,255,0.08)", borderTopColor: "#F47B20" }}>
+                    <div
+                      className="absolute top-full left-0 mt-0 w-64 shadow-2xl rounded-b-xl py-2 z-50"
+                      style={{
+                        backgroundColor: dropdownBg,
+                        backdropFilter: "blur(24px)",
+                        border: dropdownBorder,
+                        borderTopColor: "#F47B20",
+                        borderTopWidth: "2px",
+                      }}
+                    >
                       {item.children.map((child) => (
                         <div
                           key={child.href}
@@ -177,9 +234,17 @@ export default function Navbar() {
                                 </Link>
                                 <ChevronRight size={14} style={{ color: "#F47B20" }} />
                               </div>
-                              {/* Level-2 Dropdown */}
                               {activeSubDropdown === child.href && (
-                                <div className="absolute left-full top-0 w-48 shadow-xl rounded-r-lg py-2 z-50" style={{ backgroundColor: "rgba(8,18,36,0.98)", backdropFilter: "blur(24px)", borderTop: "2px solid #F47B20", border: "1px solid rgba(255,255,255,0.08)", borderTopColor: "#F47B20" }}>
+                                <div
+                                  className="absolute left-full top-0 w-48 shadow-xl rounded-r-lg py-2 z-50"
+                                  style={{
+                                    backgroundColor: dropdownBg,
+                                    backdropFilter: "blur(24px)",
+                                    border: dropdownBorder,
+                                    borderTopColor: "#F47B20",
+                                    borderTopWidth: "2px",
+                                  }}
+                                >
                                   {child.children.map((sub) =>
                                     sub.href.startsWith("http") ? (
                                       <a
@@ -227,10 +292,22 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
+
               {/* Language Switcher */}
               <div className="ml-2">
                 <LanguageSwitcher />
               </div>
+
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="ml-1 p-2 rounded-full transition-all duration-300 hover:bg-white/10"
+                aria-label="Toggle theme"
+                style={{ color: isDark ? "rgba(255,255,255,0.7)" : "rgba(10,22,40,0.7)" }}
+              >
+                {isDark ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+
               {/* OUR STORE */}
               <a
                 href="http://farisstore.com/"
@@ -244,11 +321,20 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="lg:hidden flex items-center gap-2">
+            <div className="lg:hidden flex items-center gap-1">
               <LanguageSwitcher />
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full transition-all duration-300 hover:bg-white/10"
+                aria-label="Toggle theme"
+                style={{ color: isDark ? "rgba(255,255,255,0.7)" : "rgba(10,22,40,0.7)" }}
+              >
+                {isDark ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
               <button
                 className="p-2 rounded-md text-white/70 hover:bg-white/10"
                 onClick={() => setIsOpen(!isOpen)}
+                aria-label="Toggle menu"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -256,59 +342,89 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu — fixed overlay, scrollable */}
         {isOpen && (
-          <div className="lg:hidden shadow-lg" style={{ backgroundColor: "rgba(8,18,36,0.99)", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-            <div className="container-custom py-4 space-y-1">
+          <div
+            className="lg:hidden fixed left-0 right-0 bottom-0 overflow-y-auto z-40"
+            style={{
+              top: "5rem",
+              backgroundColor: mobileMenuBg,
+              borderTop: isDark ? "1px solid rgba(255,255,255,0.07)" : "1px solid rgba(0,0,0,0.08)",
+            }}
+          >
+            <div className="container-custom py-3 pb-28">
               {navigation.map((item) => (
-                <div key={item.href}>
+                <div
+                  key={item.href}
+                  className="border-b"
+                  style={{ borderColor: isDark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.07)" }}
+                >
                   {item.children ? (
-                    <div>
-                      <Link
-                        href={item.href}
-                        className="block px-3 py-2 text-sm font-semibold text-white/80 hover:text-white uppercase tracking-wider"
-                        onClick={() => setIsOpen(false)}
+                    <>
+                      {/* Accordion header */}
+                      <button
+                        className="flex items-center justify-between w-full px-3 py-3.5 text-sm font-semibold text-white/80 hover:text-white uppercase tracking-wider text-start"
+                        onClick={() =>
+                          setExpandedMobile(expandedMobile === item.href ? null : item.href)
+                        }
                       >
-                        {item.name}
-                      </Link>
-                      {item.children.map((child) => (
-                        <div key={child.href}>
-                          {child.external ? (
-                            <a
-                              href={child.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="block px-6 py-2 text-sm text-white/70 hover:text-white"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {child.name}
-                            </a>
-                          ) : (
-                            <Link
-                              href={child.href}
-                              className="block px-6 py-2 text-sm text-white/70 hover:text-white"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {child.name}
-                            </Link>
-                          )}
-                          {child.children?.map((sub) => (
-                            <Link
-                              key={sub.href}
-                              href={sub.href}
-                              className="block px-10 py-1.5 text-sm text-white/50 hover:text-white"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              — {sub.name}
-                            </Link>
+                        <span>{item.name}</span>
+                        <ChevronDown
+                          size={16}
+                          className={`transition-transform flex-shrink-0 ml-2`}
+                          style={{
+                            color: "#F47B20",
+                            transform: expandedMobile === item.href ? "rotate(180deg)" : "rotate(0deg)",
+                          }}
+                        />
+                      </button>
+
+                      {/* Accordion body */}
+                      {expandedMobile === item.href && (
+                        <div className="pb-2">
+                          {item.children.map((child) => (
+                            <div key={child.href}>
+                              {child.external ? (
+                                <a
+                                  href={child.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block px-6 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                                  onClick={() => setIsOpen(false)}
+                                >
+                                  {child.name}
+                                </a>
+                              ) : (
+                                <Link
+                                  href={child.href}
+                                  className="block px-6 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                                  onClick={() => setIsOpen(false)}
+                                >
+                                  {child.name}
+                                </Link>
+                              )}
+                              {child.children?.map((sub) => (
+                                <a
+                                  key={sub.href}
+                                  href={sub.href}
+                                  target={sub.href.startsWith("http") ? "_blank" : undefined}
+                                  rel={sub.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                                  className="flex items-center gap-2 px-9 py-2 text-xs text-white/50 hover:text-white/80 transition-colors"
+                                  onClick={() => setIsOpen(false)}
+                                >
+                                  <span style={{ color: "#F47B20" }}>›</span>
+                                  {sub.name}
+                                </a>
+                              ))}
+                            </div>
                           ))}
                         </div>
-                      ))}
-                    </div>
+                      )}
+                    </>
                   ) : (
                     <Link
                       href={item.href}
-                      className="block px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-md"
+                      className="block px-3 py-3.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
@@ -316,9 +432,10 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
+
               <Link
                 href="/contact-us"
-                className="block text-center mt-4 px-6 py-3 text-sm font-semibold text-white"
+                className="block text-center mt-5 mx-1 px-6 py-3.5 text-sm font-semibold text-white rounded-md"
                 style={{ backgroundColor: "#F47B20" }}
                 onClick={() => setIsOpen(false)}
               >
