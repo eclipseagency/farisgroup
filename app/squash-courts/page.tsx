@@ -6,9 +6,7 @@ import { useT } from "@/lib/useT";
 import { useLocale } from "@/contexts/LocaleContext";
 import { translations } from "@/lib/translations";
 
-const projectImages = [
-  
-];
+const projectImages: string[] = [];
 
 export default function SquashCourtsPage() {
   const t = useT();
